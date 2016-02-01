@@ -1,0 +1,24 @@
+#
+#
+# This is SO my .screenrc
+#deflogin
+defscrollback 20000
+vbell off
+autodetach on
+altscreen on
+defutf8 on
+
+escape "``"
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.brW} %{-}%w %= %H %m/%d %c "
+
+# fix scrollback in putty
+termcapinfo xterm* ti@:te@
+
+startup_message off
+
+#screen -t manpage 3
+#screen -t inside.muriad 1
+#screen -t clamdigger 2
+#screen -t beatrix 0

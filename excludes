@@ -1,0 +1,44 @@
+_trunk/
+_working/
+.Trash*
+.DS_Store
+.FBC*
+.cpan/*
+.ssh/
+.fonts*
+.svn/
+*/.git/*
+*Temporary*
+*Cache*
+*cache*
+*Support/Camino/
+*Support/Ableton/
+Desktop D*
+Desktop/
+Library/Safari/
+Library/Logs/
+Library/Containers/
+SyncServices/
+Capture\ Scratch/
+Final\ Cut\ Pro\ Documents/
+Documents/Parallels/
+Spam*
+Attachments
+Sites/*
+iPhone\ Software\ Updates/
+iPad\ Software\ Updates/
+Microsoft\ User\ Data/
+MobileSync/
+BOXEE
+DOS\ Games*
+PubSub
+Dropbox
+Downloads/
+Library/Developer/
+Movies/iMovie*
+Documents/Stream\ Infrastructure\ Documents/*
+Library/Application\ Support/Steam/SteamApps/*
+Library/Application\ Support/Bitcoin/blocks/*
+Library/Application\ Support/WebEx\ Folder/*
+Library/Application\ Support/iLifeAssetManagement/
+Public/*

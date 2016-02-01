@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/Corbie/_working/limeron/doki/tmp'
+let g:netrw_dirhist_2='/Users/Corbie/_working/limeron/doki'
+let g:netrw_dirhist_3='/Users/Corbie/_working/limeron/www/lib/tasks'
+let g:netrw_dirhist_4='/Users/Corbie/chef-repo/.chef'
+let g:netrw_dirhist_5='/Users/Corbie/chef-repo/cookbooks/base/files/default'
+let g:netrw_dirhist_6='/Volumes/users/cjohnson'
+let g:netrw_dirhist_7='/usr/local/etc/bash_completion.d'
+let g:netrw_dirhist_8='/Users/Corbie/Workspace/bento/http/centos-5.11'

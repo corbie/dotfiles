@@ -1,0 +1,30 @@
+[core]
+	excludesfile = /Users/Corbie/.gitignore_global
+        pager = less -r
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Corban Johnson
+	email = cjohnson@muriad.net
+[merge]
+	tool = vimdiff
+[color]
+	ui = auto
+	interactive = auto
+[format]
+	pretty = format: '%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+[alias]
+	d = diff --color-words
+	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+[http]
+	sslVerify = false
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
