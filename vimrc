@@ -14,8 +14,8 @@ else
 endif
 
 "" Formatting
-set foldmethod=indent
-set	foldlevel=5
+"set foldmethod=indent
+"set	foldlevel=5
 set	autoindent
 "set	expandtab " expand tabs by default (overloadable per file type later)
 set	smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
