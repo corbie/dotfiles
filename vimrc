@@ -38,6 +38,7 @@ set	title
 set	hidden
 set	linebreak
 set matchpairs+=<:> " show matching <>
+set laststatus=2 " Always show status line
 
 "" Keybindings
 nmap th :tabprev<cr>
@@ -53,6 +54,8 @@ set wildchar=<Tab> wildmenu wildmode=full " Buffer list with <Tab>
 "" Misc
 " Markdown also starts with .md
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+" .j2 is Jinja2
+autocmd BufNewFile,BufRead *.j2 set syntax=jinja
 
 " Save and run python when typing <leader>r
 "noremap <buffer> <leader>r :w<cr> :exec '!python' shellescape(@%, 1)<cr>
