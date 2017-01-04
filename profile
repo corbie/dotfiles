@@ -22,6 +22,11 @@ screen|xterm*|rxvt*)
 	;;
 esac
 
+if [ -e /usr/share/terminfo/78/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
