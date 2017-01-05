@@ -1,6 +1,6 @@
 export HISTCONTROL=ignoredups
 export HISTSIZE=50000
-export EDITOR=/usr/bin/vim
+export EDITOR='/usr/bin/vim'
 shopt -s histappend
 
 alias ls='ls -G'
@@ -9,8 +9,6 @@ alias ll='ls -l'
 alias pu='pushd'
 alias po='popd'
 
-EDITOR="/usr/bin/vi"
-#PATH=$PATH":~/bin"
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PS1="<<\u@\h>><\w> "
 
