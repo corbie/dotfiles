@@ -15,9 +15,8 @@ else
 endif
 
 "" Formatting
-"set	foldmethod=indent
-"set	foldlevel=5
 set	autoindent
+set breakindent " Every wrapped line will continue visually indented
 "set	expandtab " expand tabs by default (overloadable per file type later)
 set	smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
 set	tabstop=2 " tab spaces size
@@ -40,6 +39,7 @@ set	hidden
 set	linebreak
 set	matchpairs+=<:> " show matching <>
 set	laststatus=2 " Always show status line
+autocmd VimResized * wincmd = " Auto-equalize window splits
 
 "" Keybindings
 nmap th :tabprev<cr>
@@ -47,26 +47,38 @@ nmap tl :tabnext<cr>
 nmap tn :tabnew<cr>
 nmap tc :tabclose<cr>
 nmap te :tabedit
+noremap J :bn<cr>
+noremap K :bp<cr>
 
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>v :tabedit $MYVIMRC<CR>
-nmap <leader>l :ls<CR>
-nmap <leader>t :TagbarToggle<CR>
+" file browser
+nmap <leader>n :nerdtreetoggle<cr>
+" edit $myvimrc
+nmap <leader>v :tabedit $myvimrc<cr>
+" buffer list
+nmap <leader>l :ls<cr>
+" show tags window
+nmap <leader>t :tagbartoggle<cr>
+" toggle line numbers
+nmap <leader>u :set nu!<cr>
+" toggle invisible chars
+nmap <leader>i :set list!<cr>
+" toggle window scroll binding
+nmap <leader>b :windo set scrollbind!<cr>
 
-set	wildchar=<Tab> wildmenu wildmode=full " Buffer list with <Tab>
+set	wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 
-"" Misc
-" Markdown also starts with .md
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-" .j2 is Jinja2
-autocmd BufNewFile,BufRead *.j2 set syntax=jinja
+"" misc
+" markdown also starts with .md
+autocmd bufnewfile,bufread *.md set filetype=markdown
+" .j2 is jinja2
+autocmd bufnewfile,bufread *.j2 set syntax=jinja
 
-"" Plugins
-" Airline settings
+"" plugins
+" airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Tagbar settings
+" tagbar settings
 let g:tagbar_type_ansible = {
     \ 'ctagstype' : 'ansible',
     \ 'kinds' : [
@@ -77,9 +89,9 @@ let g:tagbar_type_ansible = {
 let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
     \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
+        \ 'h:heading_l1',
+        \ 'i:heading_l2',
+        \ 'k:heading_l3'
     \ ]
 \ }
 let g:tagbar_type_go = {
