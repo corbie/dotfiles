@@ -5,9 +5,10 @@ shopt -s histappend
 
 alias ls='ls -G'
 alias tm='diskutil unmount /Volumes/*\ Mascheen'
-alias ll='ls -l' 
+alias ll='ls -l'
 alias pu='pushd'
 alias po='popd'
+alias ws='cd ~/Workspace/'
 
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PS1="<<\u@\h>><\w> "
@@ -16,19 +17,19 @@ case "$TERM" in
 screen|xterm*|rxvt*)
 	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
 	;;
-*)  
+*)
 	;;
 esac
 
 if [ -e /usr/share/terminfo/78/xterm-256color ]; then
-        export TERM='xterm-256color'
+	export TERM='xterm-256color'
 else
-        export TERM='xterm-color'
+	export TERM='xterm-color'
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Command completion
 ## Git
