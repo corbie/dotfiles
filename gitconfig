@@ -19,6 +19,7 @@
 	ll = log --stat --abbrev-commit
 	refresh = !git fetch origin --prune && git pull
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	recap = log --all --oneline --no-merges --author=corban.johnson@stackpath.com
 [http]
 	sslVerify = false
 [credential]
@@ -31,3 +32,4 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
