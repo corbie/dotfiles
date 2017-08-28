@@ -9,6 +9,7 @@ alias ll='ls -l'
 alias pu='pushd'
 alias po='popd'
 alias ws='cd ~/Workspace/'
+alias cat='ccat'
 
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PS1="<<\u@\h>><\w> "
