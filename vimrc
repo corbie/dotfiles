@@ -51,9 +51,9 @@ noremap J :bn<cr>
 noremap K :bp<cr>
 
 " file browser
-nmap <leader>n :nerdtreetoggle<cr>
-" edit $myvimrc
-nmap <leader>v :tabedit $myvimrc<cr>
+nmap <leader>n :NERDTreeToggle<cr>
+" edit $MYVIMRC
+nmap <leader>v :tabedit $MYVIMRC<cr>
 " buffer list
 nmap <leader>l :ls<cr>
 " show tags window
@@ -77,6 +77,7 @@ autocmd bufnewfile,bufread *.j2 set syntax=jinja
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#format = 2
 
 " tagbar settings
 let g:tagbar_type_ansible = {
