@@ -122,3 +122,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" fugitive settings
+autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
