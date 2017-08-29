@@ -1,49 +1,49 @@
 "" Global settings
-set	encoding=utf-8
-syntax	on
-filetype	on
-filetype	plugin on
-filetype	indent on
-set	nocompatible " We're not using Vi
+set encoding=utf-8
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+set nocompatible " We're not using Vi
 
 
 "" Formatting
-set	autoindent
-set	breakindent " Every wrapped line will continue visually indented
-"set	expandtab " expand tabs by default (overloadable per file type later)
-set	smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
-set	tabstop=2 " tab spaces size
-set	softtabstop=2 " when hitting <BS>, pretend like a tab is removed, even if spaces
-set	shiftwidth=2 " number of spaces to use for autoindenting
+set autoindent
+set breakindent " Every wrapped line will continue visually indented
+"set expandtab " expand tabs by default (overloadable per file type later)
+set smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
+set tabstop=2 " tab spaces size
+set softtabstop=2 " when hitting <BS>, pretend like a tab is removed, even if spaces
+set shiftwidth=2 " number of spaces to use for autoindenting
 
 
 "" Display
-set	incsearch " Incremental search
-set	ignorecase " Case-insensitive search
-set	hlsearch " Highlight search results
-set	showcmd
-set	showmode
-set	smartcase
-set	ruler " Show current position
-set	nu " Show line numbers
-set	history=1000
-set	scrolloff=5 " keep three lines between the cursor and the bottom of the screen
-set	title " Set terminal window title to filename
-set	hidden
-set	linebreak
-set	matchpairs+=<:> " show matching <>
-set	laststatus=2 " Always show status line
-set	foldlevel=5 " Default fold level
-set	foldmethod=syntax " Default to syntax folding
+set incsearch " Incremental search
+set ignorecase " Case-insensitive search
+set hlsearch " Highlight search results
+set showcmd
+set showmode
+set smartcase
+set ruler " Show current position
+set nu " Show line numbers
+set history=1000
+set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
+set title " Set terminal window title to filename
+set hidden
+set linebreak
+set matchpairs+=<:> " show matching <>
+set laststatus=2 " Always show status line
+set foldlevel=5 " Default fold level
+set foldmethod=syntax " Default to syntax folding
 set nofoldenable " Folding off by default (toggled by <leader>-f)
 autocmd VimResized * wincmd = " Auto-equalize window splits
 
 " Use light or dark Solarized theme conditionally
-colorscheme	solarized
+colorscheme solarized
 if has('gui_running')
-	set background=light
+ set background=light
 else
-	set background=dark
+ set background=dark
 endif
 
 
@@ -74,7 +74,7 @@ nmap <leader>f :windo set foldenable!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
 " buffer list with <tab>
-set	wildchar=<tab> wildmenu wildmode=full
+set wildchar=<tab> wildmenu wildmode=full
 
 
 "" Misc
