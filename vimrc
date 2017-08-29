@@ -77,13 +77,6 @@ nmap <leader>b :windo set scrollbind!<cr>
 set wildchar=<tab> wildmenu wildmode=full
 
 
-"" Misc
-" markdown also starts with .md
-autocmd bufnewfile,bufread *.md set filetype=markdown
-" .j2 is jinja2
-autocmd bufnewfile,bufread *.j2 set syntax=jinja
-
-
 "" Plugins
 " airline settings
 let g:airline_powerline_fonts = 1
