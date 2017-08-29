@@ -33,6 +33,9 @@ set	hidden
 set	linebreak
 set	matchpairs+=<:> " show matching <>
 set	laststatus=2 " Always show status line
+set	foldlevel=5 " Default fold level
+set	foldmethod=syntax " Default to syntax folding
+set nofoldenable " Folding off by default (toggled by <leader>-f)
 autocmd VimResized * wincmd = " Auto-equalize window splits
 
 " Use light or dark Solarized theme conditionally
@@ -66,6 +69,8 @@ nmap <leader>t :TagbarToggle<cr>
 nmap <leader>u :set nu!<cr>
 " toggle invisible chars
 nmap <leader>i :set list!<cr>
+" toggle window folding
+nmap <leader>f :windo set foldenable!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
 " buffer list with <tab>
