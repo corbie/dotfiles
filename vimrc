@@ -1,27 +1,21 @@
 "" Global settings
-set encoding=utf-8
+set	encoding=utf-8
 syntax	on
 filetype	on
-filetype plugin on
-filetype indent on
+filetype	plugin on
+filetype	indent on
 set	nocompatible " We're not using Vi
 
-"" Use light or dark Solarized theme conditionally
-colorscheme	solarized
-if has('gui_running')
-	set background=light
-else
-	set background=dark
-endif
 
 "" Formatting
 set	autoindent
-set breakindent " Every wrapped line will continue visually indented
+set	breakindent " Every wrapped line will continue visually indented
 "set	expandtab " expand tabs by default (overloadable per file type later)
 set	smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
 set	tabstop=2 " tab spaces size
 set	softtabstop=2 " when hitting <BS>, pretend like a tab is removed, even if spaces
 set	shiftwidth=2 " number of spaces to use for autoindenting
+
 
 "" Display
 set	incsearch " Incremental search
@@ -41,15 +35,25 @@ set	matchpairs+=<:> " show matching <>
 set	laststatus=2 " Always show status line
 autocmd VimResized * wincmd = " Auto-equalize window splits
 
+" Use light or dark Solarized theme conditionally
+colorscheme	solarized
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+endif
+
+
 "" Keybindings
+" Tabs
 nmap th :tabprev<cr>
 nmap tl :tabnext<cr>
 nmap tn :tabnew<cr>
 nmap tc :tabclose<cr>
 nmap te :tabedit
-noremap J :bn<cr>
-noremap K :bp<cr>
-
+" Buffers
+noremap K :bn<cr>
+noremap J :bp<cr>
 " file browser
 nmap <leader>n :NERDTreeToggle<cr>
 " edit $MYVIMRC
@@ -57,23 +61,25 @@ nmap <leader>v :tabedit $MYVIMRC<cr>
 " buffer list
 nmap <leader>l :ls<cr>
 " show tags window
-nmap <leader>t :tagbartoggle<cr>
+nmap <leader>t :TagbarToggle<cr>
 " toggle line numbers
 nmap <leader>u :set nu!<cr>
 " toggle invisible chars
 nmap <leader>i :set list!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
+" buffer list with <tab>
+set	wildchar=<tab> wildmenu wildmode=full
 
-set	wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 
-"" misc
+"" Misc
 " markdown also starts with .md
 autocmd bufnewfile,bufread *.md set filetype=markdown
 " .j2 is jinja2
 autocmd bufnewfile,bufread *.j2 set syntax=jinja
 
-"" plugins
+
+"" Plugins
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
