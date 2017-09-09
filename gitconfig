@@ -1,6 +1,6 @@
 [core]
-	excludesfile = /Users/Corbie/.gitignore_global
-        pager = less -r
+	excludesfile = /Users/corban.johnson/.gitignore_global
+	pager = less -r
 [difftool "sourcetree"]
 [mergetool "sourcetree"]
 [user]
