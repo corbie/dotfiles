@@ -35,12 +35,13 @@ function refresh_socket {
     export SSH_AUTH_SOCK=$socket
   fi
 }
-if [[ -v SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
-  # SSH auth socket exists, NOP
-  true
-else
-  refresh_socket
-fi
+
+#if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
+#  # SSH auth socket exists, NOP
+#  true
+#else
+#  refresh_socket
+#fi
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
