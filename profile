@@ -16,16 +16,30 @@ PS1="<<\u@\h>><\w> "
 
 case "$TERM" in
 screen|xterm*|rxvt*)
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
-	;;
+  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
+  ;;
 *)
-	;;
+  ;;
 esac
 
 if [ -e /usr/share/terminfo/78/xterm-256color ]; then
-	export TERM='xterm-256color'
+  export TERM='xterm-256color'
 else
-	export TERM='xterm-color'
+  export TERM='xterm-color'
+fi
+
+# SSH agent forwarding socket environment workaround
+function refresh_socket {
+  socket=`find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs --max-line=5 | ls -1 | head -1`
+  if [ -S $socket ]; then
+    export SSH_AUTH_SOCK=$socket
+  fi
+}
+if [[ -v SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
+  # SSH auth socket exists, NOP
+  true
+else
+  refresh_socket
 fi
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
