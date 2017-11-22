@@ -11,9 +11,6 @@ alias po='popd'
 alias ws='cd ~/Workspace/'
 alias cat='ccat'
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-PS1="<<\u@\h>><\w> "
-
 case "$TERM" in
 screen|xterm*|rxvt*)
   PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
@@ -47,6 +44,12 @@ function refresh_socket {
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+export GOPATH=~/Workspace/go
+export GOBIN=$GOPATH/bin
+
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$(go env GOPATH)/bin
+PS1="<<\u@\h>><\w> "
+
 # Command completion
 ## Git
 . /usr/local/etc/bash_completion.d/git-completion.bash
@@ -54,3 +57,6 @@ function refresh_socket {
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
+
+## Docker
+. /usr/local/etc/bash_completion.d/docker
