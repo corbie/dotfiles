@@ -17,7 +17,7 @@
 	d = diff --color-words
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
-	refresh = !git fetch origin --prune && git pull
+	refresh = !git remote update --prune && git pull
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	recap = log --all --oneline --no-merges --author=corban.johnson@stackpath.com
 [http]
