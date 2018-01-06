@@ -7,6 +7,26 @@ filetype indent on
 set nocompatible " We're not using Vi
 
 
+"" Vim-plug
+" Install
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'romainl/flattened'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+call plug#end()
+
+
 "" Formatting
 set autoindent
 set breakindent " Every wrapped line will continue visually indented
@@ -39,12 +59,10 @@ set nofoldenable " Folding off by default (toggled by <leader>-f)
 autocmd VimResized * wincmd = " Auto-equalize window splits
 
 " Use light or dark Solarized theme conditionally
-colorscheme solarized
+colorscheme flattened_dark
 if has('gui_running')
  set gfn=Iosevka:h12
- set background=light
-else
- set background=dark
+ colorscheme flattened_light
 endif
 
 
