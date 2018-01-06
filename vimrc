@@ -5,6 +5,7 @@ filetype on
 filetype plugin on
 filetype indent on
 set nocompatible " We're not using Vi
+set autowrite
 
 
 "" Vim-plug
@@ -17,11 +18,14 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'majutsushi/tagbar'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 call plug#end()
