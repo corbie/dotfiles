@@ -41,6 +41,7 @@ autocmd VimResized * wincmd = " Auto-equalize window splits
 " Use light or dark Solarized theme conditionally
 colorscheme solarized
 if has('gui_running')
+ set gfn=Iosevka:h12
  set background=light
 else
  set background=dark
