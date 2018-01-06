@@ -59,4 +59,6 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Docker
-. /usr/local/etc/bash_completion.d/docker
+. /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+. /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
