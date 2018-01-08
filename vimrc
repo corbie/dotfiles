@@ -18,16 +18,23 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 call plug#end()
 
 
@@ -92,12 +99,23 @@ nmap <leader>t :TagbarToggle<cr>
 nmap <leader>u :set nu!<cr>
 " toggle invisible chars
 nmap <leader>i :set list!<cr>
-" toggle window folding
-nmap <leader>f :windo set foldenable!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
+" close quickfix window
+nmap <leader>x :cclose<cr>
 " buffer list with <tab>
 set wildchar=<tab> wildmenu wildmode=full
+nmap <M-k>    :Ack! "\b<cword>\b" <CR>
+nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
+" fzf
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>g :Tags<CR>
+nmap <Leader>a :Ag<CR>
+" goyo
+nmap <Leader>p :Goyo<CR>
+" buffwill: delete buffer, keep window
+nmap <M-w> :BD<CR>
 
 
 "" Plugins
@@ -105,6 +123,7 @@ set wildchar=<tab> wildmenu wildmode=full
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#format = 2
+let g:airline#extensions#ale#enabled = 1
 
 " tagbar settings
 let g:tagbar_type_ansible = {
@@ -152,3 +171,8 @@ let g:tagbar_type_go = {
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
+
+" ack.vim settings
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
