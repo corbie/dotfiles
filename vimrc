@@ -4,7 +4,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-set nocompatible " We're not using Vi
+set nocompatible
 set autowrite
 
 
@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
+Plug 'plan9-for-vimspace/acme-colors'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree'
@@ -61,21 +62,22 @@ set nu " Show line numbers
 set history=1000
 set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
 set title " Set terminal window title to filename
-set hidden
-set linebreak
+set hidden " keep buffers hidden
+set linebreak " ragged margins
 set matchpairs+=<:> " show matching <>
 set laststatus=2 " Always show status line
 set foldlevel=5 " Default fold level
 set foldmethod=syntax " Default to syntax folding
-set nofoldenable " Folding off by default (toggled by <leader>-f)
+set nofoldenable " Folding off by default
 autocmd VimResized * wincmd = " Auto-equalize window splits
 
-" Use light or dark Solarized theme conditionally
+" Use light or dark theme conditionally
 colorscheme flattened_dark
 if has('gui_running')
  set gfn=Iosevka:h12
- colorscheme flattened_light
+ colorscheme acme
 endif
+highlight Comment cterm=italic
 
 
 "" Keybindings
@@ -106,8 +108,8 @@ nmap <leader>b :windo set scrollbind!<cr>
 nmap <leader>x :cclose<cr>
 " buffer list with <tab>
 set wildchar=<tab> wildmenu wildmode=full
+" Ack search for word
 nmap <M-k>    :Ack! "\b<cword>\b" <CR>
-nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
 " fzf
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
@@ -115,11 +117,11 @@ nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
 " goyo
 nmap <Leader>p :Goyo<CR>
-" buffwill: delete buffer, keep window
+" buffkill: delete buffer, keep window
 nmap <M-w> :BD<CR>
 
 
-"" Plugins
+"" Plugin settings
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -178,3 +180,7 @@ autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search re
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" ALE settings
+let g:ale_yaml_yamllint_options = '-d relaxed'
+let g:ale_sign_column_always = 1
