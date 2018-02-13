@@ -12,18 +12,12 @@ alias ws='cd ~/Workspace/'
 alias cat='ccat'
 
 case "$TERM" in
-screen|xterm*|rxvt*)
+screen*|xterm*|rxvt*)
   PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
   ;;
 *)
   ;;
 esac
-
-if [ -e /usr/share/terminfo/78/xterm-256color ]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
-fi
 
 # SSH agent forwarding socket environment workaround
 function refresh_socket {
@@ -39,10 +33,6 @@ function refresh_socket {
 #else
 #  refresh_socket
 #fi
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
