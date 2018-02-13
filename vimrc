@@ -70,12 +70,12 @@ set foldlevel=5 " Default fold level
 set foldmethod=syntax " Default to syntax folding
 set nofoldenable " Folding off by default
 autocmd VimResized * wincmd = " Auto-equalize window splits
+set guioptions-=lr
 
 " Use light or dark theme conditionally
-colorscheme flattened_dark
+colorscheme flattened_light
 if has('gui_running')
  set gfn=Iosevka:h12
- colorscheme acme
 endif
 highlight Comment cterm=italic
 
@@ -109,7 +109,7 @@ nmap <leader>x :cclose<cr>
 " buffer list with <tab>
 set wildchar=<tab> wildmenu wildmode=full
 " Ack search for word
-nmap <M-k>    :Ack! "\b<cword>\b" <CR>
+nmap <M-k> :Ack! "\b<cword>\b" <CR>
 " fzf
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
@@ -119,6 +119,10 @@ nmap <Leader>a :Ag<CR>
 nmap <Leader>p :Goyo<CR>
 " buffkill: delete buffer, keep window
 nmap <M-w> :BD<CR>
+" vim-go
+nmap Gr :GoRun<cr>
+nmap Gb :GoBuild<cr>
+nmap Gd :GoDoc<cr>
 
 
 "" Plugin settings
