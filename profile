@@ -12,6 +12,7 @@ alias pu='pushd'
 alias po='popd'
 alias ws='cd ~/Workspace/'
 alias cat='ccat'
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
 case "$TERM" in
 screen*|xterm*|rxvt*)

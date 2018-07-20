@@ -22,16 +22,16 @@ Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'glench/vim-jinja2-syntax'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja2' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'plan9-for-vimspace/acme-colors'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -70,13 +70,15 @@ set foldlevel=5 " Default fold level
 set foldmethod=syntax " Default to syntax folding
 set nofoldenable " Folding off by default
 autocmd VimResized * wincmd = " Auto-equalize window splits
-set guioptions-=lr
+set guioptions-=lr " Disable left and right GUI scrollbars
 
 " Use light or dark theme conditionally
 colorscheme flattened_light
+" Set GUI font
 if has('gui_running')
  set gfn=Iosevka:h12
 endif
+" Use italic terminal fonts for comments
 highlight Comment cterm=italic
 
 
