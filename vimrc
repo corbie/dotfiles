@@ -23,7 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja2' }
+Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
