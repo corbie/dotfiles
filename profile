@@ -7,6 +7,7 @@ alias ls='ls -G'
 alias tm='diskutil unmount /Volumes/*\ Mascheen'
 alias ts='tmutil status'
 alias tl='tmutil listbackups'
+alias tll='tmutil latestbackup'
 alias ll='ls -l'
 alias pu='pushd'
 alias po='popd'
@@ -25,7 +26,11 @@ PS1="\n\w\n\u@\h> "
 
 # SSH agent forwarding socket environment workaround
 function refresh_socket {
-  socket=`find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1`
+  if [[ `uname -s` == 'Darwin' ]]; then
+    socket=`find /private/tmp -user $USER -type s -name Listeners 2>/dev/null | xargs ls -1t | head -1`
+  else
+    socket=`find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1`
+  fi
   if [ -S $socket ]; then
     export SSH_AUTH_SOCK=$socket
   fi
@@ -50,9 +55,3 @@ git_completion_dir=/usr/local/etc/bash_completion.d
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
-
-## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
-. $docker_completion_dir/docker.bash-completion
-. $docker_completion_dir/docker-compose.bash-completion
-. $docker_completion_dir/docker-machine.bash-completion
