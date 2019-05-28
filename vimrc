@@ -37,6 +37,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 call plug#end()
 
 
@@ -107,7 +110,7 @@ nmap <leader>i :set list!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
 " close quickfix window
-nmap <leader>x :cclose<cr>
+nmap <leader>x :cclose <bar> lcl<cr>
 " buffer list with <tab>
 set wildchar=<tab> wildmenu wildmode=full
 " Ack search for word
@@ -188,5 +191,7 @@ if executable('ag')
 endif
 
 " ALE settings
-let g:ale_yaml_yamllint_options = '-d relaxed'
+let g:ale_lint_delay = 1000
+let g:ale_lint_on_text_changed = 'always'
 let g:ale_sign_column_always = 1
+let g:ale_yaml_yamllint_options = '-d relaxed'
