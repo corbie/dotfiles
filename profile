@@ -1,4 +1,5 @@
 export HISTCONTROL=ignoredups
+export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=50000
 export EDITOR='/usr/bin/vim'
 shopt -s histappend
@@ -17,7 +18,7 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
 case "$TERM" in
 screen*|xterm*|rxvt*)
-  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"'
+  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"; history -a'
   ;;
 *)
   ;;
