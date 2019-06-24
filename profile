@@ -4,6 +4,8 @@ export HISTSIZE=50000
 export EDITOR='/usr/bin/vim'
 shopt -s histappend
 
+alias d='docker'
+alias dc='docker-compose'
 alias ls='ls -G'
 alias tm='diskutil unmount /Volumes/*\ Mascheen'
 alias ts='tmutil status'
