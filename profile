@@ -56,3 +56,9 @@ git_completion_dir=/usr/local/etc/bash_completion.d
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
+
+## Docker
+docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc/
+. $docker_completion_dir/docker.bash-completion
+. $docker_completion_dir/docker-compose.bash-completion
+export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
