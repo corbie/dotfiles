@@ -79,7 +79,7 @@ set guioptions-=lr " Disable left and right GUI scrollbars
 colorscheme flattened_light
 " Set GUI font
 if has('gui_running')
- set gfn=Iosevka:h12
+ set guifont=Iosevka\ SS08:h12
 endif
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
