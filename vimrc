@@ -128,6 +128,8 @@ nmap <M-w> :BD<CR>
 nmap Gr :GoRun<cr>
 nmap Gb :GoBuild<cr>
 nmap Gd :GoDoc<cr>
+" YouCompleteMe
+map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 "" Plugin settings
@@ -195,3 +197,6 @@ let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_sign_column_always = 1
 let g:ale_yaml_yamllint_options = '-d relaxed'
+
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_completion=1
