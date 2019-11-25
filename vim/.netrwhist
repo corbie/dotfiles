@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/Corbie/Workspace'
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/corban.johnson/Workspace/network_ansible/venv/lib/python3.7/site-packages/ansible/plugins/inventory'
+let g:netrw_dirhist_2='/Users/corban.johnson/Workspace/network_ansible/roles/junos/templates/includes/policy-options'
+let g:netrw_dirhist_1='/Users/corban.johnson/Workspace/network_ansible/plugins/vars'
