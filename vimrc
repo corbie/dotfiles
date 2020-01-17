@@ -76,7 +76,8 @@ autocmd VimResized * wincmd = " Auto-equalize window splits
 set guioptions-=lr " Disable left and right GUI scrollbars
 
 " Use light or dark theme conditionally
-colorscheme flattened_light
+"colorscheme flattened_light
+colorscheme acme
 " Set GUI font
 if has('gui_running')
  set guifont=Iosevka\ SS08:h12
@@ -115,8 +116,9 @@ nmap <leader>x :cclose <bar> lcl<cr>
 set wildchar=<tab> wildmenu wildmode=full
 " Ack search for word
 nmap <M-k> :Ack! "\b<cword>\b" <CR>
+" CtrlP
+nmap <Leader>; :CtrlPBuffer<CR>
 " fzf
-nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
