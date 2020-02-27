@@ -6,6 +6,7 @@ shopt -s histappend
 
 alias d='docker'
 alias dc='docker-compose'
+alias hg='history | grep'
 alias ls='ls -G'
 alias tm='diskutil unmount /Volumes/*\ Mascheen'
 alias ts='tmutil status'
