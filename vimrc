@@ -40,6 +40,7 @@ Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 
