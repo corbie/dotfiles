@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/corban.johnson/Workspace/norah/infrastructure'
 let g:netrw_dirhist_5='/Users/corban.johnson/Workspace/inventory-kit/inventory_kit'
 let g:netrw_dirhist_4='/Users/corban.johnson/Workspace/norah/api/docker'
 let g:netrw_dirhist_3='/Users/corban.johnson/Workspace/network_ansible/venv/lib/python3.7/site-packages/ansible/plugins/inventory'
