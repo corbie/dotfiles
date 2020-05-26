@@ -180,7 +180,6 @@ brew "wiki"
 brew "wireshark", link: false
 brew "wxmac"
 brew "yadm"
-brew "yarn"
 brew "saulpw/vd/visidata"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "boxer"
