@@ -2,23 +2,28 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=50000
 export EDITOR='/usr/bin/vim'
+if [[ `uname -s` == 'Darwin' ]]; then
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
 shopt -s histappend
 
 alias d='docker'
 alias dc='docker-compose'
 alias hg='history | grep'
 alias ls='ls -G'
-alias tm='diskutil unmount /Volumes/*\ Mascheen'
-alias ts='tmutil status'
-alias tl='tmutil listbackups'
-alias tll='tmutil latestbackup'
-alias tstop='tmutil stopbackup'
 alias ll='ls -l'
 alias pu='pushd'
 alias po='popd'
 alias ws='cd ~/Workspace/'
 alias cat='ccat'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+if [[ `uname -s` == 'Darwin' ]]; then
+  alias tm='diskutil unmount /Volumes/*\ Mascheen'
+  alias ts='tmutil status'
+  alias tl='tmutil listbackups'
+  alias tll='tmutil latestbackup'
+  alias tstop='tmutil stopbackup'
+fi
 
 case "$TERM" in
 screen*|xterm*|rxvt*)
