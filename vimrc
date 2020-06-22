@@ -22,13 +22,17 @@ Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
+Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'plan9-for-vimspace/acme-colors'
+Plug 'plasticboy/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -36,11 +40,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'w0rp/ale'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
-Plug 'hashivim/vim-terraform'
+Plug 'w0rp/ale'
 call plug#end()
 
 
