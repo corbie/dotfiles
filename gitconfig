@@ -36,3 +36,5 @@
 	process = git-lfs filter-process
 [diff]
 	submodule = log
+[pull]
+	rebase = false
