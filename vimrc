@@ -6,6 +6,7 @@ filetype plugin on
 filetype indent on
 set nocompatible
 set autowrite
+set dir=~/.vim/swap
 
 
 "" Vim-plug
@@ -19,16 +20,23 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
+Plug 'Lokaltog/vim-monotone'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
+Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'drmingdrmer/vim-toggle-quickfix'
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'plan9-for-vimspace/acme-colors'
@@ -40,15 +48,16 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
+Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
 call plug#end()
 
 
 "" Formatting
 set autoindent
 set breakindent " Every wrapped line will continue visually indented
-"set expandtab " expand tabs by default (overloadable per file type later)
 set smarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
 set tabstop=2 " tab spaces size
 set softtabstop=2 " when hitting <BS>, pretend like a tab is removed, even if spaces
@@ -77,12 +86,12 @@ set nofoldenable " Folding off by default
 autocmd VimResized * wincmd = " Auto-equalize window splits
 set guioptions-=lr " Disable left and right GUI scrollbars
 
-" Use light or dark theme conditionally
 "colorscheme flattened_light
-colorscheme acme
+"colorscheme acme
+colorscheme monotone
 " Set GUI font
 if has('gui_running')
- set guifont=Iosevka\ SS08:h12
+ set guifont=Iosevka:h12
 endif
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
@@ -113,11 +122,11 @@ nmap <leader>i :set list!<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<cr>
 " close quickfix window
-nmap <leader>x :cclose <bar> lcl<cr>
+nmap <leader>x <Plug>window:quickfix:loop
 " buffer list with <tab>
 set wildchar=<tab> wildmenu wildmode=full
 " Ack search for word
-nmap <M-k> :Ack! "\b<cword>\b" <CR>
+nmap <leader>k :Ack! "\b<cword>\b" <CR>
 " CtrlP
 nmap <Leader>; :CtrlPBuffer<CR>
 " fzf
@@ -127,13 +136,21 @@ nmap <Leader>a :Ag<CR>
 " goyo
 nmap <Leader>p :Goyo<CR>
 " buffkill: delete buffer, keep window
-nmap <M-w> :BD<CR>
+nmap <leader>w :BD<CR>
 " vim-go
 nmap Gr :GoRun<cr>
 nmap Gb :GoBuild<cr>
 nmap Gd :GoDoc<cr>
 " YouCompleteMe
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>o  :YcmCompleter GetDoc<CR>
+" vim-session
+map <leader>s :SaveSession<CR>
+
+
+"" Filetype settings
+" Python
+au! BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
 
 
 "" Plugin settings
@@ -201,6 +218,9 @@ let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_sign_column_always = 1
 let g:ale_yaml_yamllint_options = '-d relaxed'
+
+" vim-gutentag settings
+let gutentags_cache_dir = '~/.vim/plugged/vim-gutentags-cache'
 
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
