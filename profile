@@ -1,9 +1,14 @@
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=50000
-export EDITOR='/usr/bin/vim'
-if [[ `uname -s` == 'Darwin' ]]; then
+export UNAME_SYSTEM=$(uname -s)
+if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
+  export EDITOR='/usr/local/bin/vi'
+else
+  export EDITOR='/usr/bin/vim'
 fi
 shopt -s histappend
 
@@ -17,7 +22,7 @@ alias po='popd'
 alias ws='cd ~/Workspace/'
 alias cat='ccat'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
-if [[ `uname -s` == 'Darwin' ]]; then
+if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   alias tm='diskutil unmount /Volumes/*\ Mascheen'
   alias ts='tmutil status'
   alias tl='tmutil listbackups'
@@ -36,7 +41,7 @@ PS1="\n\w\n\u@\h> "
 
 # SSH agent forwarding socket environment workaround
 function refresh_socket {
-  if [[ `uname -s` == 'Darwin' ]]; then
+  if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
     socket=`find /private/tmp -user $USER -type s -name Listeners 2>/dev/null | xargs ls -1t | head -1`
   else
     socket=`find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1`
