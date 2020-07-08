@@ -32,7 +32,7 @@ fi
 
 case "$TERM" in
 screen*|xterm*|rxvt*)
-  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n\w" "\n\u@\h> " ":{%s}"; history -a'
+  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]} " "\n\u@\h> " ":{%s}"; history -a'
   ;;
 *)
   ;;
