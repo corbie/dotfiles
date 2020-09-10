@@ -31,7 +31,9 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'godlygeek/tabular'
+Plug 'guns/vim-sexp', { 'for': 'fennel' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kien/rainbow_parentheses.vim'
@@ -45,13 +47,15 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'fennel' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
-Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 call plug#end()
 
 
@@ -146,11 +150,15 @@ map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>
 " vim-session
 map <leader>s :SaveSession<CR>
+" clear search highlight
+map <leader>c :let @/ = ""<CR>
 
 
 "" Filetype settings
 " Python
-au! BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+au! BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+" bash
+au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
 
 
 "" Plugin settings
@@ -162,6 +170,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 
 " tagbar settings
+let g:tagbar_compact = 1
+let g:tagbar_foldlevel = 1
+let g:tagbar_zoomwidth = 0
 let g:tagbar_type_ansible = {
     \ 'ctagstype' : 'ansible',
     \ 'kinds' : [
@@ -220,7 +231,17 @@ let g:ale_sign_column_always = 1
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
 " vim-gutentag settings
-let gutentags_cache_dir = '~/.vim/plugged/vim-gutentags-cache'
+let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_auto_hover=''
+
+" vim-slime
+let g:slime_target = 'vimterminal'
+let g:slime_python_ipython = 1
+let g:slime_vimterminal_config = { 'vertical': 1 }
+
+" vim-session
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
