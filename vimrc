@@ -7,6 +7,7 @@ filetype indent on
 set nocompatible
 set autowrite
 set dir=~/.vim/swap
+set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 
 
 "" Vim-plug
@@ -32,7 +33,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-sexp', { 'for': 'fennel' }
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'hashivim/vim-terraform'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -95,7 +96,7 @@ set guioptions-=lr " Disable left and right GUI scrollbars
 colorscheme monotone
 " Set GUI font
 if has('gui_running')
- set guifont=Iosevka:h12
+ set guifont=Iosevka:h13
 endif
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
@@ -127,12 +128,13 @@ nmap <leader>i :set list!<cr>
 nmap <leader>b :windo set scrollbind!<cr>
 " close quickfix window
 nmap <leader>x <Plug>window:quickfix:loop
-" buffer list with <tab>
-set wildchar=<tab> wildmenu wildmode=full
+" clear search highlight
+map <leader>c :let @/ = ""<CR>
 " Ack search for word
 nmap <leader>k :Ack! "\b<cword>\b" <CR>
 " CtrlP
 nmap <Leader>; :CtrlPBuffer<CR>
+nmap <Leader>: :CtrlPBufTag<CR>
 " fzf
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :Tags<CR>
@@ -142,23 +144,40 @@ nmap <Leader>p :Goyo<CR>
 " buffkill: delete buffer, keep window
 nmap <leader>w :BD<CR>
 " vim-go
+nmap Ga :GoAlternate <cr>
 nmap Gr :GoRun<cr>
 nmap Gb :GoBuild<cr>
 nmap Gd :GoDoc<cr>
+nmap Gdb :GoDocBrowser<cr>
+nmap Gi :GoInfo<cr>
+nmap Gf :GoDef<cr>
+nmap Gft :GoDefType<cr>
+nmap Gt :GoTest!<cr>
+nmap Gtc :GoTestCompile!<cr>
+nmap Gtf :GoTestFunc!<cr>
 " YouCompleteMe
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>
 " vim-session
 map <leader>s :SaveSession<CR>
-" clear search highlight
-map <leader>c :let @/ = ""<CR>
 
 
 "" Filetype settings
+" TODO Replace single lines with autogroups
 " Python
 au! BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+au! BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
 " bash
 au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+" SQL
+au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
+" vimrc
+au! BufWritePost ~/.vimrc source ~/.vimrc
+" Go
+augroup go_cmds
+  au!
+  let g:slime_vimterminal_cmd = "/usr/local/bin/go"
+augroup end
 
 
 "" Plugin settings
@@ -172,6 +191,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " tagbar settings
 let g:tagbar_compact = 1
 let g:tagbar_foldlevel = 1
+let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
 let g:tagbar_type_ansible = {
     \ 'ctagstype' : 'ansible',
@@ -227,8 +247,24 @@ endif
 " ALE settings
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint'],
+\   'ruby': ['standardrb', 'rubocop'],
+\   'javascript': ['eslint'],
+\}
 let g:ale_sign_column_always = 1
 let g:ale_yaml_yamllint_options = '-d relaxed'
+
+" vim-go settings
+let g:go_doc_keywordprg_enabled = 0
+let g:go_debug_mappings = {
+	 \ '(go-debug-continue)':   {'key': '<F5>'},
+	 \ '(go-debug-print)':      {'key': '<F6>'},
+	 \ '(go-debug-breakpoint)': {'key': '<F9>'},
+	 \ '(go-debug-next)':       {'key': '<F10>'},
+	 \ '(go-debug-step)':       {'key': '<F11>'},
+	 \ '(go-debug-halt)':       {'key': '<F8>'},
+\ }
 
 " vim-gutentag settings
 let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
@@ -245,3 +281,6 @@ let g:slime_vimterminal_config = { 'vertical': 1 }
 " vim-session
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
+
+" CtrlP
+let g:ctrlp_show_hidden = 0
