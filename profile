@@ -2,7 +2,7 @@
 ## Shell
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
-export HISTSIZE=50000
+export HISTSIZE=100000
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
