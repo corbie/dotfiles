@@ -26,6 +26,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
 Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 Plug 'bling/vim-airline'
+Plug 'chr4/nginx.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
@@ -96,7 +97,7 @@ set guioptions-=lr " Disable left and right GUI scrollbars
 colorscheme monotone
 " Set GUI font
 if has('gui_running')
- set guifont=Iosevka:h13
+ set guifont=Iosevka:h14
 endif
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
