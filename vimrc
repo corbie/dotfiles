@@ -256,6 +256,9 @@ let g:ale_linters = {
 let g:ale_sign_column_always = 1
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
+" NERDTree settings
+let g:NERDTreeShowHidden = 1
+
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
 let g:go_debug_mappings = {
@@ -284,4 +287,4 @@ let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 
 " CtrlP
-let g:ctrlp_show_hidden = 0
+let g:ctrlp_show_hidden = 1
