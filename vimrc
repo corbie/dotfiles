@@ -56,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
+Plug 'wfxr/minimap.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 call plug#end()
@@ -161,6 +162,8 @@ map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>
 " vim-session
 map <leader>s :SaveSession<CR>
+" minimap-vim
+map <leader>m :MinimapToggle<CR> 
 
 
 "" Filetype settings
@@ -288,3 +291,6 @@ let g:session_autosave = 'no'
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
+
+" mimimap-vim
+let g:minimap_highlight_range = 1
