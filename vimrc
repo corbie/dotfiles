@@ -47,7 +47,7 @@ Plug 'plan9-for-vimspace/acme-colors'
 Plug 'plasticboy/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
 Plug 'tpope/vim-fugitive'
@@ -56,7 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
-Plug 'wfxr/minimap.vim'
+Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 call plug#end()
@@ -115,7 +115,7 @@ nmap te :tabedit
 noremap K :bn<cr>
 noremap J :bp<cr>
 " file browser
-nmap <leader>n :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeToggleVCS<cr>
 " edit $MYVIMRC
 nmap <leader>v :tabedit $MYVIMRC<cr>
 " buffer list
@@ -197,48 +197,7 @@ let g:tagbar_compact = 1
 let g:tagbar_foldlevel = 1
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
-let g:tagbar_type_ansible = {
-    \ 'ctagstype' : 'ansible',
-    \ 'kinds' : [
-        \ 't:tasks'
-    \ ],
-    \ 'sort' : 0
-\ }
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:heading_l1',
-        \ 'i:heading_l2',
-        \ 'k:heading_l3'
-    \ ]
-\ }
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
+let g:tagbar_ctags_options = ['/Users/corban.johnson/.ctags.d/defaults.ctags']
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
