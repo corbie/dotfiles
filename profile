@@ -50,8 +50,25 @@ export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$(go env GOPATH)/bin
 
+## Java
+export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.12/
+
+## NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 
 # Command completion
+## AWS CLI
+aws_completion_dir=/usr/local/etc/bash_completion.d
+. $aws_completion_dir/aws_bash_completer
+
+## Docker
+docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc/
+. $docker_completion_dir/docker.bash-completion
+. $docker_completion_dir/docker-compose.bash-completion
+export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
+
 ## Git
 git_completion_dir=/usr/local/etc/bash_completion.d
 . $git_completion_dir/git-completion.bash
@@ -59,12 +76,6 @@ git_completion_dir=/usr/local/etc/bash_completion.d
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
-
-## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc/
-. $docker_completion_dir/docker.bash-completion
-. $docker_completion_dir/docker-compose.bash-completion
-export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
 
 
 # Functions
