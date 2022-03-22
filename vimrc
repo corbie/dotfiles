@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 "Plug 'chr4/nginx.vim'
 "Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
+"Plug 'godlygeek/tabular'
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 "Plug 'hashivim/vim-terraform'
 "Plug 'lifepillar/vim-solarized8'
@@ -36,7 +37,6 @@ Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'godlygeek/tabular'
 Plug 'guns/vim-sexp', { 'for': 'fennel' }
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
