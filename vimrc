@@ -20,21 +20,22 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+"Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
+"Plug 'chr4/nginx.vim'
+"Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
+"Plug 'hashivim/vim-terraform'
+"Plug 'plasticboy/vim-markdown'
 Plug '/usr/local/opt/fzf'
 Plug 'Lokaltog/vim-monotone'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
-Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 Plug 'bling/vim-airline'
-Plug 'chr4/nginx.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-sexp', { 'for': 'fennel' }
-Plug 'hashivim/vim-terraform'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -44,10 +45,10 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'plan9-for-vimspace/acme-colors'
-Plug 'plasticboy/vim-markdown'
 Plug 'qpkorr/vim-bufkill'
 Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
 Plug 'tpope/vim-fugitive'
