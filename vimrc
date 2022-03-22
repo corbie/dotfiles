@@ -24,7 +24,9 @@ call plug#begin('~/.vim/plugged')
 "Plug 'chr4/nginx.vim'
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 "Plug 'hashivim/vim-terraform'
+"Plug 'lifepillar/vim-solarized8'
 "Plug 'plasticboy/vim-markdown'
+"Plug 'romainl/flattened'
 Plug '/usr/local/opt/fzf'
 Plug 'Lokaltog/vim-monotone'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
@@ -40,13 +42,11 @@ Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'plan9-for-vimspace/acme-colors'
 Plug 'qpkorr/vim-bufkill'
-Plug 'romainl/flattened'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
