@@ -3,4 +3,4 @@
 --regex-markdown=/^##[ \t]+(.*)/\1/i,HeadingL2/
 --regex-markdown=/^###[ \t]+(.*)/\1/k,HeadingL3/
 
---regex-sh=/^[ \t]*(local|export)?[ \t]*([A-Za-z0-9_-]+)=/\2/v,variable,variables/
+--regex-sh=/^[ \t]*(export|local)?[ \t]*([A-Za-z0-9_-]+)=/\2/v,variable,variables/
