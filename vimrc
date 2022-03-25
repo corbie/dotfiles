@@ -217,14 +217,24 @@ if executable('ag')
 endif
 
 " ALE settings
+let g:ale_fixers = {
+\   'bash': ['shfmt'],
+\   'sh': ['shfmt'],
+\}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
+\   'bash': ['shellcheck'],
+\   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
-\   'javascript': ['eslint'],
+\   'sh': ['shellcheck'],
 \}
 let g:ale_sign_column_always = 1
+"" ALE Shellcheck
+""  SC2086 (info): Double quote to prevent globbing and word splitting
+let g:ale_sh_shellcheck_options = '-S info -e SC2086'
+"" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
 " NERDTree settings
