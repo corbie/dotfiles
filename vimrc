@@ -199,14 +199,15 @@ let g:tagbar_foldlevel = 1
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
 let tlist_sh_settings = 'sh;f:functions;v:variables;c:constants'
-let g:tagbar_type_sh = {
-  \ 'kinds':[
-  \ 'c:constants',
-  \ 'f:functions',
-  \ 'l:local',
-  \ 'v:variables'
-  \ ]
-  \}
+" I found adding shell variables to the tagbar too chatty
+" let g:tagbar_type_sh = {
+"   \ 'kinds':[
+"   \ 'c:constants',
+"   \ 'f:functions',
+"   \ 'l:local',
+"   \ 'v:variables'
+"   \ ]
+"   \}
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
