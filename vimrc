@@ -199,14 +199,15 @@ let g:tagbar_foldlevel = 1
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
 let tlist_sh_settings = 'sh;f:functions;v:variables;c:constants'
-let g:tagbar_type_sh = {
-  \ 'kinds':[
-  \ 'c:constants',
-  \ 'f:functions',
-  \ 'l:local',
-  \ 'v:variables'
-  \ ]
-  \}
+" I found adding shell variables to the tagbar too chatty
+" let g:tagbar_type_sh = {
+"   \ 'kinds':[
+"   \ 'c:constants',
+"   \ 'f:functions',
+"   \ 'l:local',
+"   \ 'v:variables'
+"   \ ]
+"   \}
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
@@ -217,14 +218,24 @@ if executable('ag')
 endif
 
 " ALE settings
+let g:ale_fixers = {
+\   'bash': ['shfmt'],
+\   'sh': ['shfmt'],
+\}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
+\   'bash': ['shellcheck'],
+\   'javascript': ['eslint'],
 \   'python': ['flake8', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
-\   'javascript': ['eslint'],
+\   'sh': ['shellcheck'],
 \}
 let g:ale_sign_column_always = 1
+"" ALE Shellcheck
+""  SC2086 (info): Double quote to prevent globbing and word splitting
+let g:ale_sh_shellcheck_options = '-S info -e SC2086'
+"" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
 
 " NERDTree settings
