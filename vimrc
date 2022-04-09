@@ -23,8 +23,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 "Plug 'chr4/nginx.vim'
 "Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
-"Plug 'godlygeek/tabular'
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
+"Plug 'godlygeek/tabular'
 "Plug 'hashivim/vim-terraform'
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'plasticboy/vim-markdown'
