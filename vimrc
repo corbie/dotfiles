@@ -175,14 +175,14 @@ au! BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
 " bash
 au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
 " lua
-au! BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -W"
+au! BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
 " SQL
 au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
 " vimrc
 au! BufWritePost ~/.vimrc source ~/.vimrc
 " Go
 augroup go_cmds
-  au!
+  au! BufNewFile,BufRead *.go
   let g:slime_vimterminal_cmd = "/usr/local/bin/go"
 augroup end
 
@@ -222,7 +222,7 @@ endif
 " ALE settings
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
-\   'lua': ['lua-fmt'],
+\   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
 \}
 let g:ale_lint_delay = 1000
@@ -230,7 +230,7 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'javascript': ['eslint'],
-\   'lua': ['luacheck --std ngx_lua', 'luac'],
+\   'lua': ['luac', 'luacheck --std ngx_lua'],
 \   'python': ['flake8', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
@@ -262,13 +262,13 @@ let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_auto_hover=''
-let g:ycm_language_server = [
-\   { 'name': 'lua',
-\     'filetypes': [ 'lua' ],
-\     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
-\                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
-\   },
-\ ]
+" let g:ycm_language_server = [
+" \   { 'name': 'lua',
+" \     'filetypes': [ 'lua' ],
+" \     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
+" \                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
+" \   },
+" \ ]
 
 " vim-slime
 let g:slime_target = 'vimterminal'
