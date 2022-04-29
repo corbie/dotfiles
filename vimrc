@@ -230,7 +230,7 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'javascript': ['eslint'],
-\   'lua': ['luacheck', 'luac'],
+\   'lua': ['luacheck --std ngx_lua', 'luac'],
 \   'python': ['flake8', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
