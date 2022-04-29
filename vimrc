@@ -164,7 +164,7 @@ map <leader>o  :YcmCompleter GetDoc<CR>
 " vim-session
 map <leader>s :SaveSession<CR>
 " minimap-vim
-map <leader>m :MinimapToggle<CR> 
+map <leader>m :MinimapToggle<CR>
 
 
 "" Filetype settings
@@ -248,12 +248,12 @@ let g:NERDTreeShowHidden = 1
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
 let g:go_debug_mappings = {
-	 \ '(go-debug-continue)':   {'key': '<F5>'},
-	 \ '(go-debug-print)':      {'key': '<F6>'},
-	 \ '(go-debug-breakpoint)': {'key': '<F9>'},
-	 \ '(go-debug-next)':       {'key': '<F10>'},
-	 \ '(go-debug-step)':       {'key': '<F11>'},
-	 \ '(go-debug-halt)':       {'key': '<F8>'},
+\   '(go-debug-continue)':   {'key': '<F5>'},
+\   '(go-debug-print)':      {'key': '<F6>'},
+\   '(go-debug-breakpoint)': {'key': '<F9>'},
+\   '(go-debug-next)':       {'key': '<F10>'},
+\   '(go-debug-step)':       {'key': '<F11>'},
+\   '(go-debug-halt)':       {'key': '<F8>'},
 \ }
 
 " vim-gutentag settings
