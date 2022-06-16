@@ -8,6 +8,7 @@ set nocompatible
 set autowrite
 set dir=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
+set omnifunc=ale#completion#OmniFunc
 
 
 "" Vim-plug
@@ -168,23 +169,42 @@ map <leader>m :MinimapToggle<CR>
 
 
 "" Filetype settings
-" TODO Replace single lines with autogroups
 " Python
-au! BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
-au! BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
+augroup python
+  au!
+  au BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+  au BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
+augroup end
+
 " bash
-au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+augroup bash
+  au!
+  au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+augroup end
+
 " lua
-au! BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
+augroup lua
+  au!
+  au BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
+augroup end
+
 " SQL
 au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
-" vimrc
-au! BufWritePost ~/.vimrc source ~/.vimrc
+
 " Go
 augroup go_cmds
-  au! BufNewFile,BufRead *.go
-  let g:slime_vimterminal_cmd = "/usr/local/bin/go"
+  au!
+  au BufNewFile,BufRead *.go let g:slime_vimterminal_cmd = "/usr/local/bin/go"
 augroup end
+
+" Minimap
+" augroup minimap
+"   au!
+"   au WinEnter * MinimapRefresh
+" augroup end
+
+" vimrc
+au! BufWritePost ~/.vimrc source ~/.vimrc
 
 
 "" Plugin settings
@@ -220,6 +240,7 @@ if executable('ag')
 endif
 
 " ALE settings
+let g:ale_completion_enabled = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
@@ -230,7 +251,7 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'javascript': ['eslint'],
-\   'lua': ['luac', 'luacheck --std ngx_lua'],
+\   'lua': ['luacheck', 'luac'],
 \   'python': ['flake8', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
@@ -241,7 +262,8 @@ let g:ale_sign_column_always = 1
 let g:ale_sh_shellcheck_options = '-S info -e SC2086'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
-
+"" ALE luacheck
+let g:ale_lua_luacheck_options = '--std ngx_lua'
 " NERDTree settings
 let g:NERDTreeShowHidden = 1
 
@@ -262,13 +284,13 @@ let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_auto_hover=''
-" let g:ycm_language_server = [
-" \   { 'name': 'lua',
-" \     'filetypes': [ 'lua' ],
-" \     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
-" \                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
-" \   },
-" \ ]
+let g:ycm_language_server = [
+\   { 'name': 'lua',
+\     'filetypes': [ 'lua' ],
+\     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
+\                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
+\   },
+\ ]
 
 " vim-slime
 let g:slime_target = 'vimterminal'
