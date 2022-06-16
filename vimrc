@@ -46,6 +46,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
+Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 Plug 'plan9-for-vimspace/acme-colors'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
@@ -251,8 +252,8 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'javascript': ['eslint'],
-\   'lua': ['luacheck', 'luac'],
-\   'python': ['flake8', 'pylint'],
+\   'lua': ['luac', 'luacheck --std ngx_lua'],
+\   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
 \}
@@ -260,6 +261,23 @@ let g:ale_sign_column_always = 1
 "" ALE Shellcheck
 ""  SC2086 (info): Double quote to prevent globbing and word splitting
 let g:ale_sh_shellcheck_options = '-S info -e SC2086'
+"" ALE Python
+let g:ale_python_pyls_executable = "pylsp"
+let g:ale_python_pyls_config = {
+\   'pylsp': {
+\     'plugins': {
+\       'pycodestyle': {
+\         'enabled': v:false,
+\       },
+\       'pyflakes': {
+\         'enabled': v:false,
+\       },
+\       'pydocstyle': {
+\         'enabled': v:false,
+\       },
+\     },
+\   },
+\}
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
