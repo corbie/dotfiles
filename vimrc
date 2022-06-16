@@ -23,8 +23,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
 "Plug 'chr4/nginx.vim'
 "Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
-"Plug 'godlygeek/tabular'
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
+"Plug 'godlygeek/tabular'
 "Plug 'hashivim/vim-terraform'
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'plasticboy/vim-markdown'
@@ -165,7 +165,7 @@ map <leader>o  :YcmCompleter GetDoc<CR>
 " vim-session
 map <leader>s :SaveSession<CR>
 " minimap-vim
-map <leader>m :MinimapToggle<CR> 
+map <leader>m :MinimapToggle<CR>
 
 
 "" Filetype settings
@@ -175,13 +175,15 @@ au! BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 
 au! BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
 " bash
 au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+" lua
+au! BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
 " SQL
 au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
 " vimrc
 au! BufWritePost ~/.vimrc source ~/.vimrc
 " Go
 augroup go_cmds
-  au!
+  au! BufNewFile,BufRead *.go
   let g:slime_vimterminal_cmd = "/usr/local/bin/go"
 augroup end
 
@@ -221,6 +223,7 @@ endif
 " ALE settings
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
+\   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
 \}
 let g:ale_lint_delay = 1000
@@ -228,6 +231,7 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'javascript': ['eslint'],
+\   'lua': ['luac', 'luacheck --std ngx_lua'],
 \   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
@@ -262,12 +266,12 @@ let g:NERDTreeShowHidden = 1
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
 let g:go_debug_mappings = {
-	 \ '(go-debug-continue)':   {'key': '<F5>'},
-	 \ '(go-debug-print)':      {'key': '<F6>'},
-	 \ '(go-debug-breakpoint)': {'key': '<F9>'},
-	 \ '(go-debug-next)':       {'key': '<F10>'},
-	 \ '(go-debug-step)':       {'key': '<F11>'},
-	 \ '(go-debug-halt)':       {'key': '<F8>'},
+\   '(go-debug-continue)':   {'key': '<F5>'},
+\   '(go-debug-print)':      {'key': '<F6>'},
+\   '(go-debug-breakpoint)': {'key': '<F9>'},
+\   '(go-debug-next)':       {'key': '<F10>'},
+\   '(go-debug-step)':       {'key': '<F11>'},
+\   '(go-debug-halt)':       {'key': '<F8>'},
 \ }
 
 " vim-gutentag settings
@@ -276,6 +280,13 @@ let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_auto_hover=''
+" let g:ycm_language_server = [
+" \   { 'name': 'lua',
+" \     'filetypes': [ 'lua' ],
+" \     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
+" \                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
+" \   },
+" \ ]
 
 " vim-slime
 let g:slime_target = 'vimterminal'
