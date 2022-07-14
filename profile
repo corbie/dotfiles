@@ -80,6 +80,14 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
+## M
+m_completion_dir=/usr/local/etc/bash_completion.d
+. $m_completion_dir/m
+
+## MAS
+mas_completion_dir=/usr/local/etc/bash_completion.d
+. $mas_completion_dir/mas
+
 
 # Functions
 ## SSH agent forwarding socket environment workaround
