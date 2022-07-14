@@ -50472,3 +50472,1530 @@ ls -a
 pu .dotfiles/
 git add bash_history
 vi profile 
+git restore bash_history
+tmux
+history | wc -l
+tmutil --help
+cd /Volumes/Work\ Mascheen/
+ls -al
+cd ..
+man tmutil
+ls /Volumes/Work\ Mascheen/
+sudo tmutil associatedisk -a /Volumes/Macintosh\ HD /Volumes/Work\ Mascheen/Backups.backupdb/
+ls /Volumes/Work\ Mascheen/Backups.backupdb/
+sudo tmutil associatedisk -a /Volumes/Macintosh\ HD /Volumes/Work\ Mascheen/Backups.backupdb/Maude/Latest/Macintosh\ HD
+sudo tmutil associatedisk -a /Volumes/Macintosh\ HD "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest/Macintosh HD"
+sudo tmutil associatedisk -a "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest/Macintosh HD"
+sudo tmutil inheritbackup /Volumes/Work\ Mascheen/Backups.backupdb/
+sudo tmutil inheritbackup /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+sudo tmutil associatedisk -a "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest/Macintosh HD"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest/Macintosh HD"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Latest"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude
+"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest"
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest
+sudo tmutil associatedisk "/Volumes/Macintosh HD" "/Volumes/Work Mascheen/Backups.backupdb/Maude/Latest"
+ls /Volumes/
+ls /Volumes/Macintosh\ HD
+sudo tmutil associatedisk "/Volumes/Macintosh HD" /Volumes/Work\ Mascheen/Backups.backupdb/Maude/Latest/Macintosh\ HD
+man tmutil
+sudo tmutil associatedisk "/Volumes/Macintosh HD" /Volumes/Work\ Mascheen/Backups.backupdb/Maude/Latest/Macintosh\ HD
+tm
+tl
+sudo tmutil
+sudo tmutil associatedisk "/Volumes/Macintosh HD" /Volumes/Work\ Mascheen/Backups.backupdb/Maude/Latest/Macintosh\ HD
+tmutil listbackups
+tmutil machinedirectory
+man tmtil
+man tmutil
+sudo tmutil setdestination /Volumes/Work\ Mascheen/Backups.backupdb/
+man tmutil
+sudo tmutil setdestination -a /Volumes/Work\ Mascheen/
+tmutil machinedirectory
+tmutil listbackups
+man tmutil
+sudo tmutil destinationinfo
+tmutil startbackup -a -r
+ts
+tl
+ls -al
+ls -a
+brew outdated
+ts
+tl
+ts
+tl
+df -h
+hg prune 
+diskutil --help
+diskutil 
+tl
+ts
+brew outdated
+ssh-add -l
+ls -al .ssh/
+hg Mascheen
+hg hdiutil
+df -h
+tl
+sudo tmutil deleteinprogress /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+sudo tmutil deleteinprogress /Volumes/Work\ Mascheen/Backups.backupdb/
+ls /Volumes/Work\ Mascheen/
+ls /Volumes/Work\ Mascheen/Backups.backupdb/
+sudo tmutil deleteinprogress "/Volumes/Work Macheen/Backups.backupdb/Maude"
+ls -l /Volumes/Work Macheen/Backups.backupdb/Maude
+ls -l "/Volumes/Work Macheen/Backups.backupdb/Maude"
+ls -l "/Volumes/Work Macheen/Backups.backupdb"
+sudo ls -l "/Volumes/Work Macheen/Backups.backupdb"
+man tmutil
+vi
+tmux
+sudo tmutil deleteinprogress "/Volumes/Work Macheen/Backups.backupdb/Maude"
+man tmutil
+ls -al /Volumes/Work\ Mascheen/
+ls -al /Volumes/Work\ Mascheen/Backups.backupdb/
+ls -al /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+sudo tmutil delteteinprogress /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+sudo tmutil deleteinprogress /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+sudo su -
+sudo tmutil delete -d /Volumes/Work\ Mascheen/ -t 2021-09-08-100644
+tl
+tm
+man tmutil
+tmux
+brew update
+brew outdated
+tl
+brew upgrade
+brew update
+brew outdated
+brew upgrade
+mas
+mas outdated
+mas upgrade
+mas open
+ts
+tl
+ts
+tl
+brew upgrade
+ts
+brew outdated
+tl
+ts
+tl
+ts
+tl
+ts
+brew update
+ls /Volumes/TMBackup/
+ll /Volumes/TMBackup/Maude.backupbundle/
+df -h
+tail -f /var/log/system.log
+ls /Volumes/TMBackup/
+sudo rm -R /Volumes/TMBackup/Maude.backupbundle/
+df -h
+ts
+tl
+cd Workspace/infra/
+docker -c durandal-inside ps
+brew search docker
+which docker
+ls -al
+ls -al .docker/
+ls -al .docker/con
+ls -al .docker/contexts/
+docker context ls
+cd ~/Downloads/
+po
+cd ~/Workspace/infra/
+ls Documents/
+ls -l Desktop/
+ls -l Desktop/cert/
+mv Desktop/cert/* ~/.docker/
+ls -al ~/.docker/
+hg 'docker context' | less
+docker context update durandal-local --description "inside.muriad.net" --docker "host=tcp://192.168.1.5:2376,skip-tls-verify=1,ca=/Users/corban.johnson/.docker/ca.pem,cert=/Users/corban.johnson/.docker/cert.pem,key=/Users/corban.johnson/.docker/key.pem"
+docker context 
+docker context create durandal-local --description "inside.muriad.net" --docker "host=tcp://192.168.1.5:2376,skip-tls-verify=1,ca=/Users/corban.johnson/.docker/ca.pem,cert=/Users/corban.johnson/.docker/cert.pem,key=/Users/corban.johnson/.docker/key.pem"
+docker -c durandal-inside ps
+docker -c durandal-local ps
+hg docker-compose | tail
+docker-compose -c durandal-local ps
+docker-compose -c durandal-local logs -f unifi
+docker-compose -c durandal-local ps
+pu ~/Workspace/infra/
+docker-compose -c durandal-local ps
+docker-compose -c durandal-local up
+docker-compose -c durandal-local up -d
+ls -al
+ls -al
+po
+ws
+ls -al
+ws
+cd htd/
+tree
+pu henbit-openresty/
+ls -al
+tree
+vi
+ws
+pu htd/henbit-openresty/
+ls -al
+make run
+brew search restydoc
+brew info resty
+brew install resty
+make run
+cat Makefile 
+make logs
+git status
+git diff
+curl 127.0.0.1:8000
+docker ps
+docker exec -it henbit bash
+make watch
+curl 127.0.0.1:8000
+curl 127.0.0.1:8000/test
+curl 127.0.0.1:8000/test/test
+make reload
+curl 127.0.0.1:8000/test/test
+curl 127.0.0.1:8000/test/test/
+make reload
+curl 127.0.0.1:8000/test/test/
+make tst
+make test
+make test TESTPATH=/test/test
+make test TESTURI=/test/test
+ws
+pu htd/henbit-openresty/
+make test
+brew search fswatch
+brew install fswatch
+fswatch 
+fswatch --help
+man fswatch
+man xargs
+man fswatch
+tree
+man fswatch
+man bash
+make watchreload
+make watchtest
+make watchtest /testing
+make watchtest TESTURI=/testing
+make watchtest
+make watchtest TESTURI=/testing
+make reloadtest
+git status
+git refresh 
+git remote -v
+which docker
+make reloadtest
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+pwd
+make reload
+make test TESTURI=Dockerfile
+pwd
+cat Dockerfile 
+make reload
+make test TESTURI=Dockerfile
+make watch
+make stop
+make run
+make test TESTURI=Dockerfile
+cat /Users/corban.johnson/Workspace/htd/henbit-openresty/Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make watchlogs
+make stop
+make run
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make test TESTURI=Dockerfile/
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make reload
+make test TESTURI=Dockerfile
+make reloadtest TESTURI=Dockerfile
+make watchreload TESTURI=Dockerfile
+make watchtest TESTURI=Dockerfile
+make test TESTURI=Dockerfile
+brew update
+brew outdated
+make run
+brew upgrade
+ls -al
+tl
+brew update
+tm
+brew update
+brew outdated
+sf-pwgen 
+hg sf-pwgen
+sf-pwgen -a alphanumeric -l 32
+brew upgrade
+hg gpg
+gpg -l
+gpg -k
+gpg --full-generate-key
+hg feralgravy
+gpg --export -a cocoblot | pbcopy
+pu Desktop/
+vi temp
+gpg -d temp
+gpg --export -a cocoblot 
+gpg --export -a cocoblot | pbcopy
+brew outdated
+brew update
+brew outdated
+brew upgrade
+tm
+gpg --export -a cocoblot | pbcopy
+gpg --help | grep -i delete
+gpg --help | grep -i replace
+gpg --help | grep -i update
+gpg --delete-keys cocoblot
+gpg --delete-secret-keys cocoblot
+gpg --delete-keys cocoblot
+gpg --full-generate-key
+gpg --export -a cocoblot | pbcopy
+gpg --export -a cocoblot 
+gpg --delete-keys cocoblot
+gpg --delete-secret-keys cocoblot
+gpg --delete-keys cocoblot
+gpg --full-generate-key
+gpg --export -a cocoblot 
+gpg --export -a cocoblot | pbcopy
+gpg --delete-secret-keys cocoblot
+gpg --delete-keys cocoblot
+gpg --full-generate-key
+man pgp
+man gpg
+gpg --full-generate-key
+gpg --export -a cocoblot | pbcopy
+vi temp
+gpg -d temp
+hF4DdlRjrbiAW9ASAQdAB8Nq0JFZIORjLTC1SxXaj/iE/Id8DdOZwCdbvCQD+1sw
+DuzrPjaZhg3FeMZplHik6q/aiC9UwYIvcyl2GFz+s2JDYW3PvMf7hCihFfIMvt2S
+0kwBe+95/qYc75DjvtY3bRlZy+LLhzOaD113i8Fv/ppmekWKS8qSrPGDMX0UHQYX
+PE6Vn+sD5H5xIpj1V31HRrGZTMIW2D831D4zPK0z
+=IrhI
+gpg -d temp
+vi temp
+gpg --import temp
+vi temp
+gpg --import temp
+hg cali
+hg strain
+vi temp
+gpg -e -r strain -a temp
+cat temp.asc 
+cat temp
+vi temp2
+gpg -d temp2
+git google.com
+dig google.com
+pu ~/Workspace/infra/
+docker-compose -c durandal-local ps
+ping 192.168.1.1
+docker-compose -c durandal-local ps
+ping 192.168.1.1
+pbpaste | gpg -d 
+pbpaste | gpg -d  -
+po
+vi temp
+gpg -d temp
+ping 192.168.1.1
+brew update
+brew outdated
+brew upgrade
+brew update
+brew outdated
+brew upgrade
+mas outdated
+tm
+brew update
+brew outdated
+brew update
+brew upgrade
+ping 192.168.1.1
+tm
+tmux
+w
+tmux a
+tmux l
+brew list trash
+brew info trash
+brew update
+brew outdated
+brew remove gitlab-runner
+tmux
+brew upgrade
+brew update
+brew upgrade
+brew update
+brew upgrade
+brew list vim
+brew list vi
+brew list
+brew list | grep vim
+brew info macvim
+brew remove macvim && brew install homebrew/cask/macvim
+vi
+brew outdated
+brew upgrade
+mas outdated
+mas upgrade
+ls -al .dotfiles/
+cat .dotfiles/.git/config 
+pu .dotfiles/
+git remote add origin https://github.com/corbie/dotfiles.git
+git branch -M main
+git remote -v
+vi .dotfiles/.git/config
+vi .git/config
+git remote -v
+git status
+git restore .gitignore
+git status
+cat .gitignore 
+git status
+git diff
+git add vimrc
+git status
+git commit -v
+git l
+git push
+git push --set-upstream origin main
+git push
+git push --set-upstream origin main
+git add vimrc
+vi .git/config
+git push --set-upstream origin main
+ssh-add -l
+ssh-add -K
+ssh-add --apple-load-keychain
+ssh-add --apple-use-keychain
+ssh-add -l
+cat ~/.ssh/id_personal_ed25519.pub 
+git push --set-upstream origin main
+vi .git/config
+git push -u origin main
+git status
+tl
+ping 192.168.1.1
+tmux ls
+tmux l
+w
+brew update
+brew outdated
+tl
+tmux -v
+ws
+ssh-add -l
+ssh-add -A
+ssh-add --apple-load-keychain
+ssh-add --apple-use-keychain
+ssh-add --apple-use-keychain ~/.ssh/id_personal_ed25519
+ssh-add --apple-load-keychain
+ssh-add -l
+pu ~/.dotfiles/
+git refresh 
+git status
+git diff
+tig
+po
+vi
+brew upgrade
+ls -al
+tl
+brew update
+brew upgrade
+sudo xcode-select --install 
+brew upgrade
+sudo xcode-select --install 
+sudo -l
+sudo xcode-select --install 
+w
+brew upgrade
+top -o cpu
+tl
+ls -al
+tm
+ping 192.168.1.5
+watch -n 10 curl -K https://192.168.1.5:8443/
+watch -n 10 curl -k https://192.168.1.5:8443/
+tm
+tms
+ts
+tm
+tl
+brew update
+brew outdated
+vi temp
+gpg -d temp
+vi temp
+hg 'gpg -e'
+gpg -e -r strain -a temp
+cat temp.asc 
+pbpaste < temp.asc
+pbcopy < temp.asc
+vi temp2
+gpg -d temp2
+pbcopy < D7M3Q16VVJ4P6ZNE4
+echo D7M3Q16VVJ4P6ZNE4
+echo D7M3Q16VVJ4P6ZNE4 | pbcopy 
+pbcopy < temp.asc
+dmesg
+sudo dmesg
+ts
+tm
+tmux
+ws
+vi temp
+vi temp2
+gpg -d temp2
+brew update
+brew outdated
+ts
+brew upgrade
+tmux 
+tl
+mas outdated
+brew update
+brew outdated
+brew upgrade
+tmux
+tl
+trash tmux-client-34020.log 
+tm
+ts
+tl
+tm
+brew install firefox
+brew install chrome
+tmux a
+brew update and brew upgrade
+cd ~/.dotfiles/
+git refresh 
+git status
+git diff
+brew search minimap
+brew install code-minimap
+vi
+brew update
+tm
+tl
+ts
+ws
+brew upgrade
+git status
+tl
+ts
+ws
+docker context ls
+cd infra/
+docker-compose -c durandal-local ps
+cd ~/Downloads/
+po
+ws
+pu ~/Desktop/
+unzip cert.zip -d ~/.docker
+po
+pu infra/
+docker-compose -c durandal-local ps
+pu ~/.docker/
+ls -al
+ls -ltr 
+date
+po
+docker-compose -c durandal-local ps
+docker context ls
+ts
+docker-compose -c durandal-local ps
+docker context ls
+docker context --help
+docker context inspect durandal-local
+hg 'docker context'
+docker context update durandal-local --description "inside.muriad.net" --docker "host=tcp://192.168.1.5:2376,skip-tls-verify=1,ca=/Users/corban.johnson/.docker/ca.pem,cert=/Users/corban.johnson/.docker/cert.pem,key=/Users/corban.johnson/.docker/key.pem"
+docker-compose -c durandal-local ps
+docker-compose -c durandal-local up -d
+docker-compose -c durandal-local logs infra_unifi_1
+docker-compose -c durandal-local ps
+docker-compose -c durandal-local logs infra_unifi_1
+docker-compose -c durandal-local logs 
+docker-compose -c durandal-local logs unifi_1 
+docker-compose -c durandal-local ps
+ts
+docker-compose -c durandal-local up -d
+ts
+tl
+docker-compose -c durandal-local pull
+docker-compose -c durandal-local up -d
+docker-compose -c durandal-local ps
+docker-compose -c durandal-local logs 
+docker-compose -c durandal-local -f logs 
+docker-compose -c durandal-local logs -f
+docker-compose -c durandal-local 
+docker-compose -c durandal-local top
+docker-compose -c durandal-local images
+docker -c durandal-local system prune
+docker -c durandal-local top
+docker -c durandal-local ps
+docker -c durandal-local 
+docker -c durandal-local stats
+vi
+tm
+brew search minetest
+brew info minetest
+brew install minetest
+brew list minetest
+brew link minetest
+open /usr/local/Cellar/minetest/5.5.0/minetest.app/C
+open /usr/local/Cellar/minetest/5.5.0/minetest.app/
+cat ~/.ssh/id_personal_ed25519.pub | pbcopy
+man blueutil
+blueutil --helo
+blueutil --help
+BlueTool --helop
+man BlueTool
+brew info BlueTool
+BlueTool 
+brew upgrade vcvrack
+brew upgrade vcv
+brew search vcv
+brew upgrade vcv-rack
+brew update
+brew upgrade vcv-rack
+tm
+vi
+ws
+pu ~/.dotfiles/
+git refresh 
+ts
+brew update 
+brew oudated
+brew outdated
+ts
+tl
+tm
+ts
+vi
+tmux a
+cd .dotfiles/
+git pull
+tl
+po
+tl
+ws
+cd htd/henbit-openresty/
+cd .dotfiles/
+git diff
+git status
+git refresh 
+vi
+ws
+cd htd/henbit-openresty/
+cat Makefile 
+make
+make run
+make watchtest
+make logs
+make watch logs
+ws
+cd htd/henbit-openresty/
+git diff
+make watchlogs
+make stop
+make --help
+make start
+make -d
+make run
+ws
+cd htd/henbit-openresty/
+make reload
+make watchtest
+make watchtet
+make watchtest
+make test TESTURI=main.lua
+make reload
+make test TESTURI=main.lua
+make watchtest
+make watchtest TESTURI=main.lua
+ws
+cd htd/henbit-openresty/
+git status
+make reload
+make watchtest TESTURI=main.lua
+pu ~/.dotfiles/vim/plugged/openresty-vim/
+tree
+diff syntax/nginx.conf ../vim-polyglot/syntax/nginx.vim 
+diff syntax/nginx.vim ../vim-polyglot/syntax/nginx.vim
+pu ~/.dotfiles/
+git refresh 
+git diff
+po
+popd --help
+popd -2
+popd -1
+po
+git status
+git refresh 
+git commit -av
+git status
+git add src/
+git commit -av --amend
+git push
+pu ~/Workspace/
+git clone https://github.com/keplerproject/luafilesystem.git
+cd luafilesystem/doc/us/
+open index.html 
+make watchtest TESTURI=Dockerfile
+make build
+make watchlogs
+make stop
+make run
+po
+make build
+docker run -it -d openresty/openresty:1.19.9.1-7-centos-rpm
+docker run -it -d openresty/openresty:1.19.9.1-7-centos-rpm bash
+docker ps
+docker stop zen_wilson 
+docker rm zen_wilson
+docker exec -it lucid_jemison bash
+make watchtest TESTURI=Dockerfile
+docker ps
+make build
+docker stop lucid_jemison && docker rm lucid_jemiso
+docker rm lucid_jemison
+make stop
+make run
+docker ps
+docker image ls henbit-openresty
+docker image ls openresty/openresty
+make watchtest TESTURI=Dockerfile
+make stop
+docker ps -a
+make run
+make test TESTURI=Dockerfile
+git diff
+make stop
+ts
+tl
+brew search --desc spotify
+brew info bubo
+ts
+brew search tenacity
+brew search audacity
+ts
+brew install audacity
+brew remove audacity
+brew search youtube
+youtube-dl --help
+youtube-dl -x --audio-formac wav https://www.youtube.com/watch?v=5Yt3Fi48Wr4
+pu ~/Desktop/
+ts
+tm
+youtube-dl -x --audio-format wav https://www.youtube.com/watch?v=5Yt3Fi48Wr4
+brew search avprobe
+brew search avconv
+brew info ffprobe
+brew search fprobe
+brew install
+brew install fprobe
+youtube-dl -x --audio-format wav https://www.youtube.com/watch?v=5Yt3Fi48Wr4
+brew search ffmpeg
+ts
+tl
+brew install ffmpeg
+youtube-dl -x --audio-format wav https://www.youtube.com/watch?v=5Yt3Fi48Wr4
+trash *.par
+trash *.part
+brew install audacity
+pu ~/.dotfiles/
+git refresh 
+git status
+git diff
+po
+ts
+brew remove audacity
+tl
+vi
+tmux
+tm
+tl
+whois streamenergy.net
+dig +short streamenergy.net
+whob 23.100.31.84
+bre update
+brew update
+brew outdated
+brew upgrade
+tl
+pu Workspace/htd/henbit-openresty/
+vi
+ws
+ts
+tl
+brew update
+top
+ws
+cd htd/henbit-openresty/
+hg docker-compose | tail
+brew install devdocs
+brew outdated
+brew update
+vi
+ws
+vi
+pu ~/.dotfiles/
+git refresh 
+git diff
+git add vimrc
+git commit -v
+git refresh 
+git push
+git diff
+git status
+po
+ws
+cd htd/henbit-openresty/
+lua
+man lua
+lua
+luarocks install lfs
+luarocks install lfs --check-lua-versions
+luarocks install luafilesystem
+lua
+man curl
+man wget
+make build
+vi
+lua
+make build
+make start
+make run
+make test
+cat Makefile 
+curl http://127.0.0.1:8000/test
+make reload
+curl http://127.0.0.1:8000/test
+curl http://127.0.0.1:8000/Dockerfile
+ws
+cd htd/henbit-openresty/
+ws
+cd htd/henbit-openresty/
+curl http://127.0.0.1:8000/Dockerfile
+curl http://127.0.0.1:8000/test
+curl http://127.0.0.1:8000/Dockerfile
+make reload
+curl http://127.0.0.1:8000/Dockerfile
+make reload
+curl http://127.0.0.1:8000/Dockerfile
+cat Makefile 
+fswatch --help
+curl http://127.0.0.1:8000/Dockerfile
+TESTURI=Dockerfile make watchtest
+make watchlogs
+make reload
+TESTURI=Dockerfile make watchtest
+docker ps
+docker exec -it henbit bash
+make reload
+TESTURI=Dockerfile make watchtest
+lua
+TESTURI=Dockerfile make watchtest
+make reload
+TESTURI=Dockerfile make watchtest
+make reload
+TESTURI=Dockerfile make watchtest
+lua
+ws
+cd htd/henbit-openresty/
+lua
+TESTUIR=blah make test
+TESTUIR=src make test
+TESTURI=src make test
+TESTURI=Dockerfile make watchtest
+fswatch -r -o .
+man fswatch
+fswatch -r .
+man fswatch
+TESTURI=Dockerfile make watchtest
+man curl
+ws
+cd htd/henbit-openresty/
+git status
+docker help
+docker update --help
+docker update henbit
+make update
+make watchlogs
+docker ps
+docker ps -a
+make run
+docker ps -a
+docker ps
+docker run                 -d                 --name henbit                 --rm                 --volume $(pwd)/conf.d:/etc/nginx/conf.d                 --volume $(pwd):/mnt                 -p 127.0.0.1:8000:8000                 henbit-openresty:latest
+docker run                                 --name henbit                 --rm                 --volume $(pwd)/conf.d:/etc/nginx/conf.d                 --volume $(pwd):/mnt                 -p 127.0.0.1:8000:8000                 henbit-openresty:latest
+make update
+make run
+docker ps
+make watchlogs
+make update
+make watchlogs
+make build
+make update
+make watchlogs
+docker ps -a
+docker stop
+make stop
+make build
+make run
+make watchlogs
+docker ps -a
+docker exec -it henbit bash
+ps -a
+docker ps -a
+make build
+make update
+docker ps -a
+TESTURI=newfile make watchtest
+cat newfile 
+TESTURI=newfile make watchtest
+make test
+TESTURI=newfile make test
+TESTURI=newfile make watch
+TESTURI=newfile make watchtest
+TESTURI=newfile make test
+cat newfile 
+ls -l
+TESTURI=newfile make test
+rm newfile
+TESTURI=newfile make test
+trash newfile*
+TESTURI=newfile make watchtest
+man fswatch
+TESTURI=newfile make watchtest
+man fswatch
+TESTURI=newfile make watchtest
+git status
+ws
+cd htd/henbit-openresty/
+ls -l
+trash newfile2 
+lua
+make watchlogs
+kkj
+cat corban 
+git status
+trash corban 
+docker image ls
+make watchlogs
+`}`}
+make run
+top
+ts
+tl
+docker image ls
+git status
+trash corban \{\{formAction\}\} 
+git diff
+git diff HEAD
+git restore --staged .
+git status
+git diff
+git status
+ls -al
+trash newfile/
+git status
+git diff
+tree
+trash a
+git status
+cat corban 
+ls -al
+trash file/ index.html 
+git status
+trash corban 
+git diff
+git status
+git push
+tree directory 
+ls -al
+tl
+lua
+tl
+git status
+lua
+mkdir testingdir/
+touch testingdir/afile
+cat testing > testingdir/afile
+echo testing > testingdir/afile
+echo "one more" > testingdir/afile
+ls -al
+trash afile directory index.html testingdir/
+git status
+git push
+ts
+tl
+make watchlogs
+make run
+open /Applications/Docker.app/
+docker status
+docker system
+docker system info
+make run
+make build
+make update
+brew search luacheck
+luarocks install luacheck
+luarocks install lua-lsp
+luarocks install --server=http://luarocks.org/dev lua-lsp
+luarocks install --check-lua-versions lua-lsp
+brew install lua-language-server
+which lua-language-server
+lua-language-server --help
+lua-language-server main.lua
+lua-language-server ./main.lua
+brew list lua-language-server
+tree /usr/local/Cellar/lua-language-server/3.2.2/libexec/
+tree /usr/local/Cellar/lua-language-server/3.2.2/libexec/ | grep main
+which lua-language-server
+brew info lua-language-server
+brew list lua-language-server
+ls /usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua 
+which lua
+lua --help
+lua -i
+lua
+lua -W
+opm
+luarocks install --server=https://luarocks.org/dev luaformatter
+pu ~/.vim/
+git status
+git add -p
+git commit -v
+killall CalendarWidget
+git add -p .
+git status
+git add -p ../vimrc
+git commit -v
+git add -p ../vimrc
+git commit -v --amend
+git status
+git push
+top
+po
+git status
+trash A index.html page2.html 
+git status
+luacheck --help
+pu ~/.vim/
+git status
+git rebase -i HEAD^2
+tig
+git rebase -i f330bc215cffbdfe45f4d0fb238eea229bea197d
+git add ../vimrc
+git commit -v
+git push
+lua-format --help
+git status
+git diff
+lua-language-server --help
+brew info lua-language-server
+brew list lua-language-server
+git add ../vimrc
+git commit -v
+man lua
+lua -i
+man lua
+make watchlogs
+cd ..
+cd ..
+mkdir archive/go/
+mkdir -p archive/go/
+git mv cmd deck/ feed/ go.mod go.sum main.go server/ static/ storage/ archive/go/
+git status
+ls henbit
+git mv henbit archive/python/
+git status
+ls archive/
+ls -al
+git mv .pytest_cache/ archive/python
+git mv .pytest_cache/ archive/python/
+git mv .pytest_cache archive/python/
+ls -al archive/python/
+git rm archive/python/.pytest_cache/ .pytest_cache/
+git status
+trash archive/python/.pytest_cache/ .pytest_cache/
+git status
+cat .gitlab-ci.yml 
+git mv .gitlab-ci.yml archive/go/
+git status
+ls -al
+ls henbit-openresty/
+git mv henbit-openresty/* .
+ls henbit-openresty/
+rmdir henbit-openresty/
+git status
+ls -al
+ls -al conf.d/
+cat Makefile 
+mkdir nginx
+git mv conf.d/ nginx/conf.d
+ls -l nginx/conf.d
+vi Makefile 
+ls -al
+git status
+git add Makefile
+pu htd/
+git commit -v
+make build
+make run
+make remove
+cat Makefile 
+docker stop henbit 
+make update
+docker container rm henbit
+make run
+git status
+po
+git status
+git diff
+git add ../vimrc
+git commit -v
+git push
+po
+ws
+cd htd/
+ls -al
+git push
+tree
+TESTURI=newfile make watchtest
+make build
+make watchlogs
+make update
+docker image ls
+docker image prune
+docker image ls
+TESTURI=newfile make watchtest
+make build
+make update
+docker image prune
+docker image prune -a
+docker image ls
+docker ps
+docker image ls
+docker image ls -a
+TESTURI=newfile make watchtest
+docker ps
+make stop
+docker ps
+docker image ls
+docker image prune
+docker image prune -a
+docker image ls
+make build
+make run
+k
+docker system prune
+git status
+git push
+brew search openresty
+brew list luajit-openresty
+ls /usr/local/Cellar/luajit-openresty/2.1-20220310/lib/
+brew install openresty/brew/openresty
+top
+resty
+resty --help
+ls edit/
+cat edit/index.html 
+trash edit/
+make watchlogs
+make run
+man mkdir
+tm
+git status
+git refresh 
+git status
+ls -al
+mkdir deck
+mv login.html new.html deck
+git status
+tig
+git l -5
+git rebase -i df35067
+git rebase -i 7ffdcf4
+git l -5
+TESTURI=newfile make watchtest
+make watchlogs
+ws
+cd htd/
+git status
+git commit -v
+git rebase -i ad5ae0950c7
+ae0950c7
+git rebase -i ae0950c7
+git -l 5
+git l 5
+git l -5
+git rebase -i 7ffdcf4
+git diff
+vi ~/.gitconfig 
+man git-diff
+git status
+git diff
+git rebase --continue
+git add TODO.md
+git rebase --continue
+git diff
+git rebase --continue
+tig
+git rm deck/*
+git status
+git commit -v --amend
+git status
+mkdir deck
+mv deck{,s}
+git status
+git dif
+git diff
+git status
+git diff
+git status
+git stash
+tig
+git status
+git stash pop
+git diff
+make watchlog
+make logs
+make watchlog
+make watchlogs
+ws
+cd htd/
+mkdir -p decks/test/one/two
+touch decks/test/foo decks/test/one/bar decks/test/one/two/baz
+tig
+echo "qux" > test/one/qux
+touch test/one/qux
+echo "qux" > decks/test/one/qux
+ls decks/test/one/qux
+echo "qux" > decks/test/one/qux
+ls decks/test/one/qux
+touch test/one/qux
+echo "qux" > decks/test/one/qux
+ls decks/test/one/qux
+git status
+ls -al
+touch decks/.gitkeep
+git status
+cat .gitignore 
+echo "decks/*" > .gitignore
+git status
+git add decks/.gitkeep
+cat .gitignore 
+rm .gitignore
+touch .gitignore
+git status
+git restore .gitignore
+git status
+tig
+git push
+tig
+man git-add
+git push
+git status
+git refresh 
+git diff
+git status
+git commit
+git rebase -i 7ffdcf4
+git diff
+git rebase --continue
+git diff
+git rebase --continue
+tig
+git rebase -i 7ffdcf4
+tig
+git status
+git push -f
+tig
+git rebase -i 7ffdcf4
+git rebase --continue
+git status
+git diff
+git rebase --continue
+tig
+git rebase -i 7ffdcf4
+git diff HEAD^
+git rebase --continue
+git push -f
+git status
+tmux
+git l -5
+ls decks/
+docker logs --help
+lua -i
+ls decks/
+tl
+lua -i
+ls decks/
+tree decks/
+touch decks/test/one/two/foo
+tree decks/
+touch decks/test/one/two/foo
+htop
+brew search htop
+brew install htop
+htop
+sudo htop
+tl
+make watchlogs
+git status
+git add -p
+git status
+git restore --staged Dockerfile
+ts
+tmutil --help
+git status
+git diff
+git status
+git diff
+grep session Dockerfile 
+make build
+make update
+docker ps
+docker ps -a
+make run
+docker ps -a
+git l
+git rebase -i 6a96a40
+tig
+sf-pwgen -a alphanumeric -l 32
+git diff
+brew search lua selene
+brew search selene
+brew info selene
+git status
+trash :w
+brew install selene
+selene
+selene --help
+selene src/main.lua 
+vi
+which selene
+ctags --help
+ctags src/main.lua 
+git diff
+brew update && brew upgrade
+selene src/main.lua | less
+git dif
+git diff
+git diff src/
+git add -p src/
+git commit -v
+git add -p
+git status
+git diff
+git status
+git diff
+git status
+tig
+git l
+git rebase -i 26630e9
+tig
+ls -l decks/
+tree decks/
+make watchlogs
+git status
+git diff
+tmux a
+ts
+ws
+ts
+brew update && brew upgrade
+vi
+tmux
+ws
+ws
+cd htd/
+open /Applications/Docker.app/
+make watchlog
+man make
+make
+make watchlogs
+ws
+cd htd/
+ls decks/
+mkdir decks/default
+pu decks/
+mv demo/ test/ default/
+tree
+git branches
+git branch -l
+tig
+git rebase -i da8a23dd4
+git diff
+git rebase --abort
+ws
+cd htd/
+git rebase -i da8a23dd4
+git diff
+git rebase --abort
+git status
+git diff
+trash ../tags 
+git push
+tl
+trash tags
+git status
+git diff
+pwd
+po
+cat .gitignore 
+ls -al
+echo ./decks >> .gitignore
+git status
+cat .gitignore
+vi .gitignore
+git status
+git add .gitignore
+git commit -v
+git status
+top
+cat README.md 
+tl
+make watchlogs
+ts
+tl
+top
+lua
+man lua
+brew man lua
+lua --help
+lua -v
+tl
+ls /Volumes/Work\ Mascheen/Backups.backupdb/Maude/
+tm
+man lua
+git refresh 
+vi
+ts
+tl
+make watchlogs
+tm
+tl
+tm
+pu ~/.dotfiles/
+git diff
+git diff vimrc
+git add vimrc
+git commit -v
+git refresh 
+git diff
+git status
+git add vimrc
+git commit -v
+git push
+git status
+git diff bash_history
+po
+ts
+tl
+top
+git diff
+sf-pwgen 
+sf-pwgen --help
+sf-pwgen -l 32
+hg gpg
+tig
+sf-pwgen -a alphanumeric -l 32
+gpg --full-generate-key
+gpg -a --export barnstormed
+gpg -a --export barnstormed | pbcopy
+pu ~/Desktop/
+vi temp
+gpg -d temp
+vi temp 
+gpg -d temp
+vi temp 
+gpg -l
+gpg -k
+vi temp2
+gpg --help | grep delete
+gpg --delete-keys strain
+gpg --help | grep import
+cat temp2
+gpg --import temp2
+gpg -e -r strain -a temp
+cat temp.asc 
+cat temp 
+vi temp3
+gpg -d temp3
+cat temp.asc | pbcopy
+vi temp
+gpg -d temp
+po
+git diff
+brew update && brew upgrade
+brew search nanostudio
+brew install nanostudio
+vi ~/.bash_rc
+vi ~/.profile 
+. ~/.profile
+cdi
+. ~/.profile
+cdi
+vimdiff Music/Outbox/AAWP*
+. ~/.profile
+ws
+pui
+po
+dig acidkolor.com
+whois acidkolor.com
+w
+brew info spottopgm
+cdi
+cd Music/Projects/An\ Age\ Without\ Pity/
+youtube-dl --help
+youtube-dl https://www.youtube.com/watch?v=RsZPmcWTajs
+youtube-dl -x https://www.youtube.com/watch?v=RsZPmcWTajs
+trash Aphex\ Twin\ -\ Ageispolis\ \(Official\ Music\ Video\)-RsZPmcWTajs.
+trash Aphex\ Twin\ -\ Ageispolis\ \(Official\ Music\ Video\)-RsZPmcWTajs.*
+youtube-dl -x --audio-format wav --audio-quality 256K https://www.youtube.com/watch?v=bdWIwpTS48s
+m help
+m finder help
+m bluetooth
+ll
+du -sh .
+tl
+ts
+brew update && brew outdated
+m
+m update
+m update list
+ts
+login
+pud
+git diff
+git add profile
+git status
+git commit -av
+git commit -v
+jobs
