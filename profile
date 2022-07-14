@@ -14,12 +14,15 @@ else
 fi
 shopt -s histappend
 
+alias cdi='cd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
 alias d='docker'
 alias dc='docker-compose'
 alias hg='history | grep'
 alias ls='ls -G'
 alias ll='ls -l'
 alias pu='pushd'
+alias pud='pushd "/Users/corban.johnson/.dotfiles"'
+alias pui='pushd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
 alias po='popd'
 alias ws='cd ~/Workspace/'
 alias cat='ccat'
@@ -64,8 +67,8 @@ aws_completion_dir=/usr/local/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc/
-. $docker_completion_dir/docker.bash-completion
+docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
+. $docker_completion_dir/docker
 . $docker_completion_dir/docker-compose.bash-completion
 export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
 
