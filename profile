@@ -1,32 +1,33 @@
 # Environment
-## Shell
+## Shell Options
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=100000
+shopt -s histappend
+
+## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
-if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   export EDITOR='/usr/local/bin/vi'
 else
   export EDITOR='/usr/bin/vim'
 fi
-shopt -s histappend
 
+## Aliases
+alias cat='ccat'
 alias cdi='cd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
 alias d='docker'
 alias dc='docker-compose'
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias hg='history | grep'
-alias ls='ls -G'
 alias ll='ls -l'
+alias ls='ls -G'
+alias po='popd'
 alias pu='pushd'
 alias pud='pushd "/Users/corban.johnson/.dotfiles"'
 alias pui='pushd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
-alias po='popd'
 alias ws='cd ~/Workspace/'
-alias cat='ccat'
-alias did="vim +'normal Go' +'r!date' ~/did.txt"
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   alias tm='diskutil unmount /Volumes/*\ Mascheen'
   alias ts='tmutil status'
@@ -35,6 +36,7 @@ if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   alias tstop='tmutil stopbackup'
 fi
 
+## Prompt
 case "$TERM" in
 screen*|xterm*|rxvt*)
   PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
