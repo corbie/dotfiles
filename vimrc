@@ -108,6 +108,9 @@ highlight Comment cterm=italic
 
 
 "" Keybindings
+" Text
+" yank to system clipboard
+nmap yc "*y
 " Tabs
 nmap th :tabprev<cr>
 nmap tl :tabnext<cr>
@@ -148,6 +151,8 @@ nmap <Leader>a :Ag<CR>
 nmap <Leader>p :Goyo<CR>
 " buffkill: delete buffer, keep window
 nmap <leader>w :BD<CR>
+" git status
+nmap <leader>G :G<CR>
 " vim-go
 nmap Ga :GoAlternate <cr>
 nmap Gr :GoRun<cr>
