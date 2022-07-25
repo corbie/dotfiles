@@ -70,7 +70,7 @@ aws_completion_dir=/usr/local/etc/bash_completion.d
 
 ## Docker
 docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
-. $docker_completion_dir/docker
+. $docker_completion_dir/docker.bash-completion
 . $docker_completion_dir/docker-compose.bash-completion
 export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
 
