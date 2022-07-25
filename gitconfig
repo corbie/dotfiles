@@ -9,6 +9,7 @@
 	email = cjohnson@muriad.net
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
 [color]
 	ui = auto
 	interactive = auto

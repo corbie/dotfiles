@@ -242,27 +242,10 @@ cask "wireshark"
 cask "wkhtmltopdf"
 cask "xquartz"
 cask "xscreensaver"
-cask "yujitach-menumeters"
 cask "zoom"
-mas "1Password 7", id: 1333542190
-mas "Calca", id: 635758264
-mas "Exporter", id: 1099120373
 mas "GarageBand", id: 682658836
-mas "Ghostery Lite", id: 1436953057
-mas "Graphic", id: 404705039
-mas "Instapaper Save", id: 1481302432
+mas "Ghostery – Privacy Ad Blocker", id: 1436953057
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
-mas "Magnet", id: 441258766
-mas "Marked 2", id: 890031187
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
-mas "OP-Z", id: 1098190457
-mas "Oscilloppoi", id: 1102313524
 mas "Pages", id: 409201541
-mas "Pixelmator", id: 407963104
-mas "Slack", id: 803453959
-mas "The Unarchiver", id: 425424353
-mas "Todoist", id: 585829637
-mas "Tomato One", id: 907364780
-mas "WiFi Explorer", id: 494803304
