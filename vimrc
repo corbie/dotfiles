@@ -90,9 +90,10 @@ set hidden " keep buffers hidden
 set linebreak " ragged margins
 set matchpairs+=<:> " show matching <>
 set laststatus=2 " Always show status line
-set foldlevel=5 " Default fold level
+"set foldcolumn=3
+set foldlevel=3 " Default fold level
 set foldmethod=syntax " Default to syntax folding
-set nofoldenable " Folding off by default
+"set nofoldenable " Folding off by default
 autocmd VimResized * wincmd = " Auto-equalize window splits
 set guioptions-=lr " Disable left and right GUI scrollbars
 
@@ -110,7 +111,7 @@ highlight Comment cterm=italic
 "" Keybindings
 " Text
 " yank to system clipboard
-nmap yc "*y
+"nmap yc "*y
 " Tabs
 nmap th :tabprev<cr>
 nmap tl :tabnext<cr>
@@ -153,6 +154,7 @@ nmap <Leader>p :Goyo<CR>
 nmap <leader>w :BD<CR>
 " git status
 nmap <leader>G :G<CR>
+nmap <leader>GG gq<CR>
 " vim-go
 nmap Ga :GoAlternate <cr>
 nmap Gr :GoRun<cr>
@@ -201,6 +203,12 @@ au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
 augroup go_cmds
   au!
   au BufNewFile,BufRead *.go let g:slime_vimterminal_cmd = "/usr/local/bin/go"
+augroup end
+
+" YAML
+augroup yaml_cmds
+  au!
+  au BufNewFile,BufRead *.go let foldcolumn = 3
 augroup end
 
 " Minimap
@@ -265,6 +273,7 @@ let g:ale_linters = {
 let g:ale_sign_column_always = 1
 "" ALE Shellcheck
 ""  SC2086 (info): Double quote to prevent globbing and word splitting
+call ale#handlers#shellcheck#DefineLinter('sh')
 let g:ale_sh_shellcheck_options = '-S info -e SC2086'
 "" ALE Python
 let g:ale_python_pyls_executable = "pylsp"
@@ -326,6 +335,7 @@ let g:session_autosave = 'no'
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/]\node_modules\'
 
 " mimimap-vim
 let g:minimap_highlight_range = 1
