@@ -22,6 +22,7 @@ alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias hg='history | grep'
 alias ll='ls -l'
+alias lh='ls -lh'
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
@@ -56,7 +57,7 @@ export GOBIN=$GOPATH/bin
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$(go env GOPATH)/bin
 
 ## Java
-export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.15/
+export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.16.1_1
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
@@ -110,3 +111,6 @@ function refresh_socket {
 #else
 #  refresh_socket
 #fi
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
