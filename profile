@@ -20,6 +20,7 @@ alias cdi='cd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDoc
 alias d='docker'
 alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+alias ghpr="gh pr create"
 alias hg='history | grep'
 alias ll='ls -l'
 alias lh='ls -lh'
