@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'plasticboy/vim-markdown'
 "Plug 'romainl/flattened'
 Plug '/usr/local/opt/fzf'
+Plug 'Joorem/vim-haproxy'
 Plug 'Lokaltog/vim-monotone'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
@@ -124,7 +125,7 @@ noremap J :bp<cr>
 " file browser
 nmap <leader>n :NERDTreeToggleVCS<cr>
 " edit $MYVIMRC
-nmap <leader>v :tabedit $MYVIMRC<cr>
+nmap <leader>v :vsplit $MYVIMRC<cr>
 " buffer list
 nmap <leader>l :ls<cr>
 " show tags window
@@ -211,6 +212,18 @@ augroup yaml_cmds
   au BufNewFile,BufRead *.go let foldcolumn = 3
 augroup end
 
+" Nginx configuration template
+augroup nginx_template_cmds
+  au!
+  au BufNewFile,BufRead *nginx.conf.template set ft=nginx
+augroup end
+
+" Nginx configuration template
+augroup haproxy_template_cmds
+  au!
+  au BufNewFile,BufRead *haproxy.cfg.template set ft=haproxy
+augroup end
+
 " Minimap
 " augroup minimap
 "   au!
@@ -259,11 +272,13 @@ let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
+\   'python': ['yapf'],
 \}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck'],
+\   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck --std ngx_lua'],
 \   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
@@ -335,7 +350,7 @@ let g:session_autosave = 'no'
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]\node_modules\'
+let g:ctrlp_custom_ignore = '\v[\/]node_modules'
 
 " mimimap-vim
 let g:minimap_highlight_range = 1

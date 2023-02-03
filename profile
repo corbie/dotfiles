@@ -14,6 +14,9 @@ else
   export EDITOR='/usr/bin/vim'
 fi
 
+## Path
+PATH=$PATH:/Users/corban.johnson/Workspace/eng-env
+
 ## Aliases
 alias cat='ccat'
 alias cdi='cd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
@@ -29,6 +32,8 @@ alias po='popd'
 alias pu='pushd'
 alias pud='pushd "/Users/corban.johnson/.dotfiles"'
 alias pui='pushd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
+alias tfp='terraform plan -out temp.plan'
+alias tfa='terraform apply temp.plan'
 alias ws='cd ~/Workspace/'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
   alias tm='diskutil unmount /Volumes/*\ Mascheen'
@@ -55,7 +60,7 @@ export GITLAB_API_PRIVATE_TOKEN=NsFdFgZeGbEk8YFxzzQy
 ## Go
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$(go env GOPATH)/bin
+PATH=$PATH:$(go env GOPATH)/bin
 
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.16.1_1
