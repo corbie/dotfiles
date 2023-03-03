@@ -1,3 +1,5 @@
+.menv
+.dotfiles
 vim/.netrwhist
 vim/autoload
 vim/cache
