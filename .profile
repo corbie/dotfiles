@@ -34,8 +34,8 @@ alias ghpr="gh pr create"
 alias hg='history | grep'
 alias ll='ls -l'
 alias lh='ls -lh'
-alias menv="git --git-dir=${HOME}/.menv --work-tree=${HOME}"
-alias mt="GIT_DIR=${HOME}/.menv GIT_WORK_TREE=${HOME} tig"
+alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
+alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
