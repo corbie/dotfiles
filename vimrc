@@ -156,18 +156,6 @@ nmap <leader>w :BD<CR>
 " git status
 nmap <leader>G :G<CR>
 nmap <leader>GG gq<CR>
-" vim-go
-nmap Ga :GoAlternate <cr>
-nmap Gr :GoRun<cr>
-nmap Gb :GoBuild<cr>
-nmap Gd :GoDoc<cr>
-nmap Gdb :GoDocBrowser<cr>
-nmap Gi :GoInfo<cr>
-nmap Gf :GoDef<cr>
-nmap Gft :GoDefType<cr>
-nmap Gt :GoTest!<cr>
-nmap Gtc :GoTestCompile!<cr>
-nmap Gtf :GoTestFunc!<cr>
 " YouCompleteMe
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>
@@ -175,6 +163,8 @@ map <leader>o  :YcmCompleter GetDoc<CR>
 map <leader>s :SaveSession<CR>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
+" terminal
+map <leader>t :vertical terminal<CR>
 
 
 "" Filetype settings
@@ -189,6 +179,7 @@ augroup end
 augroup bash
   au!
   au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+  au! BufNewFile,BufRead *.profile set ft=bash
 augroup end
 
 " lua
@@ -201,27 +192,35 @@ augroup end
 au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
 
 " Go
-augroup go_cmds
+augroup go
   au!
   au BufNewFile,BufRead *.go let g:slime_vimterminal_cmd = "/usr/local/bin/go"
-augroup end
-
-" YAML
-augroup yaml_cmds
-  au!
   au BufNewFile,BufRead *.go let foldcolumn = 3
 augroup end
 
 " Nginx configuration template
-augroup nginx_template_cmds
+augroup nginx_template
   au!
   au BufNewFile,BufRead *nginx.conf.template set ft=nginx
 augroup end
 
 " Nginx configuration template
-augroup haproxy_template_cmds
+augroup haproxy_template
   au!
   au BufNewFile,BufRead *haproxy.cfg.template set ft=haproxy
+augroup end
+
+" Terraform
+augroup terraform
+  au!
+  au BufNewFile,BufRead *.tf let g:gutentags_enabled = 0
+augroup end
+
+" YAML
+augroup yaml_template
+  au!
+  au BufNewFile,BufRead *.yaml.tmpl set ft=yaml
+  au BufNewFile,BufRead *.yml.tmpl set ft=yaml
 augroup end
 
 " Minimap
@@ -268,10 +267,12 @@ endif
 
 " ALE settings
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
+\   'terraform': ['terraform'],
 \   'python': ['yapf'],
 \}
 let g:ale_lint_delay = 1000
@@ -286,10 +287,6 @@ let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \}
 let g:ale_sign_column_always = 1
-"" ALE Shellcheck
-""  SC2086 (info): Double quote to prevent globbing and word splitting
-call ale#handlers#shellcheck#DefineLinter('sh')
-let g:ale_sh_shellcheck_options = '-S info -e SC2086'
 "" ALE Python
 let g:ale_python_pyls_executable = "pylsp"
 let g:ale_python_pyls_config = {
@@ -311,6 +308,7 @@ let g:ale_python_pyls_config = {
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
 let g:ale_lua_luacheck_options = '--std ngx_lua'
+
 " NERDTree settings
 let g:NERDTreeShowHidden = 1
 

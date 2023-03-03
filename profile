@@ -8,14 +8,21 @@ shopt -s histappend
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
-  export BASH_SILENCE_DEPRECATION_WARNING=1
-  export EDITOR='/usr/local/bin/vi'
+	export BASH_SILENCE_DEPRECATION_WARNING=1
+	export EDITOR='/usr/local/bin/vi'
 else
-  export EDITOR='/usr/bin/vim'
+	export EDITOR='/usr/bin/vim'
 fi
 
 ## Path
 PATH=$PATH:/Users/corban.johnson/Workspace/eng-env
+
+### Snowflake SnowSQL
+if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
+	if [ -d /Applications/SnowSQL.app ]; then
+		PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+	fi
+fi
 
 ## Aliases
 alias cat='ccat'
@@ -27,6 +34,8 @@ alias ghpr="gh pr create"
 alias hg='history | grep'
 alias ll='ls -l'
 alias lh='ls -lh'
+alias menv="git --git-dir=${HOME}/.menv --work-tree=${HOME}"
+alias mt="GIT_DIR=${HOME}/.menv GIT_WORK_TREE=${HOME} tig"
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
@@ -36,20 +45,19 @@ alias tfp='terraform plan -out temp.plan'
 alias tfa='terraform apply temp.plan'
 alias ws='cd ~/Workspace/'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
-  alias tm='diskutil unmount /Volumes/*\ Mascheen'
-  alias ts='tmutil status'
-  alias tl='tmutil listbackups'
-  alias tll='tmutil latestbackup'
-  alias tstop='tmutil stopbackup'
+	alias tm='diskutil unmount /Volumes/*\ Mascheen'
+	alias ts='tmutil status'
+	alias tl='tmutil listbackups'
+	alias tll='tmutil latestbackup'
+	alias tstop='tmutil stopbackup'
 fi
 
 ## Prompt
 case "$TERM" in
-screen*|xterm*|rxvt*)
-  PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
-  ;;
-*)
-  ;;
+screen* | xterm* | rxvt*)
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
+	;;
+*) ;;
 esac
 PS1="\n\w\n\u@\h> "
 
@@ -67,8 +75,7 @@ export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.16.1_1
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Command completion
 ## AWS CLI
@@ -97,18 +104,17 @@ m_completion_dir=/usr/local/etc/bash_completion.d
 mas_completion_dir=/usr/local/etc/bash_completion.d
 . $mas_completion_dir/mas
 
-
 # Functions
 ## SSH agent forwarding socket environment workaround
 function refresh_socket {
-  if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
-    socket=`find /private/tmp -user $USER -type s -name Listeners 2>/dev/null | xargs ls -1t | head -1`
-  else
-    socket=`find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1`
-  fi
-  if [ -S $socket ]; then
-    export SSH_AUTH_SOCK=$socket
-  fi
+	if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
+		socket=$(find /private/tmp -user $USER -type s -name Listeners 2>/dev/null | xargs ls -1t | head -1)
+	else
+		socket=$(find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1)
+	fi
+	if [ -S $socket ]; then
+		export SSH_AUTH_SOCK=$socket
+	fi
 }
 
 #if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
@@ -117,6 +123,3 @@ function refresh_socket {
 #else
 #  refresh_socket
 #fi
-
-# added by Snowflake SnowSQL installer v1.2
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
