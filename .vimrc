@@ -164,7 +164,7 @@ map <leader>s :SaveSession<CR>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
 " terminal
-map <leader>t :vertical terminal<CR>
+map <leader>T :vertical terminal<CR>
 
 
 "" Filetype settings
