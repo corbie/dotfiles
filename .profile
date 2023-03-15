@@ -68,7 +68,7 @@ export GITLAB_API_PRIVATE_TOKEN=NsFdFgZeGbEk8YFxzzQy
 ## Go
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
-PATH=$PATH:$(go env GOPATH)/bin
+PATH=$PATH:$GOBIN
 
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.16.1_1
