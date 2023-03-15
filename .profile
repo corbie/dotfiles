@@ -20,7 +20,7 @@ PATH=$PATH:/Users/corban.johnson/Workspace/eng-env
 ### Snowflake SnowSQL
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	if [ -d /Applications/SnowSQL.app ]; then
-		PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+		PATH=$PATH:/Applications/SnowSQL.app/Contents/MacOS
 	fi
 fi
 
