@@ -15,7 +15,7 @@ else
 fi
 
 ## Path
-PATH=$PATH:/Users/corban.johnson/Workspace/eng-env
+PATH=$PATH:$HOME/Workspace/eng-env
 
 ### Snowflake SnowSQL
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
@@ -26,7 +26,6 @@ fi
 
 ## Aliases
 alias cat='ccat'
-alias cdi='cd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
 alias d='docker'
 alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
@@ -39,12 +38,13 @@ alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
-alias pud='pushd "/Users/corban.johnson/.dotfiles"'
-alias pui='pushd "/Users/corban.johnson/Library/Mobile Documents/com~apple~CloudDocs"'
+alias pud='pushd "${HOME}/.dotfiles"'
 alias tfp='terraform plan -out temp.plan'
 alias tfa='terraform apply temp.plan'
 alias ws='cd ~/Workspace/'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
+	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
+	alias pui='pushd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 	alias tm='diskutil unmount /Volumes/*\ Mascheen'
 	alias ts='tmutil status'
 	alias tl='tmutil listbackups'
@@ -60,10 +60,6 @@ screen* | xterm* | rxvt*)
 *) ;;
 esac
 PS1="\n\w\n\u@\h> "
-
-## gitlab-gem
-export GITLAB_API_ENDPOINT=https://gitlab.com/api/v4
-export GITLAB_API_PRIVATE_TOKEN=NsFdFgZeGbEk8YFxzzQy
 
 ## Go
 export GOPATH=~/Workspace/go
