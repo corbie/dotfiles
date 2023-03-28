@@ -109,7 +109,7 @@ endif
 highlight Comment cterm=italic
 
 
-"" Keybindings
+"" Keybindings and aliases
 " Text
 " yank to system clipboard
 "nmap yc "*y
@@ -156,6 +156,12 @@ nmap <leader>w :BD<CR>
 " git status
 nmap <leader>G :G<CR>
 nmap <leader>GG gq<CR>
+nmap <leader>Gl :Commits<CR>
+" git shortcuts
+command Gc :G commit -v
+command Gp :G push
+" Github
+nmap <leader>Ghr :!gh run view<CR>
 " YouCompleteMe
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>

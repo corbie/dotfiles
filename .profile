@@ -67,7 +67,7 @@ export GOBIN=$GOPATH/bin
 PATH=$PATH:$GOBIN
 
 ## Java
-export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.16.1_1
+export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.18
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
