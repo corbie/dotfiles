@@ -184,7 +184,7 @@ augroup end
 " bash
 augroup bash
   au!
-  au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -i"
+  au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -l"
   au! BufNewFile,BufRead *.profile set ft=bash
 augroup end
 
@@ -317,6 +317,8 @@ let g:ale_lua_luacheck_options = '--std ngx_lua'
 
 " NERDTree settings
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalMenu = 1
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0

@@ -15,7 +15,7 @@ else
 fi
 
 ## Path
-PATH=$PATH:$HOME/Workspace/eng-env
+PATH=$PATH:$HOME/Workspace/semantic-data-platform/scripts
 
 ### Snowflake SnowSQL
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
