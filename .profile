@@ -96,6 +96,9 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 m_completion_dir=/usr/local/etc/bash_completion.d
 . $m_completion_dir/m
 
+## Make
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+
 ## MAS
 mas_completion_dir=/usr/local/etc/bash_completion.d
 . $mas_completion_dir/mas
