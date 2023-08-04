@@ -38,7 +38,6 @@ alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
-alias pud='pushd "${HOME}/.dotfiles"'
 alias tfp='terraform plan -out temp.plan'
 alias tfa='terraform apply temp.plan'
 alias ws='cd ~/Workspace/'
