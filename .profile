@@ -29,6 +29,7 @@ alias cat='ccat'
 alias d='docker'
 alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+alias ecrlogin="aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 021451147547.dkr.ecr.us-west-2.amazonaws.com"
 alias ghpr="gh pr create"
 alias hg='history | grep'
 alias ll='ls -l'
@@ -66,7 +67,7 @@ export GOBIN=$GOPATH/bin
 PATH=$PATH:$GOBIN
 
 ## Java
-export JAVA_HOME=/usr/local/Cellar/openjdk@11/11.0.18
+export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"

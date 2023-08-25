@@ -162,6 +162,7 @@ command Gc :G commit -v
 command Gp :G push
 " Github
 nmap <leader>Ghr :!gh run view<CR>
+nmap <leader>Gpr :!gh pr create<CR>
 " YouCompleteMe
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>o  :YcmCompleter GetDoc<CR>
