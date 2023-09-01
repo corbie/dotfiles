@@ -266,6 +266,17 @@ let tlist_sh_settings = 'sh;f:functions;v:variables;c:constants'
 "   \ 'v:variables'
 "   \ ]
 "   \}
+let g:tagbar_type_terraform = {
+      \ 'ctags_type':'Terraform',
+    \ 'kinds':[
+    \ 'd:data',
+    \ 'm:module',
+    \ 'o:output',
+    \ 'p:provider',
+    \ 'r:resource',
+    \ 'v:variable'
+    \ ]
+    \}
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
