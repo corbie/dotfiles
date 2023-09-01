@@ -44,10 +44,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 Plug 'plan9-for-vimspace/acme-colors'
+Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug 'sheerun/vim-polyglot'
@@ -222,7 +222,6 @@ augroup end
 " Terraform
 augroup terraform
   au!
-  au BufNewFile,BufRead *.tf let g:gutentags_enabled = 1
   au BufNewFile,BufRead *.tf set ft=terraform
   au BufNewFile,BufRead *.tfvars set ft=terraform
 augroup end
@@ -298,7 +297,6 @@ let g:ale_linters = {
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
 \   'tf': ['tflint','terraform-ls', 'terraform-lsp'],
-\   'terraform': ['tflint','terraform-ls', 'terraform-lsp'],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python

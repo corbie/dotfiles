@@ -1,5 +1,5 @@
 --langmap=markdown:.mkd
---regex-markdown=/^#[ \t]+(.*)/\1/h,HeadingL1/
+--regex-markdown=/^#[ \t]+(.*)/\1/HeadingL1/
 --regex-markdown=/^##[ \t]+(.*)/\1/i,HeadingL2/
 --regex-markdown=/^###[ \t]+(.*)/\1/k,HeadingL3/
 
