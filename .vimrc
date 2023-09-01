@@ -26,7 +26,6 @@ call plug#begin('~/.vim/plugged')
 "Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 "Plug 'godlygeek/tabular'
-"Plug 'hashivim/vim-terraform'
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'plasticboy/vim-markdown'
 "Plug 'romainl/flattened'
@@ -180,6 +179,7 @@ augroup python
   au!
   au BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
   au BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
+  au! BufNewFile,BufRead *.py set ft=python
 augroup end
 
 " bash
@@ -193,6 +193,7 @@ augroup end
 augroup lua
   au!
   au BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
+  au BufNewFile,BufRead *.go set ft=lua
 augroup end
 
 " SQL
@@ -203,6 +204,7 @@ augroup go
   au!
   au BufNewFile,BufRead *.go let g:slime_vimterminal_cmd = "/usr/local/bin/go"
   au BufNewFile,BufRead *.go let foldcolumn = 3
+  au BufNewFile,BufRead *.go set ft=go
 augroup end
 
 " Nginx configuration template
@@ -220,10 +222,12 @@ augroup end
 " Terraform
 augroup terraform
   au!
-  au BufNewFile,BufRead *.tf let g:gutentags_enabled = 0
+  au BufNewFile,BufRead *.tf let g:gutentags_enabled = 1
+  au BufNewFile,BufRead *.tf set ft=terraform
+  au BufNewFile,BufRead *.tfvars set ft=terraform
 augroup end
 
-" YAML
+" YAML Template
 augroup yaml_template
   au!
   au BufNewFile,BufRead *.yaml.tmpl set ft=yaml
@@ -279,6 +283,7 @@ let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
+\   'tf': ['terraform'],
 \   'terraform': ['terraform'],
 \   'python': ['yapf'],
 \}
@@ -292,6 +297,8 @@ let g:ale_linters = {
 \   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
+\   'tf': ['tflint','terraform-ls', 'terraform-lsp'],
+\   'terraform': ['tflint','terraform-ls', 'terraform-lsp'],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python
