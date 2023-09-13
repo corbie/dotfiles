@@ -373,7 +373,9 @@ let g:session_autosave = 'no'
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]node_modules'
+let g:ctrlp_custom_ignore = {
+\  'dir': 'node_modules',
+\ }
 
 " mimimap-vim
 let g:minimap_highlight_range = 1
