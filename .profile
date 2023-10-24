@@ -15,14 +15,7 @@ else
 fi
 
 ## Path
-PATH=$PATH:$HOME/Workspace/semantic-data-platform/scripts
-
-### Snowflake SnowSQL
-if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
-	if [ -d /Applications/SnowSQL.app ]; then
-		PATH=$PATH:/Applications/SnowSQL.app/Contents/MacOS
-	fi
-fi
+#PATH=$PATH:$HOME/Workspace/semantic-data-platform/scripts
 
 ## Aliases
 alias cat='ccat'
@@ -78,10 +71,9 @@ aws_completion_dir=/usr/local/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/usr/local/Cellar/docker-completion/24.0.6/etc/bash_completion.d
-. $docker_completion_dir/docker
-# . $docker_completion_dir/docker-compose.bash-completion
-export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
+docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
+. $docker_completion_dir/docker.bash-completion
+#. $docker_completion_dir/docker-compose.bash-completion
 
 ## Git
 git_completion_dir=/usr/local/etc/bash_completion.d
