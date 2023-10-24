@@ -29,19 +29,17 @@ alias cat='ccat'
 alias d='docker'
 alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
-alias ecrlogin="aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 021451147547.dkr.ecr.us-west-2.amazonaws.com"
-alias ghpr="gh pr create"
-alias hg='history | grep'
-alias ll='ls -l'
-alias lh='ls -lh'
 alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
 alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
+alias ghpr="gh pr create"
+alias hg='history | grep'
+alias lh='ls -lh'
+alias ll='ls -l'
 alias ls='ls -G'
 alias po='popd'
 alias pu='pushd'
-alias pud='pushd "${HOME}/.dotfiles"'
-alias tfp='terraform plan -out temp.plan'
 alias tfa='terraform apply temp.plan'
+alias tfp='terraform plan -out temp.plan'
 alias ws='cd ~/Workspace/'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
@@ -80,9 +78,9 @@ aws_completion_dir=/usr/local/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
-. $docker_completion_dir/docker.bash-completion
-. $docker_completion_dir/docker-compose.bash-completion
+docker_completion_dir=/usr/local/Cellar/docker-completion/24.0.6/etc/bash_completion.d
+. $docker_completion_dir/docker
+# . $docker_completion_dir/docker-compose.bash-completion
 export DOCKER_COMPLETION_SHOW_IMAGE_IDS=non-intermediate
 
 ## Git
