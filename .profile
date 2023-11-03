@@ -5,6 +5,9 @@ export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=100000
 shopt -s histappend
 
+## Path
+PATH=$PATH:/usr/local/sbin:$GOBIN
+
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
@@ -13,9 +16,6 @@ if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 else
 	export EDITOR='/usr/bin/vim'
 fi
-
-## Path
-#PATH=$PATH:$HOME/Workspace/semantic-data-platform/scripts
 
 ## Aliases
 alias cat='ccat'
@@ -56,7 +56,7 @@ PS1="\n\w\n\u@\h> "
 ## Go
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
-PATH=$PATH:/usr/local/sbin:$GOBIN
+PATH=$PATH:$GOBIN
 
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
