@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'lifepillar/vim-solarized8'
 "Plug 'plasticboy/vim-markdown'
 "Plug 'romainl/flattened'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug '/usr/local/opt/fzf'
 Plug 'Joorem/vim-haproxy'
 Plug 'Lokaltog/vim-monotone'
@@ -49,7 +50,6 @@ Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 Plug 'plan9-for-vimspace/acme-colors'
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 Plug 'qpkorr/vim-bufkill'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
@@ -57,6 +57,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'fennel' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'w0rp/ale'
 Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' }
@@ -122,7 +123,7 @@ nmap te :tabedit
 noremap K :bn<cr>
 noremap J :bp<cr>
 " file browser
-nmap <leader>n :NERDTreeToggleVCS<cr>
+nmap <leader>n :Lexplore<cr>
 " edit $MYVIMRC
 nmap <leader>v :vsplit $MYVIMRC<cr>
 " buffer list
@@ -332,11 +333,6 @@ let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
 let g:ale_lua_luacheck_options = '--std ngx_lua'
 
-" NERDTree settings
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeMinimalMenu = 1
-
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
 let g:go_debug_mappings = {
@@ -379,3 +375,11 @@ let g:ctrlp_custom_ignore = {
 
 " mimimap-vim
 let g:minimap_highlight_range = 1
+
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = -31
+let g:netrw_wiw = 31
