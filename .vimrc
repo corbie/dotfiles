@@ -9,6 +9,7 @@ set autowrite
 set dir=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 set omnifunc=ale#completion#OmniFunc
+set belloff=all
 
 
 "" Vim-plug
@@ -31,7 +32,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'romainl/flattened'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 Plug '/usr/local/opt/fzf'
-Plug 'Joorem/vim-haproxy'
+Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' }
 Plug 'Lokaltog/vim-monotone'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
@@ -76,43 +77,36 @@ set shiftwidth=2 " number of spaces to use for autoindenting
 
 
 "" Display
-set incsearch " Incremental search
-set ignorecase " Case-insensitive search
+autocmd VimResized * wincmd = " Auto-equalize window splits
+colorscheme monotone " Color scheme
+" Use italic terminal fonts for comments
+highlight Comment cterm=italic
+set foldlevel=3 " Default fold level
+set foldmethod=syntax " Default to syntax folding
+set hidden " keep buffers hidden
+set history=1000
 set hlsearch " Highlight search results
+set ignorecase " Case-insensitive search
+set incsearch " Incremental search
+set laststatus=2 " Always show status line
+set linebreak " ragged margins
+set matchpairs+=<:> " show matching <>
+set nu " Show line numbers
+set ruler " Show current position
+set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
 set showcmd
 set showmode
 set smartcase
-set ruler " Show current position
-set nu " Show line numbers
-set history=1000
-set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
 set title " Set terminal window title to filename
-set hidden " keep buffers hidden
-set linebreak " ragged margins
-set matchpairs+=<:> " show matching <>
-set laststatus=2 " Always show status line
-"set foldcolumn=3
-set foldlevel=3 " Default fold level
-set foldmethod=syntax " Default to syntax folding
-"set nofoldenable " Folding off by default
-autocmd VimResized * wincmd = " Auto-equalize window splits
-set guioptions-=lr " Disable left and right GUI scrollbars
-
-"colorscheme flattened_light
-"colorscheme acme
-colorscheme monotone
-" Set GUI font
+" GUI options
 if has('gui_running')
  set guifont=Iosevka:h14
+ set guicursor+=a:blinkon0
+ set guioptions-=lr " Disable left and right GUI scrollbars
 endif
-" Use italic terminal fonts for comments
-highlight Comment cterm=italic
 
 
 "" Keybindings and aliases
-" Text
-" yank to system clipboard
-"nmap yc "*y
 " Tabs
 nmap th :tabprev<cr>
 nmap tl :tabnext<cr>
@@ -171,7 +165,7 @@ map <leader>s :SaveSession<CR>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
 " terminal
-map <leader>T :vertical terminal<CR>
+map <leader>T :vertical terminal /bin/bash -l<CR>
 
 
 "" Filetype settings
@@ -268,16 +262,16 @@ let tlist_sh_settings = 'sh;f:functions;v:variables;c:constants'
 "   \ ]
 "   \}
 let g:tagbar_type_terraform = {
-      \ 'ctags_type':'Terraform',
-    \ 'kinds':[
-    \ 'd:data',
-    \ 'm:module',
-    \ 'o:output',
-    \ 'p:provider',
-    \ 'r:resource',
-    \ 'v:variable'
-    \ ]
-    \}
+\   'ctags_type':'Terraform',
+\   'kinds':[
+\   'd:data',
+\   'm:module',
+\   'o:output',
+\   'p:provider',
+\   'r:resource',
+\   'v:variable'
+\ ]
+\}
 
 " fugitive settings
 autocmd QuickFixCmdPost *grep* cwindow " Open quickfix window for grep search results
