@@ -377,3 +377,11 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = -31
 let g:netrw_wiw = 31
+function! NetrwMapping()
+  nmap <buffer> . gh
+  nmap <buffer> P <C-w>z
+endfunction
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
