@@ -149,7 +149,7 @@ nmap <Leader>p :Goyo<CR>
 nmap <leader>w :BD<CR>
 " git status
 nmap <leader>G :G<CR>
-nmap <leader>GG gq<CR>
+nmap <leader>g gq<CR>
 nmap <leader>Gl :Commits<CR>
 " git shortcuts
 command Gc :G commit -v
