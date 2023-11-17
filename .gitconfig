@@ -24,7 +24,7 @@
 	df = diff --name-only
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
-	recap = log --all --oneline --no-merges --author=corban.johnson@stackpath.com
+	recap = log --all --oneline --no-merges --author=corban@mosaic.tech
 	refresh = !git remote update --prune && git pull
 	tidyremotes = !bash -c 'git branch -r | awk \"{print \\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\$1}\" | xargs git branch -d'
 [http]

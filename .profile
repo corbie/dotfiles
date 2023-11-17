@@ -3,7 +3,10 @@
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=100000
-shopt -s histappend
+shopt -s autocd     # automatically cd if first arg is a directory
+shopt -s cdspell    # fix common spelling mistakes
+shopt -s histappend # update history after each command
+shopt -s nocaseglob # ignore case when matching
 
 ## Path
 PATH=$PATH:/usr/local/sbin:$GOBIN
@@ -18,7 +21,13 @@ else
 fi
 
 ## Aliases
+alias -- ='cd -'
 alias cat='ccat'
+alias cdd='cd ..'
+alias cddd='cd ../..'
+alias cdddd='cd ../../..'
+alias cddddd='cd ../../../..'
+alias cdddddd='cd ../../../../..'
 alias d='docker'
 alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"

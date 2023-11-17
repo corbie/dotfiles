@@ -218,7 +218,7 @@ augroup end
 augroup terraform
   au!
   au BufNewFile,BufRead *.tf set ft=terraform
-  au BufNewFile,BufRead *.tfvars set ft=terraform
+  au BufNewFile,BufRead *.tfvars set ft=tfvars
 augroup end
 
 " YAML Template
