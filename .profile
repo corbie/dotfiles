@@ -3,7 +3,7 @@
 export HISTCONTROL=ignoredups
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=100000
-shopt -s autocd     # automatically cd if first arg is a directory
+# shopt -s autocd     # automatically cd if first arg is a directory
 shopt -s cdspell    # fix common spelling mistakes
 shopt -s histappend # update history after each command
 shopt -s nocaseglob # ignore case when matching
@@ -21,7 +21,7 @@ else
 fi
 
 ## Aliases
-alias -- ='cd -'
+alias c-='cd -'
 alias cat='ccat'
 alias cdd='cd ..'
 alias cddd='cd ../..'
