@@ -118,6 +118,7 @@ noremap K :bn<cr>
 noremap J :bp<cr>
 " file browser
 nmap <leader>n :Lexplore<cr>
+nmap <leader>nn :Lexplore %:p:h<cr>
 " edit $MYVIMRC
 nmap <leader>v :vsplit $MYVIMRC<cr>
 " buffer list
