@@ -303,7 +303,8 @@ let g:ale_linters = {
 \   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
-\   'tf': ['tflint','terraform-ls', 'terraform-lsp'],
+\   'tf': ['tflint','terraform-ls' ],
+\   'tfvars': ['tflint','terraform-ls' ],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python
