@@ -289,9 +289,9 @@ let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
-\   'tf': ['terraform'],
 \   'terraform': ['terraform'],
-\   'python': ['yapf'],
+\   'tfvars': ['terraform'],
+\   'python': ['yapf', 'black'],
 \}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
@@ -300,15 +300,16 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck --std ngx_lua'],
-\   'python': ['flake8', 'pyls', 'bandit', 'mypy'],
+\   'python': ['pylsp', 'pylint'],
 \   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
-\   'tf': ['tflint','terraform-ls' ],
-\   'tfvars': ['tflint','terraform-ls' ],
+\   'terraform': ['terraform', 'tflint', 'terraform_ls'],
+\   'tfvars': ['terraform', 'tflint','terraform-ls' ],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python
-let g:ale_python_pyls_executable = "pylsp"
+let g:ale_python_pylint_options = '--disable=missing-module-docstring'
+let g:ale_python_pylsp_executable = 'pyls'
 let g:ale_python_pyls_config = {
 \   'pylsp': {
 \     'plugins': {
@@ -328,6 +329,12 @@ let g:ale_python_pyls_config = {
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
 let g:ale_lua_luacheck_options = '--std ngx_lua'
+"" ALE tflint
+"" TODO ALE tflint definition is out of date, does not
+""   match current tflint JSON fields or CLI options (--chdir).
+""   See file:
+""   https://github.com/dense-analysis/ale/blob/master/ale_linters/terraform/tflint.vim
+let g:ale_terraform_tflint_options = '-f json --module --chdir '.expand('%:p:h')
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
