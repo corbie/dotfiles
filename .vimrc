@@ -4,9 +4,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-set nocompatible
 set autowrite
-set dir=~/.vim/swap
+set directory=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 set omnifunc=ale#completion#OmniFunc
 set belloff=all
@@ -91,7 +90,7 @@ set incsearch " Incremental search
 set laststatus=2 " Always show status line
 set linebreak " ragged margins
 set matchpairs+=<:> " show matching <>
-set nu " Show line numbers
+set number " Show line numbers
 set ruler " Show current position
 set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
 set showcmd
@@ -192,7 +191,10 @@ augroup lua
 augroup end
 
 " SQL
-au! BufNewFile,BufRead *.sql let b:slime_vimterminal_cmd = "/usr/local/bin/psql"
+augroup sql
+  au!
+  au! BufNewFile,BufRead *.sql let b:slime_vimterminal_cmd = "/usr/local/bin/psql"
+augroup end
 
 " Go
 augroup go
@@ -233,7 +235,10 @@ augroup end
 " augroup end
 
 " vimrc
-au! BufWritePost ~/.vimrc source ~/.vimrc
+augroup vimrc
+  au!
+  au! BufWritePost ~/.vimrc source ~/.vimrc
+augroup end
 
 
 "" Plugin settings
@@ -302,6 +307,9 @@ let g:ale_linters = {
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
+\}
+let g:ale_linters_ignore = {
+\   'vim' : ['vim-language-server'],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python
