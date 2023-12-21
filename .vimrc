@@ -138,8 +138,8 @@ map <leader>c :let @/ = ""<CR>
 " Ack search for word
 nmap <leader>k :Ack! "\b<cword>\b" <CR>
 " CtrlP
-nmap <Leader>; :CtrlPBuffer<CR>
-nmap <Leader>: :CtrlPBufTag<CR>
+nmap <Leader>; :CtrlPMRUFiles<CR>
+nmap <Leader>: :CtrlPBuffer<CR>
 " fzf
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :Tags<CR>
@@ -173,60 +173,57 @@ map <leader>T :vertical terminal /bin/bash -l<CR>
 " Python
 augroup python
   au!
-  au BufNewFile,BufRead *.py setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
-  au BufNewFile,BufRead *.py let g:slime_vimterminal_cmd="/usr/local/bin/ipython"
-  au! BufNewFile,BufRead *.py set ft=python
+  au! BufNewFile,BufRead *.py  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+  au BufNewFile,BufRead *.py  setlocal foldmethod=indent foldlevel=3
+  au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="/usr/local/bin/ipython"
 augroup end
 
 " bash
 augroup bash
   au!
-  au! BufNewFile,BufRead *.sh let g:slime_vimterminal_cmd = "/bin/bash -l"
   au! BufNewFile,BufRead *.profile set ft=bash
+  au BufNewFile,BufRead *.sh let b:slime_vimterminal_cmd = "/bin/bash -l"
 augroup end
 
 " lua
 augroup lua
   au!
-  au BufNewFile,BufRead *.lua let g:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
-  au BufNewFile,BufRead *.go set ft=lua
+  au! BufNewFile,BufRead *.lua let b:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
 augroup end
 
 " SQL
-au! BufNewFile,BufRead *.sql let g:slime_vimterminal_cmd = "/usr/local/bin/psql"
+au! BufNewFile,BufRead *.sql let b:slime_vimterminal_cmd = "/usr/local/bin/psql"
 
 " Go
 augroup go
   au!
-  au BufNewFile,BufRead *.go let g:slime_vimterminal_cmd = "/usr/local/bin/go"
+  au! BufNewFile,BufRead *.go let b:slime_vimterminal_cmd = "/usr/local/bin/go"
   au BufNewFile,BufRead *.go let foldcolumn = 3
-  au BufNewFile,BufRead *.go set ft=go
 augroup end
 
 " Nginx configuration template
 augroup nginx_template
   au!
-  au BufNewFile,BufRead *nginx.conf.template set ft=nginx
+  au! BufNewFile,BufRead *nginx.conf.template set ft=nginx
 augroup end
 
 " Nginx configuration template
 augroup haproxy_template
   au!
-  au BufNewFile,BufRead *haproxy.cfg.template set ft=haproxy
+  au! BufNewFile,BufRead *haproxy.cfg.template set ft=haproxy
 augroup end
 
 " Terraform
 augroup terraform
   au!
-  au BufNewFile,BufRead *.tf set ft=terraform
-  au BufNewFile,BufRead *.tfvars set ft=tfvars
+  au! BufNewFile,BufRead *.tfvars set ft=tfvars
 augroup end
 
 " YAML Template
 augroup yaml_template
   au!
-  au BufNewFile,BufRead *.yaml.tmpl set ft=yaml
-  au BufNewFile,BufRead *.yml.tmpl set ft=yaml
+  au! BufNewFile,BufRead *.yaml.tmpl set ft=yaml
+  au! BufNewFile,BufRead *.yml.tmpl set ft=yaml
 augroup end
 
 " Minimap
@@ -286,12 +283,13 @@ endif
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
 \   'tfvars': ['terraform'],
-\   'python': ['yapf', 'black'],
+\   'python': ['yapf', 'autoimport', 'black', 'reorder-python-imports'],
 \}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
@@ -301,37 +299,22 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck --std ngx_lua'],
 \   'python': ['pylsp', 'pylint'],
-\   'ruby': ['standardrb', 'rubocop'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
-\   'tfvars': ['terraform', 'tflint','terraform-ls' ],
+\   'tfvars': ['terraform', 'tflint','terraform_ls' ],
 \}
 let g:ale_sign_column_always = 1
 "" ALE Python
-let g:ale_python_pylint_options = '--disable=missing-module-docstring'
+let g:ale_python_flake8_options = '--ignore=E501,W503'
+let g:ale_python_pylint_options = '--disable=missing-module-docstring --disable=line-too-long'
 let g:ale_python_pylsp_executable = 'pyls'
-let g:ale_python_pyls_config = {
-\   'pylsp': {
-\     'plugins': {
-\       'pycodestyle': {
-\         'enabled': v:false,
-\       },
-\       'pyflakes': {
-\         'enabled': v:false,
-\       },
-\       'pydocstyle': {
-\         'enabled': v:false,
-\       },
-\     },
-\   },
-\}
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
 let g:ale_lua_luacheck_options = '--std ngx_lua'
 "" ALE tflint
 "" TODO ALE tflint definition is out of date, does not
-""   match current tflint JSON fields or CLI options (--chdir).
+""   match tflint >=0.49.0 JSON fields or CLI options (--chdir).
 ""   See file:
 ""   https://github.com/dense-analysis/ale/blob/master/ale_linters/terraform/tflint.vim
 let g:ale_terraform_tflint_options = '-f json --module --chdir '.expand('%:p:h')
