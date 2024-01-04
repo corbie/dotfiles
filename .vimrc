@@ -288,7 +288,6 @@ endif
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
@@ -312,6 +311,9 @@ let g:ale_linters_ignore = {
 \   'vim' : ['vim-language-server'],
 \}
 let g:ale_sign_column_always = 1
+" let g:ale_root = {
+" \   'terraform': ale_linters#terraform#terraform_ls#GetProjectRoot(expand('%:p:h')),
+" \}
 "" ALE Python
 let g:ale_python_flake8_options = '--ignore=E501,W503'
 let g:ale_python_pylint_options = '--disable=missing-module-docstring --disable=line-too-long'
@@ -325,7 +327,7 @@ let g:ale_lua_luacheck_options = '--std ngx_lua'
 ""   match tflint >=0.49.0 JSON fields or CLI options (--chdir).
 ""   See file:
 ""   https://github.com/dense-analysis/ale/blob/master/ale_linters/terraform/tflint.vim
-let g:ale_terraform_tflint_options = '-f json --module --chdir '.expand('%:p:h')
+" let g:ale_terraform_tflint_options = '-f json --module --chdir '.expand('%:p:h')
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
