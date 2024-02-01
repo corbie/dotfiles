@@ -122,6 +122,9 @@ nmap <leader>nn :Lexplore %:p:h<cr>
 nmap <leader>v :vsplit $MYVIMRC<cr>
 " buffer list
 nmap <leader>l :ls<cr>
+" diff open windows
+command DA :windo diffthis
+command Da :diffoff!
 " show tags window
 nmap <leader>t :TagbarToggle<cr>
 " toggle line numbers
