@@ -21,6 +21,7 @@ else
 fi
 
 ## Aliases
+alias brewdump='brew bundle dump -v -f --describe'
 alias c-='cd -'
 alias cat='ccat'
 alias cdd='cd ..'
