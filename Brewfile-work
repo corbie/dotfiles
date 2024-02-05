@@ -1,151 +1,311 @@
-brew "2mol/tools/pboy"
-brew "act"
-brew "alpine"
-brew "arping"
-brew "asciidoc"
-brew "awscli"
-brew "ccat"
-brew "certbot"
-brew "cmake"
-brew "cmark"
-brew "code-minimap"
-brew "dhcpdump"
-brew "diction"
-brew "dive"
-brew "djvu2pdf"
-brew "docker", link: false
-brew "docker-compose", link: false
-brew "docker-machine"
-brew "docker-slim"
-brew "docutils"
-brew "dos2unix"
-brew "entr"
-brew "flake8"
-brew "fping"
-brew "fzf"
-brew "geoip"
-brew "gh"
-brew "git"
-brew "git-lfs"
-brew "gitlab-runner"
-brew "gnupg"
-brew "go"
-brew "gotags"
-brew "graphviz"
-brew "hadolint"
-brew "harfbuzz"
-brew "helm"
-brew "hping"
-brew "httpie"
-brew "httping"
-brew "ifstat"
-brew "iperf3"
-brew "ipython"
-brew "jq"
-brew "kind"
-brew "lft"
-brew "lftp"
-brew "lldpd"
-brew "m-cli"
-brew "macvim", link: false
-brew "mandoc"
-brew "markdown"
-brew "mas"
-brew "masscan"
-brew "md5deep"
-brew "mtr"
-brew "mypy"
-brew "mysql-client"
-brew "ncdu"
-brew "nmap"
-brew "openjdk@11"
-brew "pandoc"
-brew "parallel"
-brew "pidof"
-brew "pinentry"
-brew "prettier"
-brew "procmail"
-brew "protobuf"
-brew "ranger"
-brew "rclone"
-brew "recutils"
-brew "remind"
-brew "rename"
-brew "ripgrep"
-brew "rlwrap"
-brew "rsync"
-brew "sf-pwgen"
-brew "shellcheck"
-brew "shfmt"
-brew "smartmontools"
-brew "smartypants"
-brew "source-highlight"
-brew "sshuttle"
-brew "sslscan"
-brew "stunnel"
-brew "tcping"
-brew "tcpreplay"
-brew "tcptraceroute"
-brew "terraform"
-brew "terraform-ls"
-brew "terraform-lsp"
-brew "tflint"
-brew "the_silver_searcher"
-brew "tig"
-brew "tmux"
-brew "trash"
-brew "tree"
-brew "universal-ctags"
-brew "unixodbc"
-brew "vimpager"
-brew "virtualenv"
-brew "w3m"
-brew "watch"
-brew "webp"
-brew "wget"
-brew "wireshark", link: false
-cask "1password"
-cask "dash"
-cask "devdocs"
-cask "docker"
-cask "drawio"
-cask "firefox"
-cask "font-3270"
-cask "font-iosevka"
-cask "font-iosevka-aile"
-cask "font-iosevka-etoile"
-cask "fsnotes"
-cask "github"
-cask "google-chrome"
-cask "intellij-idea"
-cask "lofi"
-cask "macdown"
-cask "macvim"
-cask "mailtrackerblocker"
-cask "meld"
-cask "menumeters"
-cask "mesasqlite"
-cask "microsoft-teams"
-cask "notion"
-cask "nvalt"
-cask "sequel-ace"
-cask "slack"
-cask "spotify"
-cask "temurin8"
-cask "vlc"
-cask "wireshark"
-cask "wkhtmltopdf"
-cask "xquartz"
-cask "xscreensaver"
-cask "zoom"
-mas "Ghostery – Privacy Ad Blocker", id: 1436953057
 tap "2mol/tools"
 tap "apparition47/tap"
+tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "saulpw/vd"
 tap "universal-ctags/universal-ctags"
+# Run your GitHub Actions locally
+brew "act"
+# News and email agent
+brew "alpine"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# Utility to check whether MAC addresses are already taken on a LAN
+brew "arping"
+# Source-code syntax highlighter
+brew "source-highlight"
+# Formatter/translator for text files to numerous formats
+brew "asciidoc"
+# Text processing system for reStructuredText
+brew "docutils"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Security-oriented static analyser for Python code
+brew "bandit"
+# Like cat but displays content with syntax highlighting
+brew "ccat"
+# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
+brew "certbot"
+# Cross-platform make
+brew "cmake"
+# Strongly specified, highly compatible implementation of Markdown
+brew "cmark"
+# High performance code minimap generator
+brew "code-minimap"
+# Monitor DHCP traffic for debugging purposes
+brew "dhcpdump"
+# GNU diction and style
+brew "diction"
+# Tool for exploring each layer in a docker image
+brew "dive"
+# Small tool to convert Djvu files to PDF files
+brew "djvu2pdf"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
+# Isolated development environments using Docker
+brew "docker-compose"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine"
+# Minify and secure Docker images
+brew "docker-slim"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# .NET Core
+brew "dotnet"
+# Run arbitrary commands when files change
+brew "entr"
+# AST-based pattern checker for JavaScript
+brew "eslint"
+# Scriptable ping program for checking if multiple hosts are up
+brew "fping"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# This library is for the GeoIP Legacy format (dat)
+brew "geoip"
+# Distributed revision control system
+brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Git extension for versioning large files
+brew "git-lfs"
+# Passphrase entry dialog utilizing the Assuan protocol
+brew "pinentry"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Tag generator for Go, compatible with ctags
+brew "gotags"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Smarter Dockerfile linter to validate best practices
+brew "hadolint"
+# Kubernetes package manager
+brew "helm"
+# Command-line oriented TCP/IP packet assembler/analyzer
+brew "hping"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Ping-like tool for HTTP requests
+brew "httping"
+# Tool to report network interface bandwidth
+brew "ifstat"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# Interactive computing in Python
+brew "ipython"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Command-line note taker
+brew "jrnl"
+# Run local Kubernetes cluster in Docker
+brew "kind"
+# Layer Four Traceroute (LFT), an advanced traceroute tool
+brew "lft"
+# Sophisticated file transfer program
+brew "lftp"
+# Implementation of IEEE 802.1ab (LLDP)
+brew "lldpd"
+# Swiss Army Knife for macOS
+brew "m-cli"
+# GUI for vim, made for macOS
+brew "macvim", link: false
+# UNIX manpage compiler toolset
+brew "mandoc"
+# Text-to-HTML conversion tool
+brew "markdown"
+# Mac App Store command-line interface
+brew "mas"
+# TCP port scanner, scans entire Internet in under 5 minutes
+brew "masscan"
+# Recursively compute digests on files/directories
+brew "md5deep"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# Open source relational database management system
+brew "mysql-client"
+# NCurses Disk Usage
+brew "ncdu"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node@14"
+# Manage multiple Node.js versions
+brew "nvm"
+# Development kit for the Java programming language
+brew "openjdk@11"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Shell command parallelization utility
+brew "parallel"
+# Display the PID number for a given process name
+brew "pidof"
+# Object-relational database system
+brew "postgresql@15"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
+# Autonomous mail processor
+brew "procmail"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# File browser
+brew "ranger"
+# Rsync for cloud storage
+brew "rclone"
+# Tools to work with human-editable, plain text data files
+brew "recutils"
+# Sophisticated calendar and alarm
+brew "remind"
+# Perl-powered file rename script with many helpful built-ins
+brew "rename"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Readline wrapper: adds readline support to tools that lack it
+brew "rlwrap"
+# Utility that provides fast incremental file transfer
+brew "rsync"
+# Spreadsheet program for the terminal, using ncurses
+brew "sc-im"
+# Generate passwords using SecurityFoundation framework
+brew "sf-pwgen"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# SMART hard drive monitoring
+brew "smartmontools"
+# Typography prettifier
+brew "smartypants"
+# Proxy server that works as a poor man's VPN
+brew "sshuttle"
+# Test SSL/TLS enabled services to discover supported cipher suites
+brew "sslscan"
+# SSL tunneling program
+brew "stunnel"
+# TCP connect to the given IP/port combo
+brew "tcping"
+# Replay saved tcpdump files at arbitrary speeds
+brew "tcpreplay"
+# Traceroute implementation using TCP packets
+brew "tcptraceroute"
+# Terraform Language Server
+brew "terraform-ls"
+# Language Server Protocol for Terraform
+brew "terraform-lsp"
+# Linter for Terraform files
+brew "tflint"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# CLI tool that moves files or folder to the trash
+brew "trash"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Network diagnostic tool, inspired by mtr
+brew "trippy"
+# Maintained ctags implementation
+brew "universal-ctags"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# Use ViM as PAGER
+brew "vimpager"
+# Vim script Language Lint
+brew "vint"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
+# Pager/text based browser
+brew "w3m"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# Graphical network analyzer and capture tool
+brew "wireshark", link: false
+# Formatter for python code
+brew "yapf"
+# Small .pdf management utility
+brew "2mol/tools/pboy"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# API documentation browser and code snippet manager
+cask "dash"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Full-featured desktop app for DevDocs.io
+cask "devdocs"
+# Online diagram software
+cask "drawio"
+# Web browser
+cask "firefox"
+# Derived from the x3270 font
+cask "font-3270"
+# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
+cask "font-iosevka"
+# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
+cask "font-iosevka-aile"
+# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
+cask "font-iosevka-etoile"
+# Notes manager
+cask "fsnotes"
+# Desktop client for GitHub repositories
+cask "github"
+# Web browser
+cask "google-chrome"
+# Java IDE by JetBrains
+cask "intellij-idea"
+# Spotify player with WebGL visualizations
+cask "lofi"
+# Open-source Markdown editor
+cask "macdown"
+# Text editor
+cask "macvim"
+# Visual diff and merge tool
+cask "meld"
+# Set of CPU, memory, disk, and network monitoring tools
+cask "menumeters"
+# Create, design and alter an SQLite3 database
+cask "mesasqlite"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# App to write, plan, collaborate, and get organized
+cask "notion"
+# Note taking app
+cask "nvalt"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
+# MySQL/MariaDB database management
+cask "sequel-ace"
+# Music streaming service
+cask "spotify"
+# Multimedia player
+cask "vlc"
+# Network protocol analyzer
+cask "wireshark"
+# HTML to PDF renderer
+cask "wkhtmltopdf"
+# Open-source version of the X.Org X Window System
+cask "xquartz"
+# Screen savers
+cask "xscreensaver"
+# Video communication and virtual meeting platform
+cask "zoom"
+mas "1Blocker", id: 1365531024
+mas "Keeper for Safari", id: 6444685332
+mas "Keeper Password Manager", id: 414781829
+mas "Slack", id: 803453959
