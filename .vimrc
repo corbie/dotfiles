@@ -184,6 +184,7 @@ augroup end
 augroup bash
   au!
   au! BufNewFile,BufRead *.profile set ft=bash
+  au BufNewFile,BufRead *.sh  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
   au BufNewFile,BufRead *.sh let b:slime_vimterminal_cmd = "/bin/bash -l"
 augroup end
 
@@ -325,6 +326,8 @@ let g:ale_python_pylsp_executable = 'pyls'
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
 let g:ale_lua_luacheck_options = '--std ngx_lua'
+"" ALE shfmt
+let g:ale_sh_shfmt_options = '-i 4 %'
 "" ALE tflint
 "" TODO ALE tflint definition is out of date, does not
 ""   match tflint >=0.49.0 JSON fields or CLI options (--chdir).
