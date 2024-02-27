@@ -1,6 +1,6 @@
 # Environment
 ## Shell Options
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
 export HISTIGNORE='ls:bg:fg:history'
 export HISTSIZE=100000
 # shopt -s autocd     # automatically cd if first arg is a directory
