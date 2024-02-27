@@ -2,8 +2,10 @@ tap "2mol/tools"
 tap "apparition47/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "homebrew/core"
 tap "homebrew/services"
 tap "saulpw/vd"
 tap "universal-ctags/universal-ctags"
@@ -19,12 +21,12 @@ brew "arping"
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
-# Text processing system for reStructuredText
-brew "docutils"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Security-oriented static analyser for Python code
 brew "bandit"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
@@ -47,10 +49,10 @@ brew "djvu2pdf"
 brew "docker", link: false
 # Isolated development environments using Docker
 brew "docker-compose"
-# Create Docker hosts locally and on cloud providers
-brew "docker-machine"
 # Minify and secure Docker images
 brew "docker-slim"
+# Text processing system for reStructuredText
+brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
 # .NET Core
@@ -233,6 +235,8 @@ brew "wget"
 brew "wireshark", link: false
 # Formatter for python code
 brew "yapf"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Small .pdf management utility
 brew "2mol/tools/pboy"
 # Terraform
@@ -265,8 +269,6 @@ cask "github"
 cask "google-chrome"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# Spotify player with WebGL visualizations
-cask "lofi"
 # Open-source Markdown editor
 cask "macdown"
 # Text editor
@@ -281,8 +283,6 @@ cask "mesasqlite"
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# App to write, plan, collaborate, and get organized
-cask "notion"
 # Note taking app
 cask "nvalt"
 # Replacement for Docker Desktop
@@ -308,4 +308,5 @@ cask "zoom"
 mas "1Blocker", id: 1365531024
 mas "Keeper for Safari", id: 6444685332
 mas "Keeper Password Manager", id: 414781829
+mas "Paper", id: 1143513744
 mas "Slack", id: 803453959
