@@ -94,6 +94,10 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
+## Kubectl
+kubectl_completion_dir=/usr/local/etc/bash_completion.d
+. $kubectl_completion_dir/kubectl
+
 ## M
 m_completion_dir=/usr/local/etc/bash_completion.d
 . $m_completion_dir/m
@@ -116,6 +120,19 @@ function refresh_socket {
 	if [ -S $socket ]; then
 		export SSH_AUTH_SOCK=$socket
 	fi
+}
+
+## AWS SSO login
+function alogin {
+	if [ "$1" == "" ]; then
+		echo -e "Usage: alogin <profile>\n--------"
+		echo "$(aws configure list-profiles)"
+		return 1
+	fi
+	aws sso login --profile "$1"
+	export AWS_PROFILE="$1"
+	echo "Account ID: $(aws sts get-caller-identity | jq -r .Account)"
+	aws configure list
 }
 
 #if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
