@@ -184,7 +184,7 @@ augroup end
 augroup bash
   au!
   au! BufNewFile,BufRead *.profile set ft=bash
-  au BufNewFile,BufRead *.sh  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+  au BufNewFile,BufRead *.sh  setlocal cc=80
   au BufNewFile,BufRead *.sh let b:slime_vimterminal_cmd = "/bin/bash -l"
 augroup end
 
