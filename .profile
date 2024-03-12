@@ -9,7 +9,7 @@ shopt -s histappend # update history after each command
 shopt -s nocaseglob # ignore case when matching
 
 ## Path
-PATH=$PATH:/usr/local/sbin:$GOBIN
+PATH=${PATH}:/usr/local/sbin:${HOME}/Workspace/infra-terraform
 
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
@@ -67,7 +67,7 @@ PS1="\n\w\n\u@\h> "
 ## Go
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
-PATH=$PATH:$GOBIN
+PATH=${PATH}:${GOBIN}
 
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
@@ -143,4 +143,4 @@ function alogin {
 #fi
 
 # Added by OrbStack: command-line tools and integration
-source ~/.orbstack/shell/init.bash 2>/dev/null || :
+# source ~/.orbstack/shell/init.bash 2>/dev/null || :
