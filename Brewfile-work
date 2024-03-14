@@ -2,10 +2,8 @@ tap "2mol/tools"
 tap "apparition47/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "saulpw/vd"
 tap "universal-ctags/universal-ctags"
@@ -21,6 +19,10 @@ brew "arping"
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Security-oriented static analyser for Python code
@@ -107,6 +109,8 @@ brew "jq"
 brew "jrnl"
 # Run local Kubernetes cluster in Docker
 brew "kind"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
 brew "lft"
 # Sophisticated file transfer program
@@ -217,8 +221,6 @@ brew "tree"
 brew "trippy"
 # Maintained ctags implementation
 brew "universal-ctags"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Use ViM as PAGER
 brew "vimpager"
 # Vim script Language Lint
