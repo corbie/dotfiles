@@ -42,6 +42,7 @@ alias ls='ls -G'
 alias mc='mc --nocolor'
 alias po='popd'
 alias pu='pushd'
+alias tf="tf.sh"
 alias tfa='terraform apply temp.plan'
 alias tfp='terraform plan -out temp.plan'
 alias ws='cd ~/Workspace/'
@@ -58,7 +59,7 @@ fi
 ## Prompt
 case "$TERM" in
 screen* | xterm* | rxvt*)
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/\~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
