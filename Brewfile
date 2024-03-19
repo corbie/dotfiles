@@ -13,6 +13,12 @@ brew "libpng"
 brew "freetype"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
+brew "readline"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Core application library for C
 brew "glib"
 # Low-level library for pixel manipulation
@@ -21,8 +27,6 @@ brew "pixman"
 brew "cairo"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # Smart font renderer for non-Roman scripts
@@ -43,16 +47,12 @@ brew "alpine"
 brew "ant"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # C library for creating IP packets
 brew "libnet"
 # Utility to check whether MAC addresses are already taken on a LAN
 brew "arping"
 # GNU database manager
 brew "gdbm"
-# Library for command-line editing
-brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Source-code syntax highlighter
@@ -231,6 +231,8 @@ brew "jrnl"
 brew "json-c"
 # Run local Kubernetes cluster in Docker
 brew "kind"
+# Kubernetes command-line interface
+brew "kubernetes-cli", link: false
 # Build tool for Clojure
 brew "leiningen"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
@@ -306,7 +308,7 @@ brew "pth"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
-brew "qt"
+brew "qt", link: false
 # File browser
 brew "ranger"
 # Rsync for cloud storage
@@ -359,6 +361,8 @@ brew "tmux"
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Maintained ctags implementation
+brew "universal-ctags", args: ["HEAD"]
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
 # Use ViM as PAGER
@@ -387,8 +391,6 @@ brew "youtube-dl"
 brew "2mol/tools/pboy"
 # Scalable Web Platform by Extending NGINX with Lua
 brew "openresty/brew/openresty"
-# Maintained ctags implementation
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # Memory training application
 cask "anki"
 # Multi-track audio editor and recorder
@@ -401,7 +403,7 @@ cask "cyberduck"
 cask "dash"
 # Full-featured desktop app for DevDocs.io
 cask "devdocs"
-# App to build and share containerized applications and microservices
+# App to build and share containerised applications and microservices
 cask "docker"
 # Online diagram software
 cask "drawio"
@@ -465,7 +467,7 @@ cask "skype"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# Modular synthesizer
+# Modular synthesiser
 cask "sunvox"
 # Web browser focusing on security
 cask "tor-browser"
@@ -473,7 +475,7 @@ cask "tor-browser"
 cask "transmission"
 # Development environment
 cask "vagrant"
-# Open-source virtual modular synthesizer
+# Open-source virtual modular synthesiser
 cask "vcv-rack"
 # Multimedia player
 cask "vlc"
