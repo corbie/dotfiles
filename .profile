@@ -129,10 +129,27 @@ function alogin {
 		echo "$(aws configure list-profiles)"
 		return 1
 	fi
-	aws sso login --profile "$1"
+	aws sso login --profile "$1" || echo "Could not log in to AWS"; return 1
 	export AWS_PROFILE="$1"
 	echo "Account ID: $(aws sts get-caller-identity | jq -r .Account)"
 	aws configure list
+}
+
+## AWS Context
+function acontext {
+	echo "AWS session"
+	echo "----------"
+	if aws sts get-caller-identity; then
+		echo
+		echo "AWS profile"
+		echo "----------"
+		aws configure list
+		[ "$?" != "0" ] && echo "***********"
+	fi
+	echo
+	echo "Kubernetes context"
+	echo "----------"
+	kubectl config current-context
 }
 
 #if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
