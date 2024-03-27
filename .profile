@@ -129,7 +129,9 @@ function alogin {
 		echo "$(aws configure list-profiles)"
 		return 1
 	fi
-	aws sso login --profile "$1" || echo "Could not log in to AWS"; return 1
+	if ! aws sso login --profile "$1"; then
+		echo "Could not log in to AWS"; return 1
+	fi
 	export AWS_PROFILE="$1"
 	echo "Account ID: $(aws sts get-caller-identity | jq -r .Account)"
 	aws configure list
