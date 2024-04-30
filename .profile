@@ -59,11 +59,14 @@ fi
 ## Prompt
 case "$TERM" in
 screen* | xterm* | rxvt*)
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/\~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
 PS1="\n\w\n\u@\h> "
+
+## AWS
+export AWS_PROFILE=default
 
 ## Go
 export GOPATH=~/Workspace/go
