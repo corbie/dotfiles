@@ -29,6 +29,8 @@ brew "awscli"
 brew "bandit"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
@@ -89,6 +91,8 @@ brew "harfbuzz"
 brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Convert HCL2 to JSON
+brew "hcl2json"
 # Kubernetes package manager
 brew "helm"
 # Command-line oriented TCP/IP packet assembler/analyzer
@@ -167,6 +171,8 @@ brew "ranger"
 brew "rclone"
 # Tools to work with human-editable, plain text data files
 brew "recutils"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Sophisticated calendar and alarm
 brew "remind"
 # Perl-powered file rename script with many helpful built-ins
@@ -289,8 +295,6 @@ cask "microsoft-teams"
 cask "nvalt"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Administration and development platform for PostgreSQL
-cask "pgadmin4"
 # MySQL/MariaDB database management
 cask "sequel-ace"
 # Music streaming service
