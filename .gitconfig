@@ -22,6 +22,7 @@
 	d = diff --color-words
 	# df shows files differing between head and <ref>. Expects a <ref> argument.
 	df = diff --name-only
+	egrep = grep -E
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
 	recap = log --all --oneline --no-merges --author=corban@mosaic.tech
