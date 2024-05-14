@@ -45,6 +45,7 @@ alias pu='pushd'
 alias tf="tf.sh"
 alias tfa='terraform apply temp.plan'
 alias tfp='terraform plan -out temp.plan'
+alias rp='echo "Reloading ~/.profile"; source ~/.profile'
 alias ws='cd ~/Workspace/'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
@@ -112,6 +113,9 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 ## MAS
 mas_completion_dir=/usr/local/etc/bash_completion.d
 . $mas_completion_dir/mas
+
+## MySQL
+PATH=${PATH}:/usr/local/opt/mysql-client/bin
 
 # Functions
 ## SSH agent forwarding socket environment workaround
