@@ -61,7 +61,7 @@ fi
 case "$TERM" in
 screen* | xterm* | rxvt*)
 	# the $DIRSTACK substitution of "~" for $HOME does not work in bash 4
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo :{${VIRTUAL_ENV##*/}})" "\n\u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo \ venv:\(${VIRTUAL_ENV//$HOME/\~}\))" "\n\u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
@@ -171,3 +171,5 @@ function acontext {
 
 # Added by OrbStack: command-line tools and integration
 # source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+fortune
