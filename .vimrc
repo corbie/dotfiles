@@ -33,7 +33,6 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf'
 Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' }
 Plug 'Lokaltog/vim-monotone'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -63,6 +62,7 @@ Plug 'w0rp/ale'
 Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --go-completer' }
 call plug#end()
 
 
@@ -177,7 +177,7 @@ augroup python
   au!
   au! BufNewFile,BufRead *.py  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
   au BufNewFile,BufRead *.py  setlocal foldmethod=indent foldlevel=3
-  au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="/usr/local/bin/ipython"
+  au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="ipython"
 augroup end
 
 " bash
@@ -319,8 +319,9 @@ let g:ale_sign_column_always = 1
 " \   'terraform': ale_linters#terraform#terraform_ls#GetProjectRoot(expand('%:p:h')),
 " \}
 "" ALE Python
+let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
-let g:ale_python_pylint_options = '--disable=missing-module-docstring --disable=line-too-long'
+let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods'
 let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
@@ -352,6 +353,7 @@ let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_auto_hover=''
+let g:ycm_enable_inlay_hints=1
 let g:ycm_language_server = [
 \   { 'name': 'lua',
 \     'filetypes': [ 'lua' ],
