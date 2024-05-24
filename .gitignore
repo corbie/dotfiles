@@ -1,5 +1,6 @@
-.menv
 .dotfiles
+.ipython/profile_default/history.sqlite
+.venv
 vim/.netrwhist
 vim/autoload
 vim/cache

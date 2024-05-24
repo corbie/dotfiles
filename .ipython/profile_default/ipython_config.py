@@ -41,6 +41,7 @@ c.InteractiveShellApp.exec_lines.append("%autoreload 2")
 c.InteractiveShellApp.exec_lines.append(
     'print(">>> Warning: disable autoreload in ipython_config.py to improve performance.")'
 )
+c.InteractiveShellApp.exec_lines.append("pdb")
 
 ## A list of dotted module names of IPython extensions to load.
 #  Default: []
