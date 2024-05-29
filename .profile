@@ -47,6 +47,8 @@ alias tfa='terraform apply temp.plan'
 alias tfp='terraform plan -out temp.plan'
 alias rp='echo "Reloading ~/.profile"; source ~/.profile'
 alias ws='cd ~/Workspace/'
+alias va='. .venv/bin/activate'
+alias vd='deactivate'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 	alias pui='pushd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'

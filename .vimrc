@@ -321,7 +321,7 @@ let g:ale_sign_column_always = 1
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
-let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods'
+let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods --disable=broad-except'
 let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
