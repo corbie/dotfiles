@@ -164,6 +164,52 @@ function acontext {
 	kubectl config current-context
 }
 
+## Utility functions
+function print() {
+	echo ">>> [$(time_now)] $1"
+}
+function print_debug() {
+	[ "$DEBUG" == "1" ] && echo "### [$(time_now)] $1"
+}
+function print_err() {
+	echo "*** [$(time_now)] $1"
+}
+function time_now() {
+	date '+%Y-%m-%d %H:%M:%S' | tr -d '\n'
+}
+
+## Set kubectl context
+function set_kubectl_context() {
+	local current_context
+	local contexts
+	local pattern
+	pattern="$1"
+	function get_kubectl_context() {
+		kubectl config current-context | tr -d '\n'
+	}
+	current_context="$(get_kubectl_context)"
+	if [[ "$current_context" =~ $pattern ]]; then
+		print "kubectl current context now '$current_context'"
+		return
+	fi
+	print "The current kubectl context does not match '${pattern}'"
+	# kubectl config get-contexts does not support structured output so we need this mess
+	contexts="$(kubectl config get-contexts --no-headers | sed -E -e 's/^[ \*]+([a-z:0-9\/-]+)[ ].+$/\1/')"
+	for context in $contexts; do
+		if [[ "$context" =~ $pattern ]]; then
+			print "Changing active kubectl context"
+			kubectl config use-context "$context"
+			print "kubectl current context now '$(get_kubectl_context)'"
+			return
+		fi
+	done
+	print_err "Could not find a kubectl context matching '${pattern}'"
+	print_err "Available contexts are:"
+	echo "$contexts"
+	exit 1
+}
+
+
 #if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
 #  # SSH auth socket exists, NOP
 #  true
