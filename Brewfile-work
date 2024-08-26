@@ -7,8 +7,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "saulpw/vd"
 tap "universal-ctags/universal-ctags"
-# Run your GitHub Actions locally
-brew "act"
 # News and email agent
 brew "alpine"
 # Image format providing lossless and lossy compression for web images
@@ -65,6 +63,8 @@ brew "dotnet"
 brew "entr"
 # AST-based pattern checker for JavaScript
 brew "eslint"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
 # Scriptable ping program for checking if multiple hosts are up
 brew "fping"
 # Command-line fuzzy finder written in Go
@@ -140,13 +140,13 @@ brew "midnight-commander"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # Open source relational database management system
+brew "mysql"
+# Open source relational database management system
 brew "mysql-client"
 # NCurses Disk Usage
 brew "ncdu"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
-brew "node@14"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
@@ -157,6 +157,10 @@ brew "pandoc"
 brew "parallel"
 # Display the PID number for a given process name
 brew "pidof"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Object-relational database system
 brew "postgresql@15"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
@@ -165,6 +169,8 @@ brew "prettier"
 brew "procmail"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# It's not just a linter that annoys you!
+brew "pylint"
 # File browser
 brew "ranger"
 # Rsync for cloud storage
@@ -239,7 +245,7 @@ brew "w3m"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Graphical network analyzer and capture tool
+# Network analyzer and capture tool - without graphical user interface
 brew "wireshark", link: false
 # Formatter for python code
 brew "yapf"
@@ -251,6 +257,8 @@ brew "2mol/tools/pboy"
 brew "hashicorp/tap/terraform"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # API documentation browser and code snippet manager
 cask "dash"
 # Universal database tool and SQL client
@@ -261,13 +269,9 @@ cask "devdocs"
 cask "drawio"
 # Web browser
 cask "firefox"
-# Derived from the x3270 font
 cask "font-3270"
-# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka"
-# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka-aile"
-# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka-etoile"
 # Notes manager
 cask "fsnotes"
@@ -277,8 +281,6 @@ cask "github"
 cask "google-chrome"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# Open-source Markdown editor
-cask "macdown"
 # Text editor
 cask "macvim"
 # Visual diff and merge tool
@@ -301,6 +303,8 @@ cask "sequel-ace"
 cask "spotify"
 # Multimedia player
 cask "vlc"
+# Scan, monitor, and troubleshoot wireless networks
+cask "wifi-explorer"
 # Network protocol analyzer
 cask "wireshark"
 # HTML to PDF renderer
@@ -316,3 +320,4 @@ mas "Keeper for Safari", id: 6444685332
 mas "Keeper Password Manager", id: 414781829
 mas "Paper", id: 1143513744
 mas "Slack", id: 803453959
+mas "Tomato 2", id: 1494210770
