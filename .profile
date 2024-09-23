@@ -80,6 +80,9 @@ PATH=${PATH}:${GOBIN}
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
 
+## MySQL
+PATH=${PATH}:/usr/local/opt/mysql-client/bin
+
 ## NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -103,7 +106,7 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Kubectl
 kubectl_completion_dir=/usr/local/etc/bash_completion.d
-. $kubectl_completion_dir/kubectl
+[[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
 
 ## M
 m_completion_dir=/usr/local/etc/bash_completion.d
@@ -115,9 +118,6 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 ## MAS
 mas_completion_dir=/usr/local/etc/bash_completion.d
 . $mas_completion_dir/mas
-
-## MySQL
-PATH=${PATH}:/usr/local/opt/mysql-client/bin
 
 # Functions
 ## SSH agent forwarding socket environment workaround
