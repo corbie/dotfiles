@@ -35,7 +35,7 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
 alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias ghpr="gh pr create"
-alias hg='history | grep'
+alias hg='history | grep -i'
 alias lh='ls -lh'
 alias ll='ls -l'
 alias ls='ls -G'
@@ -63,7 +63,8 @@ fi
 case "$TERM" in
 screen* | xterm* | rxvt*)
 	# the $DIRSTACK substitution of "~" for $HOME does not work in bash 4
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo \ venv:\(${VIRTUAL_ENV//$HOME/\~}\))" "\n\u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n$(date "+[%Y-%M-%d %H:%M:%S]" 
+	)\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo \ venv:\(${VIRTUAL_ENV//$HOME/\~}\))" "\n\u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
