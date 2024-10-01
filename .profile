@@ -63,7 +63,7 @@ fi
 case "$TERM" in
 screen* | xterm* | rxvt*)
 	# the $DIRSTACK substitution of "~" for $HOME does not work in bash 4
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n$([[ -n $VIRTUAL_ENV ]] && echo \>\>\> VENV:\(${VIRTUAL_ENV//$HOME/\~}\))\n${DIRSTACK[*]//$HOME/~}" "\n$(date "+[%Y-%M-%d %H:%M:%S]") \u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n$([[ -n $VIRTUAL_ENV ]] && echo \>\>\> VENV:\(${VIRTUAL_ENV//$HOME/\~}\))\n${DIRSTACK[*]//$HOME/~}" "\n$(date "+[%Y-%m-%d %H:%M:%S]") \u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
