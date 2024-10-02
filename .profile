@@ -10,6 +10,7 @@ shopt -s nocaseglob # ignore case when matching
 
 ## Path
 PATH=${PATH}:/usr/local/sbin:${HOME}/Workspace/infra-terraform
+PATH=/opt/homebrew/bin:$PATH
 
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
@@ -89,7 +90,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Command completion
 ## AWS CLI
-aws_completion_dir=/usr/local/etc/bash_completion.d
+aws_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
@@ -97,7 +98,7 @@ docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
 . $docker_completion_dir/docker.bash-completion
 
 ## Git
-git_completion_dir=/usr/local/etc/bash_completion.d
+git_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $git_completion_dir/git-completion.bash
 . $git_completion_dir/git-prompt.sh
 export GIT_PS1_SHOWCOLORHINTS=true
@@ -105,18 +106,18 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Kubectl
-kubectl_completion_dir=/usr/local/etc/bash_completion.d
+kubectl_completion_dir=/opt/homebrew/etc/bash_completion.d
 [[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
 
 ## M
-m_completion_dir=/usr/local/etc/bash_completion.d
+m_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $m_completion_dir/m
 
 ## Make
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 ## MAS
-mas_completion_dir=/usr/local/etc/bash_completion.d
+mas_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $mas_completion_dir/mas
 
 # Functions
