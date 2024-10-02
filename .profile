@@ -98,8 +98,8 @@ aws_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
-. $docker_completion_dir/docker.bash-completion
+docker_completion_dir=/opt/homebrew/etc/bash_completion.d
+. $docker_completion_dir/docker
 
 ## Git
 git_completion_dir=/opt/homebrew/etc/bash_completion.d
