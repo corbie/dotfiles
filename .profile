@@ -16,7 +16,11 @@ PATH=/opt/homebrew/bin:$PATH
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	export BASH_SILENCE_DEPRECATION_WARNING=1
-	export EDITOR='/usr/local/bin/vi'
+	if [[ -d /opt/homebrew ]]; then
+		export EDITOR='/opt/homebrew/bin/vi'
+	else
+		export EDITOR='/usr/local/bin/vi'
+	fi
 else
 	export EDITOR='/usr/bin/vim'
 fi
@@ -220,5 +224,3 @@ function set_kubectl_context() {
 
 # Added by OrbStack: command-line tools and integration
 # source ~/.orbstack/shell/init.bash 2>/dev/null || :
-
-fortune
