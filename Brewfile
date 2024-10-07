@@ -421,6 +421,8 @@ cask "fsnotes"
 cask "google-cloud-sdk"
 # Open-source video transcoder
 cask "handbrake"
+# Keyboard shortcuts for every button on your screen
+cask "homerow"
 # Vector graphics editor
 cask "inkscape"
 # Play music online with friends

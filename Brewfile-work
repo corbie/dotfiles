@@ -277,6 +277,8 @@ cask "fsnotes"
 cask "github"
 # Web browser
 cask "google-chrome"
+# Keyboard shortcuts for every button on your screen
+cask "homerow"
 # Java IDE by JetBrains
 cask "intellij-idea"
 # Text editor
@@ -320,5 +322,6 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
+mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
