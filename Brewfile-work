@@ -2,8 +2,6 @@ tap "2mol/tools"
 tap "apparition47/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "saulpw/vd"
 tap "universal-ctags/universal-ctags"
@@ -27,6 +25,8 @@ brew "awscli"
 brew "bandit"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Programmable completion for Bash 3.2
+brew "bash-completion"
 # Yet another cross-platform graphical process/system monitor
 brew "bottom"
 # Like cat but displays content with syntax highlighting
@@ -45,6 +45,8 @@ brew "dhcpdump"
 brew "diction"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Pack, ship and run any application as a lightweight container
@@ -85,8 +87,6 @@ brew "gnupg"
 brew "go"
 # Tag generator for Go, compatible with ctags
 brew "gotags"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
@@ -95,8 +95,6 @@ brew "hadolint"
 brew "hcl2json"
 # Kubernetes package manager
 brew "helm"
-# Command-line oriented TCP/IP packet assembler/analyzer
-brew "hping"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Ping-like tool for HTTP requests
@@ -139,6 +137,8 @@ brew "md5deep"
 brew "midnight-commander"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Open source relational database management system
 brew "mysql"
 # Open source relational database management system
@@ -167,8 +167,6 @@ brew "postgresql@15"
 brew "prettier"
 # Autonomous mail processor
 brew "procmail"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
 # It's not just a linter that annoys you!
 brew "pylint"
 # File browser
@@ -287,8 +285,6 @@ cask "macvim"
 cask "meld"
 # Set of CPU, memory, disk, and network monitoring tools
 cask "menumeters"
-# Create, design and alter an SQLite3 database
-cask "mesasqlite"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
@@ -316,8 +312,13 @@ cask "xscreensaver"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Blocker", id: 1365531024
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
 mas "Keeper for Safari", id: 6444685332
 mas "Keeper Password Manager", id: 414781829
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770

@@ -10,12 +10,17 @@ shopt -s nocaseglob # ignore case when matching
 
 ## Path
 PATH=${PATH}:/usr/local/sbin:${HOME}/Workspace/infra-terraform
+PATH=/opt/homebrew/bin:$PATH
 
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	export BASH_SILENCE_DEPRECATION_WARNING=1
-	export EDITOR='/usr/local/bin/vi'
+	if [[ -d /opt/homebrew ]]; then
+		export EDITOR='/opt/homebrew/bin/vi'
+	else
+		export EDITOR='/usr/local/bin/vi'
+	fi
 else
 	export EDITOR='/usr/bin/vim'
 fi
@@ -35,7 +40,7 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
 alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias ghpr="gh pr create"
-alias hg='history | grep'
+alias hg='history | grep -i'
 alias lh='ls -lh'
 alias ll='ls -l'
 alias ls='ls -G'
@@ -63,7 +68,7 @@ fi
 case "$TERM" in
 screen* | xterm* | rxvt*)
 	# the $DIRSTACK substitution of "~" for $HOME does not work in bash 4
-	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n${DIRSTACK[*]//$HOME/~}$([[ -n $VIRTUAL_ENV ]] && echo \ venv:\(${VIRTUAL_ENV//$HOME/\~}\))" "\n\u@\h> " ":{%s}"; history -a'
+	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n$([[ -n $VIRTUAL_ENV ]] && echo \>\>\> VENV:\(${VIRTUAL_ENV//$HOME/\~}\))\n${DIRSTACK[*]//$HOME/~}" "\n$(date "+[%Y-%m-%d %H:%M:%S]") \u@\h> " ":{%s}"; history -a'
 	;;
 *) ;;
 esac
@@ -80,21 +85,24 @@ PATH=${PATH}:${GOBIN}
 ## Java
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
 
+## MySQL
+PATH=${PATH}:/usr/local/opt/mysql-client/bin
+
 ## NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Command completion
 ## AWS CLI
-aws_completion_dir=/usr/local/etc/bash_completion.d
+aws_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/Applications/Docker.app/Contents/Resources/etc
-. $docker_completion_dir/docker.bash-completion
+docker_completion_dir=/opt/homebrew/etc/bash_completion.d
+. $docker_completion_dir/docker
 
 ## Git
-git_completion_dir=/usr/local/etc/bash_completion.d
+git_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $git_completion_dir/git-completion.bash
 . $git_completion_dir/git-prompt.sh
 export GIT_PS1_SHOWCOLORHINTS=true
@@ -102,22 +110,19 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Kubectl
-kubectl_completion_dir=/usr/local/etc/bash_completion.d
-. $kubectl_completion_dir/kubectl
+kubectl_completion_dir=/opt/homebrew/etc/bash_completion.d
+[[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
 
 ## M
-m_completion_dir=/usr/local/etc/bash_completion.d
+m_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $m_completion_dir/m
 
 ## Make
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 ## MAS
-mas_completion_dir=/usr/local/etc/bash_completion.d
+mas_completion_dir=/opt/homebrew/etc/bash_completion.d
 . $mas_completion_dir/mas
-
-## MySQL
-PATH=${PATH}:/usr/local/opt/mysql-client/bin
 
 # Functions
 ## SSH agent forwarding socket environment workaround
@@ -219,5 +224,3 @@ function set_kubectl_context() {
 
 # Added by OrbStack: command-line tools and integration
 # source ~/.orbstack/shell/init.bash 2>/dev/null || :
-
-fortune
