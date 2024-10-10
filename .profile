@@ -86,7 +86,7 @@ PATH=${PATH}:${GOBIN}
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
 
 ## MySQL
-PATH=${PATH}:/usr/local/opt/mysql-client/bin
+PATH=${PATH}:/opt/homebrew/opt/mysql-client@8.4/bin
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
