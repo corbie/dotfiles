@@ -9,7 +9,7 @@ shopt -s histappend # update history after each command
 shopt -s nocaseglob # ignore case when matching
 
 ## Path
-PATH=${PATH}:/usr/local/sbin:${HOME}/Workspace/infra-terraform
+PATH=${PATH}:/usr/local/sbin
 
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
