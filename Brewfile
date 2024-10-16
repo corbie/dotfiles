@@ -509,6 +509,7 @@ mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Pixelmator", id: 407963104
 mas "Save to Reader", id: 1640236961
+mas "SignalScope X", id: 1304775893
 mas "Slack", id: 803453959
 mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353

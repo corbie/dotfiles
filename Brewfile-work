@@ -313,7 +313,7 @@ cask "xquartz"
 cask "xscreensaver"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Blocker", id: 1365531024
+mas "Adblock Plus", id: 1432731683
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keeper for Safari", id: 6444685332
@@ -323,5 +323,6 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Save to Reader", id: 1640236961
+mas "SignalScope X", id: 1304775893
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
