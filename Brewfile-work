@@ -137,12 +137,12 @@ brew "md5deep"
 brew "midnight-commander"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
+# Open source relational database management system
+brew "mysql-client@8.4"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Open source relational database management system
-brew "mysql"
-# Open source relational database management system
-brew "mysql-client"
+brew "mysql@8.4"
 # NCurses Disk Usage
 brew "ncdu"
 # Port scanning utility for large networks
