@@ -51,10 +51,6 @@ brew "webp"
 brew "libnet"
 # Utility to check whether MAC addresses are already taken on a LAN
 brew "arping"
-# GNU database manager
-brew "gdbm"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Source-code syntax highlighter
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
@@ -67,10 +63,10 @@ brew "at-spi2-core"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Text processing system for reStructuredText
-brew "docutils"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
 # (Arguably) the best yacc variant
 brew "byacc"
 # Asynchronous DNS library
@@ -83,8 +79,6 @@ brew "cdpr"
 brew "dialog"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Implementation of the Chez Scheme language
 brew "chezscheme"
 # Compiler for the Scheme programming language
@@ -109,6 +103,8 @@ brew "diction"
 brew "jpeg"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
+# Text processing system for reStructuredText
+brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
 # GNU multiple precision arithmetic library
@@ -137,6 +133,8 @@ brew "libpq"
 brew "eralchemy"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
 # Scriptable ping program for checking if multiple hosts are up
 brew "fping"
 # Libpcap-based NetFlow probe
@@ -147,6 +145,8 @@ brew "fswatch"
 brew "fzf"
 # R7RS Scheme implementation, developed to be a handy script interpreter
 brew "gauche"
+# GNU database manager
+brew "gdbm"
 # This library is for the GeoIP Legacy format (dat)
 brew "geoip"
 # YAML Parser
@@ -165,8 +165,12 @@ brew "git"
 brew "git-lfs"
 # Bidirectional operation between a Subversion repository and Git
 brew "git-svn"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Ruby client and CLI for GitLab API
 brew "gitlab-gem"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
 # Library for handling page faults in user mode
@@ -211,8 +215,6 @@ brew "ncurses"
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
-# Common Lisp ANSI-standard Hyperspec
-brew "hyperspec"
 # Tool to report network interface bandwidth
 brew "ifstat"
 # String tool
@@ -231,8 +233,6 @@ brew "jrnl"
 brew "json-c"
 # Run local Kubernetes cluster in Docker
 brew "kind"
-# Kubernetes command-line interface
-brew "kubernetes-cli", link: false
 # Build tool for Clojure
 brew "leiningen"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
@@ -305,10 +305,12 @@ brew "poppler"
 brew "procmail"
 # GNU Portable THreads
 brew "pth"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
-brew "qt", link: false
+brew "qt"
 # File browser
 brew "ranger"
 # Rsync for cloud storage
@@ -323,8 +325,6 @@ brew "rename"
 brew "ripgrep"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Powerful, clean, object-oriented scripting language
 brew "ruby@3.0"
 # Scheme byte-code interpreter
@@ -377,7 +377,7 @@ brew "weechat"
 brew "wget"
 # Fetch summaries from MediaWiki wikis, like Wikipedia
 brew "wiki"
-# Graphical network analyzer and capture tool
+# Network analyzer and capture tool - without graphical user interface
 brew "wireshark", link: false
 # Cross-platform C++ GUI toolkit
 brew "wxwidgets"
@@ -411,9 +411,7 @@ cask "drawio"
 cask "firefox"
 # Tool to turn any web page into a desktop app
 cask "flotato"
-# Derived from the x3270 font
 cask "font-3270"
-# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka"
 # Notes manager
 cask "fsnotes"
@@ -491,15 +489,14 @@ cask "xquartz"
 cask "xscreensaver"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Blocker", id: 1365531024
 mas "1Password 7", id: 1333542190
 mas "Audulus 4", id: 1592022030
 mas "Balance Lock", id: 1019371109
 mas "Calca", id: 635758264
 mas "Exporter", id: 1099120373
 mas "GarageBand", id: 682658836
-mas "Ghostery – Privacy Ad Blocker", id: 1436953057
 mas "Graphic", id: 404705039
-mas "Instapaper Save", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Kindle Classic", id: 405399194
 mas "Magnet", id: 441258766
@@ -511,9 +508,11 @@ mas "Oscilloppoi", id: 1102313524
 mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Pixelmator", id: 407963104
+mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
 mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
+mas "Tomato 2", id: 1494210770
 mas "Tomato One", id: 907364780
 mas "ToothFairy", id: 1191449274
 mas "WiFi Explorer", id: 494803304

@@ -9,18 +9,19 @@ shopt -s histappend # update history after each command
 shopt -s nocaseglob # ignore case when matching
 
 ## Path
-PATH=${PATH}:/usr/local/sbin:${HOME}/Workspace/infra-terraform
-PATH=/opt/homebrew/bin:$PATH
+PATH=${PATH}:/usr/local/sbin
 
 ## Per-OS environment
 export UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 	if [[ -d /opt/homebrew ]]; then
-		export EDITOR='/opt/homebrew/bin/vi'
+		export BREW_PREFIX='/opt/homebrew'
 	else
-		export EDITOR='/usr/local/bin/vi'
+		export BREW_PREFIX='/usr/local'
 	fi
+	export EDITOR="${BREW_PREFIX}/bin/vi"
+	PATH=${BREW_PREFIX}/bin:$PATH
 else
 	export EDITOR='/usr/bin/vim'
 fi
@@ -86,7 +87,7 @@ PATH=${PATH}:${GOBIN}
 export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
 
 ## MySQL
-PATH=${PATH}:/opt/homebrew/opt/mysql-client@8.4/bin
+PATH=${PATH}:${BREW_PREFIX}/opt/mysql-client@8.4/bin
 
 ## NVM
 export NVM_DIR="$HOME/.nvm"
@@ -94,15 +95,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # Command completion
 ## AWS CLI
-aws_completion_dir=/opt/homebrew/etc/bash_completion.d
+aws_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $aws_completion_dir/aws_bash_completer
 
 ## Docker
-docker_completion_dir=/opt/homebrew/etc/bash_completion.d
+docker_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $docker_completion_dir/docker
 
 ## Git
-git_completion_dir=/opt/homebrew/etc/bash_completion.d
+git_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $git_completion_dir/git-completion.bash
 . $git_completion_dir/git-prompt.sh
 export GIT_PS1_SHOWCOLORHINTS=true
@@ -110,18 +111,18 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Kubectl
-kubectl_completion_dir=/opt/homebrew/etc/bash_completion.d
+kubectl_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 [[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
 
 ## M
-m_completion_dir=/opt/homebrew/etc/bash_completion.d
+m_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $m_completion_dir/m
 
 ## Make
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 ## MAS
-mas_completion_dir=/opt/homebrew/etc/bash_completion.d
+mas_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $mas_completion_dir/mas
 
 # Functions
