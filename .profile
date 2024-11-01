@@ -22,6 +22,7 @@ if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	fi
 	export EDITOR="${BREW_PREFIX}/bin/vi"
 	PATH=${BREW_PREFIX}/bin:$PATH
+	PATH=${BREW_PREFIX}/sbin:$PATH
 else
 	export EDITOR='/usr/bin/vim'
 fi
