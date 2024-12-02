@@ -41,6 +41,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'guns/vim-sexp', { 'for': 'fennel' }
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'ludovicchabant/vim-gutentags'

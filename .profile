@@ -183,11 +183,16 @@ function time_now() {
 }
 
 ## Set kubectl context
-function set_kubectl_context() {
+function kcontext() {
 	local current_context
 	local contexts
 	local pattern
 	pattern="$1"
+	if [ "$1" == "" ]; then
+		echo -e "Current kubectl context:"
+		get_kubectl_context
+		return 1
+	fi
 	function get_kubectl_context() {
 		kubectl config current-context | tr -d '\n'
 	}
@@ -210,7 +215,6 @@ function set_kubectl_context() {
 	print_err "Could not find a kubectl context matching '${pattern}'"
 	print_err "Available contexts are:"
 	echo "$contexts"
-	exit 1
 }
 
 
