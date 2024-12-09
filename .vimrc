@@ -156,6 +156,7 @@ nmap <leader>G :G<CR>
 nmap <leader>g gq<CR>
 nmap <leader>Gl :Commits<CR>
 " git shortcuts
+command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 " Github

@@ -188,14 +188,14 @@ function kcontext() {
 	local contexts
 	local pattern
 	pattern="$1"
+	function get_kubectl_context() {
+		kubectl config current-context | tr -d '\n'
+	}
 	if [ "$1" == "" ]; then
 		echo -e "Current kubectl context:"
 		get_kubectl_context
 		return 1
 	fi
-	function get_kubectl_context() {
-		kubectl config current-context | tr -d '\n'
-	}
 	current_context="$(get_kubectl_context)"
 	if [[ "$current_context" =~ $pattern ]]; then
 		print "kubectl current context now '$current_context'"
