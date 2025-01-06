@@ -193,7 +193,7 @@ augroup end
 " lua
 augroup lua
   au!
-  au! BufNewFile,BufRead *.lua let b:slime_vimterminal_cmd = "/usr/local/bin/lua -i -W"
+  au! BufNewFile,BufRead *.lua let b:slime_vimterminal_cmd = "/bin/bash -l"
 augroup end
 
 " SQL
@@ -365,7 +365,9 @@ let g:ycm_language_server = [
 \ ]
 
 " vim-slime
-let g:slime_target = 'vimterminal'
+let g:slime_target = 'tmux'
+let g:slime_default_config = { 'socket_name': 'default', 'target_pane': '{last}' }
+let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
 let g:slime_vimterminal_config = { 'vertical': 1 }
 
