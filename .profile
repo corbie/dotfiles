@@ -41,8 +41,8 @@ alias dc='docker-compose'
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
 alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
-alias ghpr="gh pr create"
 alias hg='history | grep -i'
+alias l1='ls -1'
 alias lh='ls -lh'
 alias ll='ls -l'
 alias ls='ls -G'
@@ -56,6 +56,7 @@ alias vd='deactivate'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 	alias pui='pushd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
+	alias puw='pushd "${HOME}/Workspace"'
 	alias tm='diskutil unmount /Volumes/*\ Mascheen'
 	alias ts='tmutil status'
 	alias tl='tmutil listbackups'
@@ -139,9 +140,16 @@ function refresh_socket {
 ## AWS SSO login
 function alogin {
 	if [ "$1" == "" ]; then
-		echo -e "Usage: alogin <profile>\n--------"
-		echo "$(aws configure list-profiles)"
-		return 1
+		echo "Current AWS session"
+		echo "----------"
+		if aws sts get-caller-identity; then
+			echo
+			echo "AWS profile"
+			echo "----------"
+			aws configure list
+			[ "$?" != "0" ] && echo "***********"
+		fi
+		return 0
 	fi
 	if ! aws sso login --profile "$1"; then
 		echo "Could not log in to AWS"; return 1
@@ -149,23 +157,6 @@ function alogin {
 	export AWS_PROFILE="$1"
 	echo "Account ID: $(aws sts get-caller-identity | jq -r .Account)"
 	aws configure list
-}
-
-## AWS Context
-function acontext {
-	echo "AWS session"
-	echo "----------"
-	if aws sts get-caller-identity; then
-		echo
-		echo "AWS profile"
-		echo "----------"
-		aws configure list
-		[ "$?" != "0" ] && echo "***********"
-	fi
-	echo
-	echo "Kubernetes context"
-	echo "----------"
-	kubectl config current-context
 }
 
 ## Utility functions
