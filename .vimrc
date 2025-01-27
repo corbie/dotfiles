@@ -93,7 +93,7 @@ set linebreak " ragged margins
 set matchpairs+=<:> " show matching <>
 set number " Show line numbers
 set ruler " Show current position
-set scrolloff=5 " keep three lines between the cursor and the bottom of the screen
+set scrolloff=2 " keep three lines between the cursor and the bottom of the screen
 set showcmd
 set showmode
 set smartcase
