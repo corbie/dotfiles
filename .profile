@@ -138,7 +138,7 @@ function refresh_socket {
 }
 
 ## AWS SSO login
-function alogin {
+function acontext {
 	if [ "$1" == "" ]; then
 		echo "Current AWS session"
 		echo "----------"
@@ -185,7 +185,7 @@ function kcontext() {
 	if [ "$1" == "" ]; then
 		echo -e "Current kubectl context:"
 		get_kubectl_context
-		return 1
+		return
 	fi
 	current_context="$(get_kubectl_context)"
 	if [[ "$current_context" =~ $pattern ]]; then
