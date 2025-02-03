@@ -149,8 +149,6 @@ brew "ncdu"
 brew "nmap"
 # Manage multiple Node.js versions
 brew "nvm"
-# Development kit for the Java programming language
-brew "openjdk@11"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Shell command parallelization utility

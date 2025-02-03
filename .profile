@@ -193,7 +193,7 @@ function kcontext() {
 		return
 	fi
 	print "The current kubectl context does not match '${pattern}'"
-	# kubectl config get-contexts does not support structured output so we need this mess
+	# `kubectl config get-contexts` does not support structured output so we need this mess
 	contexts="$(kubectl config get-contexts --no-headers | sed -E -e 's/^[ \*]+([a-z:0-9\/-]+)[ ].+$/\1/')"
 	for context in $contexts; do
 		if [[ "$context" =~ $pattern ]]; then
