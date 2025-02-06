@@ -307,6 +307,8 @@ brew "procmail"
 brew "pth"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Python Language Server for the Language Server Protocol
+brew "python-lsp-server"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
@@ -358,7 +360,7 @@ brew "tig"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Maintained ctags implementation
@@ -467,6 +469,8 @@ cask "skype"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Text editor for code, markup and prose
+cask "sublime-text"
 # Modular synthesiser
 cask "sunvox"
 # Web browser focusing on security

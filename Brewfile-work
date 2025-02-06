@@ -50,7 +50,7 @@ brew "harfbuzz"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Minify and secure Docker images
@@ -119,6 +119,8 @@ brew "lft"
 brew "lftp"
 # Implementation of IEEE 802.1ab (LLDP)
 brew "lldpd"
+# Language Server for the Lua language
+brew "lua-language-server"
 # Swiss Army Knife for macOS
 brew "m-cli"
 # GUI for vim, made for macOS
@@ -157,16 +159,18 @@ brew "parallel"
 brew "pidof"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Manage compile and link flags for libraries
-brew "pkg-config"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Object-relational database system
-brew "postgresql@15"
+brew "postgresql@15", link: true
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Autonomous mail processor
 brew "procmail"
 # It's not just a linter that annoys you!
 brew "pylint"
+# Python Language Server for the Language Server Protocol
+brew "python-lsp-server"
 # File browser
 brew "ranger"
 # Rsync for cloud storage
@@ -222,7 +226,7 @@ brew "tig"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Network diagnostic tool, inspired by mtr
@@ -297,6 +301,8 @@ cask "orbstack"
 cask "sequel-ace"
 # Music streaming service
 cask "spotify"
+# Text editor for code, markup and prose
+cask "sublime-text"
 # Multimedia player
 cask "vlc"
 # Scan, monitor, and troubleshoot wireless networks
