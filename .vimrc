@@ -43,7 +43,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'fennel' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
@@ -63,7 +63,6 @@ Plug 'w0rp/ale'
 Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --go-completer' }
 call plug#end()
 
 
@@ -108,69 +107,76 @@ endif
 
 "" Keybindings and aliases
 " Tabs
-nmap th :tabprev<cr>
-nmap tl :tabnext<cr>
-nmap tn :tabnew<cr>
-nmap tc :tabclose<cr>
-nmap te :tabedit
+nmap th :tabprev<CR>
+nmap tl :tabnext<CR>
+nmap tn :tabnew<CR>
+nmap tc :tabclose<CR>
 " Buffers
-noremap K :bn<cr>
-noremap J :bp<cr>
-" file browser
-nmap <leader>n :Lexplore<cr>
-nmap <leader>nn :Lexplore %:p:h<cr>
-" edit $MYVIMRC
-nmap <leader>v :vsplit $MYVIMRC<cr>
-" buffer list
-nmap <leader>l :ls<cr>
+noremap K :bn<CR>
+noremap J :bp<CR>
 " diff open windows
 command DA :windo diffthis
 command Da :diffoff!
-" show tags window
-nmap <leader>t :TagbarToggle<cr>
-" toggle line numbers
-nmap <leader>u :set nu!<cr>
-" toggle invisible chars
-nmap <leader>i :set list!<cr>
-" toggle window scroll binding
-nmap <leader>b :windo set scrollbind!<cr>
-" close quickfix window
-nmap <leader>x <Plug>window:quickfix:loop
-" clear search highlight
-map <leader>c :let @/ = ""<CR>
-" Ack search for word
-nmap <leader>k :Ack! "\b<cword>\b" <CR>
+" git shortcuts
+command Gblame :G blame
+command Gc :G commit -v
+command Gp :G push
+" ALE info window for symbold under cursor
+nmap K <cmd>ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
 " fzf
 nmap <Leader>f :Files<CR>
-nmap <Leader>g :Tags<CR>
+"nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
-" goyo
-nmap <Leader>p :Goyo<CR>
-" buffkill: delete buffer, keep window
-nmap <leader>w :BD<CR>
+""" Leader keys
+" toggle window scroll binding
+nmap <leader>b :windo set scrollbind!<CR>
+" clear search highlight
+nmap <leader>c :let @/ = ""<CR>
+" close vim-fugitive status window (only works from status window)
+nmap <leader>g gq<CR>
+" ALE symbols
+nmap <leader>gd <cmd>ALEGoToDefinition<CR>
+nmap <leader>gt <cmd>ALEGoToTypeDefinition<CR>
+nmap <leader>gr <cmd>ALEFindReferences<CR>
 " git status
 nmap <leader>G :G<CR>
-nmap <leader>g gq<CR>
 nmap <leader>Gl :Commits<CR>
-" git shortcuts
-command Gblame :G blame
-command Gc :G commit -v
-command Gp :G push
-" Github
-nmap <leader>Ghr :!gh run view<CR>
-nmap <leader>Gpr :!gh pr create<CR>
-" YouCompleteMe
-map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>o  :YcmCompleter GetDoc<CR>
-" vim-session
-map <leader>s :SaveSession<CR>
+" start :help command
+nmap <leader>h :help
+" close help window
+nmap <leader>hc :helpclose<CR>
+" toggle invisible chars
+nmap <leader>i :set list!<cr>
+" Ack search for word
+nmap <leader>k :Ack! "\b<cword>\b" <CR>
+" buffer list
+nmap <leader>l :ls<cr>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
+" file browser
+nmap <leader>n :Lexplore<cr>
+nmap <leader>nn :Lexplore %:p:h<CR>
+" goyo
+nmap <Leader>p :Goyo<CR>
+" vim-session
+map <leader>s :SaveSession<CR>
+" show tags window
+nmap <leader>t :TagbarToggle<CR>
 " terminal
 map <leader>T :vertical terminal /bin/bash -l<CR>
+" toggle line numbers
+nmap <leader>u :set nu!<CR>
+" edit $MYVIMRC
+nmap <leader>v :vsplit $MYVIMRC<CR>
+" buffkill: delete buffer, keep window
+nmap <leader>w :BD<CR>
+" close quickfix window
+nmap <leader>x <Plug>window:quickfix:loop
+" close preview window
+nmap <leader>z :pclose<CR>
 
 
 "" Filetype settings
@@ -307,8 +313,8 @@ let g:ale_linters = {
 \   'bash': ['shellcheck'],
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
-\   'lua': ['luac', 'luacheck --std ngx_lua'],
-\   'python': ['pylsp', 'pylint'],
+\   'lua': ['luac', 'luacheck', 'lua_language_server'],
+\   'python': ['pylsp', 'pylint', 'jedils'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
@@ -351,18 +357,6 @@ let g:go_debug_mappings = {
 
 " vim-gutentag settings
 let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
-
-" YouCompleteMe settings
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_auto_hover=''
-let g:ycm_enable_inlay_hints=1
-let g:ycm_language_server = [
-\   { 'name': 'lua',
-\     'filetypes': [ 'lua' ],
-\     'cmdline': [ '/usr/local/Cellar/lua-language-server/3.2.2/bin/lua-language-server',
-\                  '/usr/local/Cellar/lua-language-server/3.2.2/libexec/main.lua' ]
-\   },
-\ ]
 
 " vim-slime
 let g:slime_target = 'tmux'
