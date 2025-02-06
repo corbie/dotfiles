@@ -50,6 +50,7 @@ Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
 Plug 'plan9-for-vimspace/acme-colors'
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
 Plug 'qpkorr/vim-bufkill'
+Plug 'rizzatti/dash.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
@@ -122,7 +123,7 @@ command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 " ALE info window for symbold under cursor
-nmap K <cmd>ALEHover<CR>
+nmap <Leader>K <cmd>ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
@@ -145,7 +146,7 @@ nmap <leader>gr <cmd>ALEFindReferences<CR>
 nmap <leader>G :G<CR>
 nmap <leader>Gl :Commits<CR>
 " start :help command
-nmap <leader>h :help
+nmap <leader>h :help 
 " close help window
 nmap <leader>hc :helpclose<CR>
 " toggle invisible chars
@@ -393,3 +394,6 @@ augroup netrw_mapping
   autocmd!
   autocmd filetype netrw call NetrwMapping()
 augroup END
+
+" vim-dash
+let g:dash_activate = 1
