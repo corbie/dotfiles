@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'romainl/flattened'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
 "Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+"Plug 'jmcantrell/vim-virtualenv'
 Plug '/usr/local/opt/fzf' " fzf searching
 Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' } " haproxy syntax
 Plug 'airblade/vim-gitgutter' " git status in gutter
@@ -43,7 +44,6 @@ Plug 'jpalardy/vim-slime' " REPL terminal
 Plug 'junegunn/fzf.vim' " fzf searching
 Plug 'junegunn/fzf' " fzf searching
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free window view
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'kien/rainbow_parentheses.vim', { 'for': 'fennel' } " s-expression readable syntax hilights ()
 Plug 'ludovicchabant/vim-gutentags' " tag file management
 Plug 'Lokaltog/vim-monotone' " color scheme
@@ -53,6 +53,7 @@ Plug 'plan9-for-vimspace/acme-colors' " color scheme
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' } " tag sidebar
 Plug 'qpkorr/vim-bufkill' " close buffer but keep window
 Plug 'rizzatti/dash.vim' " Dash documentation search
+Plug 'robertmeta/nofrils' " color scheme
 Plug 'sheerun/vim-polyglot' " syntax files for langualges
 Plug 'tpope/vim-commentary' " comment management
 Plug 'tpope/vim-endwise' " automatic structure closing for if, else, do, for, etc
