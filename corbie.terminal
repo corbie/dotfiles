@@ -172,19 +172,25 @@
 	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>EnableSmoothResizing</key>
+	<true/>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKgAAAAAAABAQgAKAA15Jb3Nl
-	dmthLU1lZGl1bdIXGBkaWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohkbWE5TT2Jq
-	ZWN0CBEaJCkyN0lMUVNYXmdud36FjpCSlKOos7zDxgAAAAAAAAEBAAAAAAAAABwAAAAA
-	AAAAAAAAAAAAAADP
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKgAAAAAAABAQgAKAA1dJb3Nl
+	dmth0hcYGRpaJGNsYXNzbmFtZVgkY2xhc3Nlc1ZOU0ZvbnSiGRtYTlNPYmplY3QIERok
+	KTI3SUxRU1heZ253foWOkJKUnKGstby/AAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAA
+	AAAAAMg=
 	</data>
+	<key>FontAntialias</key>
+	<true/>
 	<key>FontWidthSpacing</key>
 	<real>1</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
+	<key>RestoreLines</key>
+	<integer>100000</integer>
 	<key>RunCommandAsShell</key>
 	<false/>
 	<key>SelectionColor</key>
@@ -231,13 +237,13 @@
 	<key>VisualBell</key>
 	<false/>
 	<key>WindowTitle</key>
-	<string></string>
+	<string>Corbans-MacBook-Pro.local</string>
 	<key>columnCount</key>
-	<integer>240</integer>
+	<integer>214</integer>
 	<key>name</key>
-	<string>Solarized Dark</string>
+	<string>corbie</string>
 	<key>rowCount</key>
-	<integer>60</integer>
+	<integer>55</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
