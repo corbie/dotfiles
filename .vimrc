@@ -30,40 +30,43 @@ call plug#begin('~/.vim/plugged')
 "Plug 'plasticboy/vim-markdown'
 "Plug 'romainl/flattened'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggleVCS' }
-Plug '/usr/local/opt/fzf'
-Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' }
-Plug 'Lokaltog/vim-monotone'
-Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'drmingdrmer/vim-toggle-quickfix'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'guns/vim-sexp', { 'for': 'fennel' }
-Plug 'jpalardy/vim-slime'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'kien/rainbow_parentheses.vim', { 'for': 'fennel' }
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'mileszs/ack.vim', { 'on': 'Ack' }
-Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' }
-Plug 'plan9-for-vimspace/acme-colors'
-Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
-Plug 'qpkorr/vim-bufkill'
-Plug 'rizzatti/dash.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fireplace', { 'for': 'fennel' }
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'fennel' }
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
-Plug 'w0rp/ale'
-Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' }
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+"Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+Plug '/usr/local/opt/fzf' " fzf searching
+Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' } " haproxy syntax
+Plug 'airblade/vim-gitgutter' " git status in gutter
+Plug 'bling/vim-airline' " status line
+Plug 'ctrlpvim/ctrlp.vim' " file/buffer search
+Plug 'drmingdrmer/vim-toggle-quickfix' " toggle for open/closing quickfix window
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' } " Go language
+Plug 'guns/vim-sexp', { 'for': 'fennel' } " s-expression movements
+Plug 'jpalardy/vim-slime' " REPL terminal
+Plug 'junegunn/fzf.vim' " fzf searching
+Plug 'junegunn/fzf' " fzf searching
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free window view
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'kien/rainbow_parentheses.vim', { 'for': 'fennel' } " s-expression readable syntax hilights ()
+Plug 'ludovicchabant/vim-gutentags' " tag file management
+Plug 'Lokaltog/vim-monotone' " color scheme
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }  " ack search
+Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' } " YAML syntax folds
+Plug 'plan9-for-vimspace/acme-colors' " color scheme
+Plug 'preservim/tagbar', { 'on': 'TagbarToggle' } " tag sidebar
+Plug 'qpkorr/vim-bufkill' " close buffer but keep window
+Plug 'rizzatti/dash.vim' " Dash documentation search
+Plug 'sheerun/vim-polyglot' " syntax files for langualges
+Plug 'tpope/vim-commentary' " comment management
+Plug 'tpope/vim-endwise' " automatic structure closing for if, else, do, for, etc
+Plug 'tpope/vim-eunuch' " UNIX file commands (Move, Rename, etc)
+Plug 'tpope/vim-fireplace', { 'for': 'fennel' } " Lisp REPL
+Plug 'tpope/vim-fugitive' " git interface
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'fennel' } " s-expression mapings
+Plug 'tpope/vim-surround' " movements for text inside {[(\" etc
+Plug 'tpope/vim-unimpaired' " pairs of handy bracket bindings
+Plug 'tpope/vim-vinegar' " netrw wrapper
+Plug 'w0rp/ale' " linting and autocompletion
+Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' } " sidebar file map
+Plug 'xolox/vim-misc' " xolox support lib
+Plug 'xolox/vim-session' " session management
 call plug#end()
 
 
@@ -100,9 +103,10 @@ set smartcase
 set title " Set terminal window title to filename
 " GUI options
 if has('gui_running')
- set guifont=Iosevka:h14
+ set guifont=Iosevka:h13
  set guicursor+=a:blinkon0
- set guioptions-=lr " Disable left and right GUI scrollbars
+ set guioptions-=l
+ set guioptions-=r
 endif
 
 
@@ -184,7 +188,7 @@ nmap <leader>z :pclose<CR>
 " Python
 augroup python
   au!
-  au! BufNewFile,BufRead *.py  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
+  au! BufNewFile,BufRead *.py  setlocal cc=100 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
   au BufNewFile,BufRead *.py  setlocal foldmethod=indent foldlevel=3
   au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="ipython"
 augroup end
@@ -193,7 +197,7 @@ augroup end
 augroup bash
   au!
   au! BufNewFile,BufRead *.profile set ft=bash
-  au BufNewFile,BufRead *.sh  setlocal cc=80
+  au BufNewFile,BufRead *.sh  setlocal cc=100
   au BufNewFile,BufRead *.sh let b:slime_vimterminal_cmd = "/bin/bash -l"
 augroup end
 
@@ -201,6 +205,7 @@ augroup end
 augroup lua
   au!
   au! BufNewFile,BufRead *.lua let b:slime_vimterminal_cmd = "/bin/bash -l"
+  au BufNewFile,BufRead *.lua  setlocal cc=100
 augroup end
 
 " SQL
@@ -330,7 +335,7 @@ let g:ale_sign_column_always = 1
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
-let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods --disable=broad-except --disable=too-many-arguments --disable=too-many-positional-arguments'
+let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods --disable=broad-except --disable=too-many-arguments --disable=too-many-positional-arguments --disable=too-many-locals'
 let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
