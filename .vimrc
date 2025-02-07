@@ -84,7 +84,7 @@ autocmd VimResized * wincmd = " Auto-equalize window splits
 colorscheme monotone " Color scheme
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
-set foldlevel=3 " Default fold level
+set foldlevel=4 " Default fold level
 set foldmethod=syntax " Default to syntax folding
 set hidden " keep buffers hidden
 set history=1000
@@ -182,6 +182,9 @@ nmap <leader>w :BD<CR>
 nmap <leader>x <Plug>window:quickfix:loop
 " close preview window
 nmap <leader>z :pclose<CR>
+" Use Tab and Shift-tab to select completions
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
 "" Filetype settings
