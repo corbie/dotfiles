@@ -127,7 +127,7 @@ command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 " ALE info window for symbold under cursor
-nmap <Leader>K <cmd>ALEHover<CR>
+nmap <Leader>k <cmd>ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
