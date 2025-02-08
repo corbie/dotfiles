@@ -56,6 +56,7 @@ Plug 'rizzatti/dash.vim' " Dash documentation search
 Plug 'robertmeta/nofrils' " color scheme
 Plug 'sheerun/vim-polyglot' " syntax files for langualges
 Plug 'tpope/vim-commentary' " comment management
+Plug 'tpope/vim-dispatch' " async command runner for Make/compile
 Plug 'tpope/vim-endwise' " automatic structure closing for if, else, do, for, etc
 Plug 'tpope/vim-eunuch' " UNIX file commands (Move, Rename, etc)
 Plug 'tpope/vim-fireplace', { 'for': 'fennel' } " Lisp REPL
@@ -85,7 +86,7 @@ autocmd VimResized * wincmd = " Auto-equalize window splits
 colorscheme monotone " Color scheme
 " Use italic terminal fonts for comments
 highlight Comment cterm=italic
-set foldlevel=4 " Default fold level
+set foldlevel=6 " Default fold level
 set foldmethod=syntax " Default to syntax folding
 set hidden " keep buffers hidden
 set history=1000
@@ -128,7 +129,7 @@ command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 " ALE info window for symbold under cursor
-nmap <Leader>k <cmd>ALEHover<CR>
+nmap <Leader>K <cmd>ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
@@ -192,8 +193,8 @@ inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " Python
 augroup python
   au!
-  au! BufNewFile,BufRead *.py  setlocal cc=100 tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0 expandtab
-  au BufNewFile,BufRead *.py  setlocal foldmethod=indent foldlevel=3
+  au! BufNewFile,BufRead *.py  setlocal cc=100 tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  au BufNewFile,BufRead *.py  setlocal foldmethod=indent
   au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="ipython"
 augroup end
 
@@ -250,7 +251,7 @@ augroup yaml_template
   au! BufNewFile,BufRead *.yml.tmpl set ft=yaml
 augroup end
 
-" Minimap
+" " Minimap
 " augroup minimap
 "   au!
 "   au WinEnter * MinimapRefresh
@@ -315,7 +316,7 @@ let g:ale_fixers = {
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
 \   'tfvars': ['terraform'],
-\   'python': ['yapf', 'autoimport', 'black', 'reorder-python-imports'],
+\   'python': ['yapf', 'autoimport', 'black', 'pyflyby'],
 \}
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
@@ -324,7 +325,7 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck', 'lua_language_server'],
-\   'python': ['pylsp', 'pylint', 'jedils'],
+\   'python': ['pylint', 'jedils'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
