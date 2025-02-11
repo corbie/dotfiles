@@ -138,9 +138,6 @@ nmap <Leader>f :Files<CR>
 "nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
 """ Leader keys
-" ALE fix navigation
-nmap <leader>aj :ALENext<cr>
-nmap <leader>ak :ALEPrevious<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
@@ -151,6 +148,9 @@ nmap <leader>g gq<CR>
 nmap <leader>gd <cmd>ALEGoToDefinition<CR>
 nmap <leader>gt <cmd>ALEGoToTypeDefinition<CR>
 nmap <leader>gr <cmd>ALEFindReferences<CR>
+" ALE fix navigation
+nmap <leader>gj :ALENext<cr>
+nmap <leader>gk :ALEPrevious<cr>
 " git status
 nmap <leader>G :G<CR>
 nmap <leader>Gl :Commits<CR>
