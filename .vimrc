@@ -138,6 +138,9 @@ nmap <Leader>f :Files<CR>
 "nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
 """ Leader keys
+" ALE fix navigation
+nmap <leader>aj :ALENext<cr>
+nmap <leader>ak :ALEPrevious<cr>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
