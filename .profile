@@ -83,7 +83,7 @@ export GOBIN=$GOPATH/bin
 PATH=${PATH}:${GOBIN}
 
 ## Java
-export JAVA_HOME=/usr/local/Cellar/openjdk\@17/17.0.8.1/
+export JAVA_HOME=/opt/homebrew/opt/openjdk
 
 ## MySQL
 PATH=${PATH}:${BREW_PREFIX}/opt/mysql-client@8.4/bin
