@@ -146,6 +146,7 @@ nmap <leader>c :let @/ = ""<CR>
 nmap <leader>g gq<CR>
 " ALE symbols
 nmap <leader>gd <cmd>ALEGoToDefinition<CR>
+nmap <leader>gdv <cmd>ALEGoToDefinition -vsplit<CR>
 nmap <leader>gt <cmd>ALEGoToTypeDefinition<CR>
 nmap <leader>gr <cmd>ALEFindReferences<CR>
 " ALE fix navigation
