@@ -142,6 +142,8 @@ nmap <Leader>a :Ag<CR>
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
 nmap <leader>c :let @/ = ""<CR>
+" vim-dash lookup under cursor
+nmap <leader>D <Plug>DashSearch
 " close vim-fugitive status window (only works from status window)
 nmap <leader>g gq<CR>
 " ALE symbols
@@ -358,6 +360,12 @@ let g:ale_sh_shfmt_options = '-i 4 %'
 ""   See file:
 ""   https://github.com/dense-analysis/ale/blob/master/ale_linters/terraform/tflint.vim
 " let g:ale_terraform_tflint_options = '-f json --module --chdir '.expand('%:p:h')
+
+" vim-dash settings
+" open -g dash://'keys=vim&query=sys.exit'
+let g:dash_map = {
+\   'python' : 'boto3'
+\ }
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
