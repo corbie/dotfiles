@@ -4,17 +4,31 @@
 	attributesfile = /Users/corban.johnson/.gitattributes
 [difftool "sourcetree"]
 [mergetool "sourcetree"]
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
 [user]
 	name = Corban Johnson
 	email = cjohnson@muriad.net
 [merge]
 	tool = vimdiff
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [color]
 	ui = auto
 	interactive = auto
 [format]
 	pretty = format: '%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[commit]
+	verbose = true
 [alias]
 	# df shows files differing between head and <ref>. Expects a <ref> argument.
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
@@ -26,12 +40,15 @@
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
 	recap = log --all --oneline --no-merges --author=corban@mosaic.tech
-	refresh = !git remote update --prune && git pull
+# refresh = !git remote update --prune && git pull
+	refresh = pull
 	tidyremotes = !bash -c 'git branch -r | awk \"{print \\$1}\" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \"{print \\$1}\" | xargs git branch -d'
 [credential]
 	helper = osxkeychain
 [push]
-	default = current
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 [stash]
 	showPatch = true
 [filter "lfs"]
@@ -40,6 +57,10 @@
 	required = true
 	process = git-lfs filter-process
 [diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 	submodule = log
 [pull]
 	rebase = false
