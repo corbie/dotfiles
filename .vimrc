@@ -152,8 +152,8 @@ nmap <leader>gdv <cmd>ALEGoToDefinition -vsplit<CR>
 nmap <leader>gt <cmd>ALEGoToTypeDefinition<CR>
 nmap <leader>gr <cmd>ALEFindReferences<CR>
 " ALE fix navigation
-nmap <leader>gj :ALENext<cr>
-nmap <leader>gk :ALEPrevious<cr>
+nmap <leader>gj :ALENext -wrap<cr>
+nmap <leader>gk :ALEPrevious -wrap<cr>
 " git status
 nmap <leader>G :G<CR>
 nmap <leader>Gl :Commits<CR>
@@ -331,7 +331,7 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck', 'lua_language_server'],
-\   'python': ['pylint', 'jedils'],
+\   'python': ['mypy', 'pylint', 'jedils'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
