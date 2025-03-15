@@ -79,6 +79,7 @@ set smarttab " insert tabs on the start of a line according to shiftwidth, not t
 set tabstop=2 " tab spaces size
 set softtabstop=2 " when hitting <BS>, pretend like a tab is removed, even if spaces
 set shiftwidth=2 " number of spaces to use for autoindenting
+set smoothscroll
 
 
 "" Display
@@ -128,6 +129,7 @@ command Da :diffoff!
 command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
+command Gpf :G push -f
 " ALE info window for symbold under cursor
 nmap <Leader>K <cmd>ALEHover<CR>
 " CtrlP
@@ -382,7 +384,11 @@ let g:go_debug_mappings = {
 let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 
 " vim-slime
-let g:slime_target = 'tmux'
+if has('gui_running')
+ let g:slime_target = 'vimterminal'
+else
+ let g:slime_target = 'tmux'
+endif
 let g:slime_default_config = { 'socket_name': 'default', 'target_pane': '{last}' }
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
