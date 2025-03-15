@@ -54,7 +54,10 @@ Plug 'preservim/tagbar', { 'on': 'TagbarToggle' } " tag sidebar
 Plug 'qpkorr/vim-bufkill' " close buffer but keep window
 Plug 'rizzatti/dash.vim' " Dash documentation search
 Plug 'robertmeta/nofrils' " color scheme
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'sheerun/vim-polyglot' " syntax files for langualges
+Plug 'Shougo/deoplete.nvim'
 Plug 'tpope/vim-commentary' " comment management
 Plug 'tpope/vim-dispatch' " async command runner for Make/compile
 Plug 'tpope/vim-endwise' " automatic structure closing for if, else, do, for, etc
@@ -131,7 +134,7 @@ command Gc :G commit -v
 command Gp :G push
 command Gpf :G push -f
 " ALE info window for symbold under cursor
-nmap <Leader>K <cmd>ALEHover<CR>
+nmap <Leader>K :ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
@@ -148,12 +151,12 @@ nmap <leader>c :let @/ = ""<CR>
 nmap <leader>D <Plug>DashSearch
 " close vim-fugitive status window (only works from status window)
 nmap <leader>g gq<CR>
-" ALE symbols
-nmap <leader>gd <cmd>ALEGoToDefinition<CR>
-nmap <leader>gdv <cmd>ALEGoToDefinition -vsplit<CR>
-nmap <leader>gt <cmd>ALEGoToTypeDefinition<CR>
-nmap <leader>gr <cmd>ALEFindReferences<CR>
-" ALE fix navigation
+" ALE
+nmap <leader>gd :ALEGoToDefinition<CR>
+nmap <leader>gi :ALEGoToImplementation<CR>
+nmap <leader>gt :ALEGoToTypeDefinition<CR>
+nmap <leader>gf :ALEFindReferences -quickfix<CR>
+nmap <leader>gr :ALERename<CR>
 nmap <leader>gj :ALENext -wrap<cr>
 nmap <leader>gk :ALEPrevious -wrap<cr>
 " git status
@@ -316,7 +319,8 @@ if executable('ag')
 endif
 
 " ALE settings
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
+let g:ale_default_navigation = 'vsplit'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
@@ -326,6 +330,7 @@ let g:ale_fixers = {
 \   'tfvars': ['terraform'],
 \   'python': ['yapf', 'autoimport', 'black', 'pyflyby'],
 \}
+let g:ale_hover_to_preview = 1
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
@@ -342,9 +347,6 @@ let g:ale_linters_ignore = {
 \   'vim' : ['vim-language-server'],
 \}
 let g:ale_sign_column_always = 1
-" let g:ale_root = {
-" \   'terraform': ale_linters#terraform#terraform_ls#GetProjectRoot(expand('%:p:h')),
-" \}
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
@@ -368,6 +370,9 @@ let g:ale_sh_shfmt_options = '-i 4 %'
 let g:dash_map = {
 \   'python' : 'boto3'
 \ }
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
