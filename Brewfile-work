@@ -15,8 +15,6 @@ brew "arping"
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Official Amazon AWS command-line interface
@@ -33,28 +31,34 @@ brew "bottom"
 brew "ccat"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Readline wrapper: adds readline support to tools that lack it
+brew "rlwrap"
+# Dynamic, general-purpose programming language
+brew "clojure"
 # Cross-platform make
 brew "cmake"
 # Strongly specified, highly compatible implementation of Markdown
 brew "cmark"
 # High performance code minimap generator
 brew "code-minimap"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Monitor DHCP traffic for debugging purposes
 brew "dhcpdump"
 # GNU diction and style
 brew "diction"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
-# Minify and secure Docker images
-brew "docker-slim"
 # Text processing system for reStructuredText
 brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
@@ -69,6 +73,8 @@ brew "eslint"
 brew "fortune"
 # Scriptable ping program for checking if multiple hosts are up
 brew "fping"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # This library is for the GeoIP Legacy format (dat)
@@ -89,12 +95,16 @@ brew "go"
 brew "gotags"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# PostgreSQL dump and obfuscation tool
+brew "greenmask"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Convert HCL2 to JSON
 brew "hcl2json"
 # Kubernetes package manager
 brew "helm"
+# Improved top (interactive process viewer)
+brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Ping-like tool for HTTP requests
@@ -137,12 +147,12 @@ brew "masscan"
 brew "md5deep"
 # Terminal-based visual file manager
 brew "midnight-commander"
+# Minify and secure Docker images
+brew "mintoolkit"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # Open source relational database management system
 brew "mysql-client@8.4"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
 # Open source relational database management system
 brew "mysql@8.4"
 # NCurses Disk Usage
@@ -167,6 +177,8 @@ brew "postgresql@15", link: true
 brew "prettier"
 # Autonomous mail processor
 brew "procmail"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Python Language Server for the Language Server Protocol
@@ -185,8 +197,6 @@ brew "remind"
 brew "rename"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Readline wrapper: adds readline support to tools that lack it
-brew "rlwrap"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Spreadsheet program for the terminal, using ncurses
@@ -233,6 +243,8 @@ brew "tree"
 brew "trippy"
 # Maintained ctags implementation
 brew "universal-ctags"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Use ViM as PAGER
 brew "vimpager"
 # Vim script Language Lint
@@ -317,7 +329,7 @@ cask "xquartz"
 cask "xscreensaver"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "Adblock Plus", id: 1432731683
+mas "AdBlock", id: 1402042596
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keeper for Safari", id: 6444685332
@@ -330,3 +342,4 @@ mas "Save to Reader", id: 1640236961
 mas "SignalScope X", id: 1304775893
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
+mas "White Noise Lite", id: 431364704

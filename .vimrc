@@ -56,8 +56,7 @@ Plug 'rizzatti/dash.vim' " Dash documentation search
 Plug 'robertmeta/nofrils' " color scheme
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'sheerun/vim-polyglot' " syntax files for langualges
-Plug 'Shougo/deoplete.nvim'
+Plug 'sheerun/vim-polyglot' " syntax files for languages
 Plug 'tpope/vim-commentary' " comment management
 Plug 'tpope/vim-dispatch' " async command runner for Make/compile
 Plug 'tpope/vim-endwise' " automatic structure closing for if, else, do, for, etc
@@ -319,8 +318,8 @@ if executable('ag')
 endif
 
 " ALE settings
-" let g:ale_completion_enabled = 1
-let g:ale_default_navigation = 'vsplit'
+let g:ale_completion_enabled = 1
+let g:ale_default_navigation = 'split'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
@@ -328,7 +327,7 @@ let g:ale_fixers = {
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
 \   'tfvars': ['terraform'],
-\   'python': ['yapf', 'autoimport', 'black', 'pyflyby'],
+\   'python': ['yapf', 'isort', 'autoimport',  'pyflyby' ],
 \}
 let g:ale_hover_to_preview = 1
 let g:ale_lint_delay = 1000
@@ -338,7 +337,7 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['luac', 'luacheck', 'lua_language_server'],
-\   'python': ['mypy', 'pylint', 'jedils'],
+\   'python': ['pyright', 'pylint'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
@@ -350,7 +349,7 @@ let g:ale_sign_column_always = 1
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
-let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-few-public-methods --disable=broad-except --disable=too-many-arguments --disable=too-many-positional-arguments --disable=too-many-locals'
+let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-many-public-methods --disable=too-few-public-methods --disable=broad-except --disable=too-many-arguments --disable=too-many-positional-arguments --disable=too-many-locals --disable=broad-exception-raised --disable=unspecified-encoding'
 let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
@@ -370,9 +369,6 @@ let g:ale_sh_shfmt_options = '-i 4 %'
 let g:dash_map = {
 \   'python' : 'boto3'
 \ }
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 
 " vim-go settings
 let g:go_doc_keywordprg_enabled = 0
