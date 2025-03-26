@@ -187,7 +187,7 @@ map <leader>T :vertical terminal /bin/bash -l<CR>
 " toggle line numbers
 nmap <leader>u :set nu!<CR>
 " edit $MYVIMRC
-nmap <leader>v :vsplit $MYVIMRC<CR>
+nmap <leader>v :tabnew $MYVIMRC<CR>
 " buffkill: delete buffer, keep window
 nmap <leader>w :BD<CR>
 " close quickfix window
