@@ -183,7 +183,7 @@ map <leader>s :SaveSession<CR>
 " show tags window
 nmap <leader>t :TagbarToggle<CR>
 " terminal
-map <leader>T :vertical terminal /bin/bash -l<CR>
+map <leader>T :terminal ++rows=15 ++close /bin/bash -l<CR>
 " toggle line numbers
 nmap <leader>u :set nu!<CR>
 " edit $MYVIMRC
