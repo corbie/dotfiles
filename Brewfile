@@ -4,7 +4,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "openresty/brew"
 tap "saulpw/vd"
-tap "universal-ctags/universal-ctags"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Library for manipulating PNG images
@@ -41,6 +40,8 @@ brew "pango"
 brew "librsvg"
 # Icons for the GNOME project
 brew "adwaita-icon-theme"
+# Reimplementation of ctags(1)
+brew "ctags"
 # News and email agent
 brew "alpine"
 # Java build tool
