@@ -53,6 +53,7 @@ alias rp='echo "Reloading ~/.profile"; source ~/.profile'
 alias ws='cd ~/Workspace/'
 alias va='. .venv/bin/activate'
 alias vd='deactivate'
+alias vn='python3 -m venv .venv'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	alias cdi='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 	alias pui='pushd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
