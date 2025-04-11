@@ -1,6 +1,7 @@
 .dotfiles
 .ipython/profile_default/history.sqlite
 .venv
+.mypycache
 vim/.netrwhist
 vim/autoload
 vim/cache
