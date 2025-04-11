@@ -203,7 +203,7 @@ inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " Python
 augroup python
   au!
-  au! BufNewFile,BufRead *.py  setlocal cc=100 tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  au! BufNewFile,BufRead *.py  setlocal cc=80 tabstop=4 softtabstop=4 shiftwidth=4 expandtab
   au BufNewFile,BufRead *.py  setlocal foldmethod=indent
   au BufNewFile,BufRead *.py  let b:slime_vimterminal_cmd="ipython"
 augroup end
@@ -382,7 +382,7 @@ let g:go_debug_mappings = {
 \ }
 
 " vim-gutentag settings
-let gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
+let g:gutentags_cache_dir = '~/.vim/cache/vim-gutentags'
 
 " vim-slime
 if has('gui_running')
@@ -402,7 +402,7 @@ let g:session_autosave = 'no'
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-\  'dir': 'node_modules',
+\  'dir': '\v(node_modules|.git|.mypy_cache|.venv|__pycache__)',
 \ }
 
 " mimimap-vim
