@@ -324,6 +324,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'lua': ['lua-format'],
+\   'javascript': ['prettier'],
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
 \   'tfvars': ['terraform'],
