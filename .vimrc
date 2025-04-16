@@ -164,7 +164,7 @@ nmap <leader>Gl :Commits<CR>
 " start :help command
 nmap <leader>h :help 
 " close help window
-nmap <leader>hc :helpclose<CR>
+nmap <leader>hh :helpclose<CR>
 " toggle invisible chars
 nmap <leader>i :set list!<cr>
 " Ack search for word
