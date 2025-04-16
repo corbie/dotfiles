@@ -162,7 +162,7 @@ nmap <leader>gk :ALEPrevious -wrap<cr>
 nmap <leader>G :G<CR>
 nmap <leader>Gl :Commits<CR>
 " start :help command
-nmap <leader>h :help 
+nmap <leader>h :help
 " close help window
 nmap <leader>hh :helpclose<CR>
 " toggle invisible chars
