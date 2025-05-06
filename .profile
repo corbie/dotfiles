@@ -42,6 +42,8 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias dt="git --git-dir=${HOME}/.dotfiles --work-tree=${HOME}"
 alias dtt="GIT_DIR=${HOME}/.dotfiles GIT_WORK_TREE=${HOME} tig"
 alias hg='history | grep -i'
+alias kc='kubectx'
+alias kn='kubens'
 alias l1='ls -1'
 alias lh='ls -lh'
 alias ll='ls -l'
