@@ -350,7 +350,20 @@ let g:ale_sign_column_always = 1
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
-let g:ale_python_pylint_options = '--disable=line-too-long --disable=missing-class-docstring --disable=missing-function-docstring --disable=missing-module-docstring --disable=too-many-public-methods --disable=too-few-public-methods --disable=broad-except --disable=too-many-arguments --disable=too-many-positional-arguments --disable=too-many-locals --disable=broad-exception-raised --disable=unspecified-encoding'
+let g:ale_python_pylint_options =
+\ '--disable=broad-except ' .
+\ '--disable=broad-exception-raised ' .
+\ '--disable=line-too-long ' .
+\ '--disable=logging-fstring-interpolation ' .
+\ '--disable=missing-class-docstring ' .
+\ '--disable=missing-function-docstring ' .
+\ '--disable=missing-module-docstring ' .
+\ '--disable=too-few-public-methods ' .
+\ '--disable=too-many-arguments ' .
+\ '--disable=too-many-locals ' .
+\ '--disable=too-many-positional-arguments ' .
+\ '--disable=too-many-public-methods ' .
+\ '--disable=unspecified-encoding '
 let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'

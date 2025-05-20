@@ -54,6 +54,7 @@ alias pu='pushd'
 alias rp='echo "Reloading ~/.profile"; source ~/.profile'
 alias ws='cd ~/Workspace/'
 alias va='. .venv/bin/activate'
+alias vinit='python3 -m venv .venv'
 alias vd='deactivate'
 alias vn='python3 -m venv .venv'
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
