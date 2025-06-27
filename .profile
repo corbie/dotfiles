@@ -225,5 +225,5 @@ function kcontext() {
 
 # zoxide
 if which zoxide > /dev/null; then
-	eval "$(zoxide init bash)"
+	eval "$(zoxide init --cmd cd bash)"
 fi
