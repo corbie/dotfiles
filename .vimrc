@@ -128,15 +128,18 @@ noremap J :bp<CR>
 command DA :windo diffthis
 command Da :diffoff!
 " git shortcuts
+command Gb :Git branch 
 command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 command Gpf :G push -f
+command Grf :G refresh
 " ALE info window for symbold under cursor
 nmap <Leader>K :ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
+nmap <Leader>" :CtrlPCurWD<CR>
 " fzf
 nmap <Leader>f :Files<CR>
 "nmap <Leader>g :Tags<CR>
@@ -415,7 +418,7 @@ let g:session_autosave = 'no'
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-\  'dir': '\v(node_modules|\.git/.*|.mypy_cache|.venv|__pycache__|\.terraform/)',
+\  'dir': '\v(node_modules|*/.git/.*|.mypy_cache|.venv|__pycache__|\.terraform/)',
 \ }
 
 " mimimap-vim
