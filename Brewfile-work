@@ -191,8 +191,6 @@ brew "ripgrep"
 brew "rlwrap"
 # Utility that provides fast incremental file transfer
 brew "rsync"
-# Spreadsheet program for the terminal, using ncurses
-brew "sc-im"
 # Generate passwords using SecurityFoundation framework
 brew "sf-pwgen"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -253,6 +251,8 @@ brew "wireshark", link: false
 brew "yapf"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Password manager that keeps all passwords secure behind one password
@@ -281,10 +281,12 @@ cask "google-chrome"
 cask "homerow"
 # Java IDE by JetBrains
 cask "intellij-idea"
+# GPU-based terminal emulator
+cask "kitty"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Text editor
-cask "macvim"
+cask "macvim-app"
 # Visual diff and merge tool
 cask "meld"
 # Set of CPU, memory, disk, and network monitoring tools
@@ -306,7 +308,7 @@ cask "vlc"
 # Scan, monitor, and troubleshoot wireless networks
 cask "wifi-explorer"
 # Network protocol analyzer
-cask "wireshark"
+cask "wireshark-app"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 # Screen savers
