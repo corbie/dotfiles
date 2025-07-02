@@ -139,7 +139,7 @@ nmap <Leader>K :ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
-nmap <Leader>" :CtrlPCurWD<CR>
+nmap <Leader>' :CtrlPCurWD<CR>
 " fzf
 nmap <Leader>f :Files<CR>
 "nmap <Leader>g :Tags<CR>
