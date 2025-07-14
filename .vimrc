@@ -128,12 +128,13 @@ noremap J :bp<CR>
 command DA :windo diffthis
 command Da :diffoff!
 " git shortcuts
-command Gb :Git branch 
 command Gblame :G blame
 command Gc :G commit -v
 command Gp :G push
 command Gpf :G push -f
 command Grf :G refresh
+
+""" Leader keys
 " ALE info window for symbold under cursor
 nmap <Leader>K :ALEHover<CR>
 " CtrlP
@@ -144,7 +145,6 @@ nmap <Leader>' :CtrlPCurWD<CR>
 nmap <Leader>f :Files<CR>
 "nmap <Leader>g :Tags<CR>
 nmap <Leader>a :Ag<CR>
-""" Leader keys
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
@@ -161,11 +161,12 @@ nmap <leader>gf :ALEFindReferences -quickfix<CR>
 nmap <leader>gr :ALERename<CR>
 nmap <leader>gj :ALENext -wrap<cr>
 nmap <leader>gk :ALEPrevious -wrap<cr>
-" git status
+" Git
 nmap <leader>G :G<CR>
+nmap <leader>Gb :G branch -c 
 nmap <leader>Gl :Commits<CR>
 " start :help command
-nmap <leader>h :help
+nmap <leader>h :help 
 " close help window
 nmap <leader>hh :helpclose<CR>
 " toggle invisible chars
