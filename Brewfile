@@ -34,8 +34,6 @@ brew "librsvg"
 brew "adwaita-icon-theme"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # C library for creating IP packets
 brew "libnet"
 # Utility to check whether MAC addresses are already taken on a LAN
@@ -50,6 +48,8 @@ brew "readline"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Yet another cross-platform graphical process/system monitor
@@ -66,10 +66,6 @@ brew "cdpr"
 brew "dialog"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
-# Implementation of the Chez Scheme language
-brew "chezscheme"
-# Compiler for the Scheme programming language
-brew "chicken"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Dynamic, general-purpose programming language
@@ -83,7 +79,7 @@ brew "cmark"
 # High performance code minimap generator
 brew "code-minimap"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
-brew "dash"
+brew "dash-shell"
 # Monitor DHCP traffic for debugging purposes
 brew "dhcpdump"
 # GNU diction and style
@@ -134,8 +130,6 @@ brew "fprobe"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# R7RS Scheme implementation, developed to be a handy script interpreter
-brew "gauche"
 # GNU database manager
 brew "gdbm"
 # Portable Foreign Function Interface library
@@ -148,8 +142,6 @@ brew "gforth"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# Bidirectional operation between a Subversion repository and Git
-brew "git-svn"
 # YAML Parser
 brew "libyaml"
 # Powerful, clean, object-oriented scripting language
@@ -236,8 +228,6 @@ brew "libxslt"
 brew "lldpd"
 # Language Server for the Lua language
 brew "lua-language-server"
-# Free, open source voxel game engine and game
-brew "luanti"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Swiss Army Knife for macOS
@@ -262,8 +252,6 @@ brew "mtr"
 brew "ncdu"
 # HTTP and WebDAV client library with a C interface
 brew "neon"
-# RSS/Atom feed reader for text terminals
-brew "newsboat"
 # Tools to collect and process netflow data on the command-line
 brew "nfdump"
 # Port scanning utility for large networks
@@ -354,8 +342,6 @@ brew "wiki"
 brew "wireshark"
 # Cross-platform C++ GUI toolkit
 brew "wxwidgets"
-# Yet Another Dotfiles Manager
-brew "yadm"
 # Memory training application
 cask "anki"
 # Multi-track audio editor and recorder
@@ -367,33 +353,34 @@ cask "cyberduck"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerised applications and microservices
-cask "docker"
+cask "docker-desktop"
 # Online diagram software
 cask "drawio"
 # Alternative to Apple's DiskImageMounter app
 cask "fastdmg"
 # Web browser
 cask "firefox"
-cask "font-3270"
 cask "font-iosevka"
 # Notes manager
 cask "fsnotes"
 # Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 # Open-source video transcoder
-cask "handbrake"
+cask "handbrake-app"
 # Vector graphics editor
 cask "inkscape"
 # Play music online with friends
 cask "jamulus"
 # End-to-end encryption software
 cask "keybase"
+# GPU-based terminal emulator
+cask "kitty"
 # 2D game framework for Lua
 cask "love"
 # Open-source Markdown editor
 cask "macdown"
 # Text editor
-cask "macvim"
+cask "macvim-app"
 # First-person shooter, first in a trilogy
 cask "marathon"
 # First-person shooter, third in a trilogy
@@ -426,14 +413,12 @@ cask "tor-browser"
 cask "transmission"
 # Virtual machines UI using QEMU
 cask "utm"
-# Development environment
-cask "vagrant"
 # Open-source virtual modular synthesiser
 cask "vcv-rack"
 # Multimedia player
 cask "vlc"
 # Network protocol analyzer
-cask "wireshark"
+cask "wireshark-app"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 # Screen savers
