@@ -220,9 +220,6 @@ function kcontext() {
 #  refresh_socket
 #fi
 
-# Added by OrbStack: command-line tools and integration
-# source ~/.orbstack/shell/init.bash 2>/dev/null || :
-
 # zoxide
 if which zoxide > /dev/null; then
 	eval "$(zoxide init --cmd cd bash)"
