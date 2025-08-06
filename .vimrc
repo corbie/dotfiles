@@ -288,6 +288,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 
 " tagbar settings
 let g:tagbar_compact = 1
+let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
 let g:tagbar_foldlevel = 1
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
@@ -341,7 +342,7 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['selene', 'luac', 'luacheck', 'lua_language_server'],
-\   'python': ['pyright', 'pylint'],
+\   'python': ['pylsp', 'pylint'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
@@ -367,7 +368,6 @@ let g:ale_python_pylint_options =
 \ '--disable=too-many-positional-arguments ' .
 \ '--disable=too-many-public-methods ' .
 \ '--disable=unspecified-encoding '
-let g:ale_python_pylsp_executable = 'pyls'
 "" ALE yamllint
 let g:ale_yaml_yamllint_options = '-d relaxed'
 "" ALE luacheck
