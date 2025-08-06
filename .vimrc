@@ -342,7 +342,7 @@ let g:ale_linters = {
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['selene', 'luac', 'luacheck', 'lua_language_server'],
-\   'python': ['pylsp', 'pylint'],
+\   'python': ['pylsp', 'jedils', 'pylint'],
 \   'sh': ['shellcheck'],
 \   'terraform': ['terraform', 'tflint', 'terraform_ls'],
 \   'tfvars': ['terraform', 'tflint','terraform_ls' ],
