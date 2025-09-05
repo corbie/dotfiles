@@ -157,7 +157,7 @@ nmap <leader>g gq<CR>
 nmap <leader>gd :ALEGoToDefinition<CR>
 nmap <leader>gi :ALEGoToImplementation<CR>
 nmap <leader>gt :ALEGoToTypeDefinition<CR>
-nmap <leader>gf :ALEFindReferences -quickfix<CR>
+nmap <leader>gf :ALEFindReferences<CR>
 nmap <leader>gr :ALERename<CR>
 nmap <leader>gj :ALENext -wrap<cr>
 nmap <leader>gk :ALEPrevious -wrap<cr>
@@ -338,7 +338,7 @@ let g:ale_hover_to_preview = 1
 let g:ale_lint_delay = 1000
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
-\   'bash': ['shellcheck'],
+\   'bash': ['shellcheck', 'bash-language-server'],
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
 \   'lua': ['selene', 'luac', 'luacheck', 'lua_language_server'],
@@ -365,6 +365,7 @@ let g:ale_python_pylint_options =
 \ '--disable=too-few-public-methods ' .
 \ '--disable=too-many-arguments ' .
 \ '--disable=too-many-locals ' .
+\ '--disable=too-many-statements ' .
 \ '--disable=too-many-positional-arguments ' .
 \ '--disable=too-many-public-methods ' .
 \ '--disable=unspecified-encoding '
