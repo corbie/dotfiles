@@ -142,9 +142,13 @@ nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
 nmap <Leader>' :CtrlPCurWD<CR>
 " fzf
-nmap <Leader>f :Files<CR>
-"nmap <Leader>g :Tags<CR>
-nmap <Leader>a :Ag<CR>
+nmap <Leader>fb :Buffers<CR>
+nmap <Leader>fc :Commits<CR>
+nmap <Leader>ff :Files<CR>
+nmap <Leader>fg :Ag<CR>
+nmap <Leader>fr :Rg<CR>
+nmap <Leader>fh :Helptags<CR>
+nmap <Leader>ft :Tags<CR>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
@@ -165,8 +169,6 @@ nmap <leader>gk :ALEPrevious -wrap<cr>
 nmap <leader>G :G<CR>
 nmap <leader>Gb :G branch -c 
 nmap <leader>Gl :Commits<CR>
-" start :help command
-nmap <leader>h :help 
 " close help window
 nmap <leader>hh :helpclose<CR>
 " toggle invisible chars
@@ -266,9 +268,10 @@ augroup yaml_template
 augroup end
 
 " " Minimap
+" This doesn't work.
 " augroup minimap
 "   au!
-"   au WinEnter * MinimapRefresh
+"   au WinEnter * MinimapRescan
 " augroup end
 
 " vimrc
@@ -282,9 +285,14 @@ augroup end
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#branch#format = 2
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
+" let g:airline_statusline_ontop=1
 
 " tagbar settings
 let g:tagbar_compact = 1
