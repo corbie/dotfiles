@@ -9,7 +9,9 @@ set directory=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 set omnifunc=ale#completion#OmniFunc
 set belloff=all
-
+if !has('gui_running')
+  set t_Co=256
+endif
 
 "" Vim-plug
 " Install
@@ -35,7 +37,8 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf' " fzf searching
 Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' } " haproxy syntax
 Plug 'airblade/vim-gitgutter' " git status in gutter
-Plug 'bling/vim-airline' " status line
+" Plug 'bling/vim-airline' " status line
+Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim' " file/buffer search
 Plug 'drmingdrmer/vim-toggle-quickfix' " toggle for open/closing quickfix window
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' } " Go language
@@ -452,3 +455,35 @@ augroup END
 
 " vim-dash
 let g:dash_activate = 1
+
+" lightline
+let g:lightline = {
+\  'active' : {
+\    'left': [ [ 'left_end', 'mode', 'paste' ],
+\            [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+\    'right': [ [ 'lineinfo', 'right_end' ],
+\             [ 'percent' ],
+\             [ 'fileformat', 'fileencoding', 'filetype' ] ]
+\  },
+\  'component': {
+\    'left_end': "%#LightlineLeft_active_0_1#\xee\x82\xb6%#LightlineLeft_active_0#",
+\    'right_end': "%#LightlineRight_active_0_1#\xee\x82\xb4%#LightlineRight_active_0#"
+\  },
+\  'component_function' : {
+\    'gitbranch': 'FugitiveHead'
+\  },
+\  'component_raw' : {'buffers': 1, 'left_end': 1, 'right_end': 1},
+\  'component_visible_condition': {
+\    'left_end': '0',
+\    'right_end': '0',
+\  },
+\  'tabline' : {
+\    'left': [ [ 'tabs' ] ],
+\    'right': [ [ 'close' ] ]
+\  },
+\  'inactive' : {
+\    'left': [ [ 'filename' ] ],
+\    'right': [ [ 'lineinfo' ],
+\             [ 'percent' ] ]
+\  },
+\}
