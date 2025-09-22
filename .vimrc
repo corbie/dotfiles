@@ -460,7 +460,7 @@ let g:dash_activate = 1
 let g:lightline = {
 \  'active' : {
 \    'left': [ [ 'left_end', 'mode', 'paste' ],
-\            [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+\            [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
 \    'right': [ [ 'lineinfo', 'right_end' ],
 \             [ 'percent' ],
 \             [ 'fileformat', 'fileencoding', 'filetype' ] ]
