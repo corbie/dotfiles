@@ -459,31 +459,24 @@ let g:dash_activate = 1
 " lightline
 let g:lightline = {
 \  'active' : {
-\    'left': [ [ 'left_end', 'mode', 'paste' ],
+\    'left': [ [ 'mode', 'paste' ],
 \            [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
-\    'right': [ [ 'lineinfo', 'right_end' ],
+\    'right': [ [ 'lineinfo' ],
 \             [ 'percent' ],
 \             [ 'fileformat', 'fileencoding', 'filetype' ] ]
-\  },
-\  'component': {
-\    'left_end': "%#LightlineLeft_active_0_1#\xee\x82\xb6%#LightlineLeft_active_0#",
-\    'right_end': "%#LightlineRight_active_0_1#\xee\x82\xb4%#LightlineRight_active_0#"
 \  },
 \  'component_function' : {
 \    'gitbranch': 'FugitiveHead'
 \  },
-\  'component_raw' : {'buffers': 1, 'left_end': 1, 'right_end': 1},
-\  'component_visible_condition': {
-\    'left_end': '0',
-\    'right_end': '0',
+\  'inactive' : {
+\    'left': [ [ 'filename', 'modified' ] ],
+\    'right': [ [ 'lineinfo' ],
+\             [ 'percent' ] ]
 \  },
+\  'separator' : { 'left': "\ue0b0", 'right': "\ue0b2"},
+\  'subseparator' : { 'left': "\ue0b1", 'right': "\ue0b3"},
 \  'tabline' : {
 \    'left': [ [ 'tabs' ] ],
 \    'right': [ [ 'close' ] ]
-\  },
-\  'inactive' : {
-\    'left': [ [ 'filename' ] ],
-\    'right': [ [ 'lineinfo' ],
-\             [ 'percent' ] ]
 \  },
 \}
