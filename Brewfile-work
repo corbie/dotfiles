@@ -3,6 +3,10 @@ tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Flexible lightweight test report tool
+brew "allure"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
 # Utility to check whether MAC addresses are already taken on a LAN
@@ -23,8 +27,14 @@ brew "bandit"
 brew "bash"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
+# Language Server for Bash
+brew "bash-language-server"
 # Yet another cross-platform graphical process/system monitor
 brew "bottom"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Console-based Audio Visualizer for ALSA
+brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
@@ -47,8 +57,6 @@ brew "dhcpdump"
 brew "diction"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Pack, ship and run any application as a lightweight container
@@ -65,6 +73,8 @@ brew "dotnet"
 brew "entr"
 # AST-based pattern checker for JavaScript
 brew "eslint"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Scriptable ping program for checking if multiple hosts are up
 brew "fping"
 # Monitor a directory for changes and run a shell command
@@ -101,6 +111,8 @@ brew "httpie"
 brew "httping"
 # Tool to report network interface bandwidth
 brew "ifstat"
+# Display an interface's bandwidth usage
+brew "iftop"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
 # Interactive computing in Python
@@ -109,6 +121,8 @@ brew "ipython"
 brew "jq"
 # Command-line note taker
 brew "jrnl"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Kubernetes command-line interface
@@ -149,6 +163,8 @@ brew "mysql-client@8.4"
 brew "mysql@8.4"
 # NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
 # Manage multiple Node.js versions
@@ -259,6 +275,8 @@ brew "hashicorp/tap/terraform"
 cask "1password"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # API documentation browser and code snippet manager
 cask "dash"
 # Universal database tool and SQL client
@@ -273,6 +291,8 @@ cask "font-iosevka-aile"
 cask "font-iosevka-etoile"
 # Notes manager
 cask "fsnotes"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
@@ -283,8 +303,12 @@ cask "homerow"
 cask "intellij-idea"
 # GPU-based terminal emulator
 cask "kitty"
+# Kubernetes IDE
+cask "lens"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# Screen and video recording software
+cask "loom"
 # Text editor
 cask "macvim-app"
 # Visual diff and merge tool
@@ -324,6 +348,7 @@ mas "Keeper for Safari", id: 6444685332
 mas "Keeper Password Manager", id: 414781829
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Save to Reader", id: 1640236961
@@ -331,4 +356,7 @@ mas "SignalScope X", id: 1304775893
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
 mas "WhiteNoiseLite", id: 431364704
+vscode "anysphere.cursorpyright"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
 vscode "ms-vscode-remote.remote-containers"
