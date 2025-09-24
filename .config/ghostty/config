@@ -1,0 +1,8 @@
+font-family						= Iosevka
+font-size							= 13
+font-thicken					= true
+initial-command				= /opt/homebrew/bin/tmux a
+theme									= Solarized Dark Patched
+window-height					= 55
+window-padding-x			= 0
+window-width					= 240
