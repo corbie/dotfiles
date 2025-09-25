@@ -144,6 +144,7 @@ nmap <Leader>K :ALEHover<CR>
 nmap <Leader>; :CtrlPMRUFiles<CR>
 nmap <Leader>: :CtrlPBuffer<CR>
 nmap <Leader>' :CtrlPCurWD<CR>
+nmap <Leader>" :CtrlPTag<CR>
 " fzf
 nmap <Leader>fb :Buffers<CR>
 nmap <Leader>fc :Commits<CR>
@@ -431,7 +432,7 @@ let g:session_autosave = 'no'
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-\  'dir': '\v(node_modules|*/.git/.*|.mypy_cache|.venv|__pycache__|\.terraform/)',
+\  'dir': '\v(node_modules|.git|.mypy_cache|.venv|__pycache__|.terraform|.dotfiles|.Trash)',
 \ }
 
 " mimimap-vim
