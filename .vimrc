@@ -7,6 +7,7 @@ filetype indent on
 set autowrite
 set directory=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
+set wildignore+=*/.git/*,*/tmp/*,*.swp
 set omnifunc=ale#completion#OmniFunc
 set belloff=all
 if !has('gui_running')
@@ -136,13 +137,13 @@ command Gc :G commit -v
 command Gp :G push
 command Gpf :G push -f
 command Grf :G refresh
+command Gl :Gclog
 
 """ Leader keys
 " ALE info window for symbold under cursor
 nmap <Leader>K :ALEHover<CR>
 " CtrlP
 nmap <Leader>; :CtrlPMRUFiles<CR>
-nmap <Leader>: :CtrlPBuffer<CR>
 nmap <Leader>' :CtrlPCurWD<CR>
 nmap <Leader>" :CtrlPTag<CR>
 " fzf
@@ -171,21 +172,19 @@ nmap <leader>gj :ALENext -wrap<cr>
 nmap <leader>gk :ALEPrevious -wrap<cr>
 " Git
 nmap <leader>G :G<CR>
-nmap <leader>Gb :G branch -c 
+nmap <leader>Gb :G checkout -b 
 nmap <leader>Gl :Commits<CR>
+nmap <leader>Gr :G refresh<CR>
 " close help window
 nmap <leader>hh :helpclose<CR>
 " toggle invisible chars
 nmap <leader>i :set list!<cr>
-" Ack search for word
-nmap <leader>k :Ack! "\b<cword>\b" <CR>
 " buffer list
 nmap <leader>l :ls<cr>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
 " file browser
 nmap <leader>n :Lexplore<cr>
-nmap <leader>nn :Lexplore %:p:h<CR>
 " goyo
 nmap <Leader>p :Goyo<CR>
 " vim-session
@@ -432,8 +431,14 @@ let g:session_autosave = 'no'
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-\  'dir': '\v(node_modules|.git|.mypy_cache|.venv|__pycache__|.terraform|.dotfiles|.Trash)',
+\  'dir': '\v(node_modules|.git|.mypy_cache|.venv|__pycache__|.dotfiles|.Trash)',
 \ }
+let g:ctrlp_max_files = 100000
+" if executable('rg')
+"   set grepprg=rg\ --color=never
+"   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+"   let g:ctrlp_use_caching = 0
+" endif
 
 " mimimap-vim
 let g:minimap_highlight_range = 1
