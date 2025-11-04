@@ -1,4 +1,5 @@
 tap "2mol/tools"
+tap "akeylesslabs/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -49,8 +50,6 @@ brew "code-minimap"
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
 # Monitor DHCP traffic for debugging purposes
 brew "dhcpdump"
 # GNU diction and style
@@ -159,6 +158,8 @@ brew "mintoolkit"
 brew "mtr"
 # Open source relational database management system
 brew "mysql-client@8.4"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Open source relational database management system
 brew "mysql@8.4"
 # NCurses Disk Usage
@@ -181,8 +182,6 @@ brew "pkgconf"
 brew "postgresql@15", link: true
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Static type checker for Python
@@ -249,6 +248,8 @@ brew "tree"
 brew "trippy"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Use ViM as PAGER
 brew "vimpager"
 # Vim script Language Lint
@@ -269,6 +270,8 @@ brew "yapf"
 brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Akeyless CLI
+brew "akeylesslabs/tap/akeyless"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Password manager that keeps all passwords secure behind one password
@@ -301,8 +304,6 @@ cask "google-chrome"
 cask "homerow"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# GPU-based terminal emulator
-cask "kitty"
 # Kubernetes IDE
 cask "lens"
 # Discover, download, and run local LLMs
@@ -353,10 +354,20 @@ mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Save to Reader", id: 1640236961
 mas "SignalScope X", id: 1304775893
-mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
 mas "WhiteNoiseLite", id: 431364704
-vscode "anysphere.cursorpyright"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-vscode-remote.remote-containers"
+go "github.com/klauspost/asmfmt/cmd/asmfmt"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/kisielk/errcheck"
+go "github.com/davidrjenni/reftools/cmd/fillstruct"
+go "github.com/rogpeppe/godef"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/fatih/gomodifytags"
+go "golang.org/x/tools/gopls"
+go "golang.org/x/tools/cmd/gorename"
+go "github.com/koron/iferr"
+go "github.com/josharian/impl"
+go "github.com/fatih/motion"
+go "github.com/mgechev/revive"
+go "honnef.co/go/tools/cmd/staticcheck"
