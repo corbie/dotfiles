@@ -10,8 +10,6 @@ brew "harfbuzz"
 brew "allure"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Utility to check whether MAC addresses are already taken on a LAN
-brew "arping"
 # Source-code syntax highlighter
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
@@ -38,8 +36,6 @@ brew "btop"
 brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
-# Tool to obtain certs from Let's Encrypt and autoenable HTTPS
-brew "certbot"
 # Cross-platform make
 brew "cmake"
 # Strongly specified, highly compatible implementation of Markdown
@@ -168,14 +164,10 @@ brew "ncdu"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Manage multiple Node.js versions
-brew "nvm"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Shell command parallelization utility
 brew "parallel"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Object-relational database system
@@ -276,19 +268,14 @@ brew "akeylesslabs/tap/akeyless"
 brew "hashicorp/tap/terraform"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # API documentation browser and code snippet manager
 cask "dash"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# Online diagram software
-cask "drawio"
 # Web browser
 cask "firefox"
-cask "font-3270"
 cask "font-iosevka"
 cask "font-iosevka-aile"
 cask "font-iosevka-etoile"
@@ -304,8 +291,6 @@ cask "google-chrome"
 cask "homerow"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# Kubernetes IDE
-cask "lens"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # Screen and video recording software
@@ -320,10 +305,6 @@ cask "menumeters"
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Replacement for Docker Desktop
-cask "orbstack"
-# MySQL/MariaDB database management
-cask "sequel-ace"
 # Music streaming service
 cask "spotify"
 # Text editor for code, markup and prose
@@ -345,17 +326,13 @@ mas "AdBlock", id: 1402042596
 mas "Exporter", id: 1099120373
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
-mas "Keeper for Safari", id: 6444685332
-mas "Keeper Password Manager", id: 414781829
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
-mas "Paper", id: 1143513744
 mas "Save to Reader", id: 1640236961
-mas "SignalScope X", id: 1304775893
+mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
-mas "WhiteNoiseLite", id: 431364704
 go "github.com/klauspost/asmfmt/cmd/asmfmt"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/kisielk/errcheck"
