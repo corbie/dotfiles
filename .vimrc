@@ -431,7 +431,7 @@ let g:session_autosave = 'no'
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-\  'dir': '\v(node_modules|.git|.mypy_cache|.venv|__pycache__|.dotfiles|.Trash)',
+\  'dir': '\v(node_modules|.git/objects/|.git/refs/|.mypy_cache|.venv|__pycache__|.dotfiles|.Trash)',
 \ }
 let g:ctrlp_max_files = 100000
 " if executable('rg')
