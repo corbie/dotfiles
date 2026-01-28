@@ -224,3 +224,8 @@ function kcontext() {
 if which zoxide > /dev/null; then
 	eval "$(zoxide init --cmd cd bash)"
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/corban.johnson/.lmstudio/bin"
+# End of LM Studio CLI section
+
