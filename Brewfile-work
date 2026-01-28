@@ -14,10 +14,6 @@ brew "webp"
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
-# Distributed revision control system
-brew "git"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Security-oriented static analyser for Python code
@@ -78,13 +74,15 @@ brew "fswatch"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Distributed revision control system
+brew "git"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
 # Git extension for versioning large files
 brew "git-lfs"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
@@ -114,8 +112,6 @@ brew "iperf3"
 brew "ipython"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Command-line note taker
-brew "jrnl"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Run local Kubernetes cluster in Docker
@@ -134,8 +130,6 @@ brew "lldpd"
 brew "lua-language-server"
 # Swiss Army Knife for macOS
 brew "m-cli"
-# GUI for vim, made for macOS
-brew "macvim", link: false
 # UNIX manpage compiler toolset
 brew "mandoc"
 # Text-to-HTML conversion tool
@@ -150,6 +144,8 @@ brew "md5deep"
 brew "midnight-commander"
 # Minify and secure Docker images
 brew "mintoolkit"
+# Deep clean and optimize your Mac
+brew "mole"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # Open source relational database management system
@@ -216,8 +212,6 @@ brew "sslscan"
 brew "stunnel"
 # TCP connect to the given IP/port combo
 brew "tcping"
-# Replay saved tcpdump files at arbitrary speeds
-brew "tcpreplay"
 # Traceroute implementation using TCP packets
 brew "tcptraceroute"
 # Terraform Language Server
@@ -246,8 +240,6 @@ brew "uv"
 brew "vimpager"
 # Vim script Language Lint
 brew "vint"
-# Tool for creating isolated virtual python environments
-brew "virtualenv"
 # Pager/text based browser
 brew "w3m"
 # Executes a program periodically, showing output fullscreen
@@ -270,6 +262,8 @@ brew "hashicorp/tap/terraform"
 cask "1password"
 # Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # API documentation browser and code snippet manager
 cask "dash"
 # Universal database tool and SQL client
@@ -297,8 +291,6 @@ cask "lm-studio"
 cask "loom"
 # Text editor
 cask "macvim-app"
-# Visual diff and merge tool
-cask "meld"
 # Set of CPU, memory, disk, and network monitoring tools
 cask "menumeters"
 # Provides updates to various Microsoft products
@@ -333,6 +325,10 @@ mas "Pages", id: 409201541
 mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
+vscode "anysphere.cursorpyright"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-vscode-remote.remote-containers"
 go "github.com/klauspost/asmfmt/cmd/asmfmt"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/kisielk/errcheck"
