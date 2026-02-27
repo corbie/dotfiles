@@ -339,6 +339,7 @@ let g:ale_default_navigation = 'split'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
+\   'json': ['jq', 'eslint'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
@@ -352,6 +353,7 @@ let g:ale_linters = {
 \   'bash': ['shellcheck', 'bash-language-server'],
 \   'dockerfile': ['hadolint'],
 \   'javascript': ['eslint'],
+\   'json': ['jq', 'eslint'],
 \   'lua': ['selene', 'luac', 'luacheck', 'lua_language_server'],
 \   'python': ['pylsp', 'jedils', 'pylint'],
 \   'sh': ['shellcheck'],

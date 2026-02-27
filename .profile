@@ -20,7 +20,7 @@ if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	else
 		export BREW_PREFIX='/usr/local'
 	fi
-	export EDITOR="${BREW_PREFIX}/bin/vi"
+	export EDITOR="${BREW_PREFIX}/bin/nvim"
 	PATH=${BREW_PREFIX}/bin:$PATH
 	PATH=${BREW_PREFIX}/sbin:$PATH
 else

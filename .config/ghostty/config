@@ -6,3 +6,7 @@ theme									= Solarized Dark Patched
 window-height					= 55
 window-padding-x			= 0
 window-width					= 240
+
+# pi-mono agent configuration
+keybind								= alt+backspace=text:\x1b\x7f
+keybind								= shift+enter=text:\n

@@ -1,0 +1,25 @@
+lastscore=13743
+mode=1
+level=1
+height=0
+rotate=3
+softdrop=1
+[term]
+drawing=1
+bg=0
+color=1
+bgdot=.
+[stdin]
+left=a
+right=d
+up=w
+down=s
+rot-a=.
+rot-b=,
+[hiscore]
+Ã†<~-dkNA
+Oò,‡biFA
+Ãó<<C	ioBA
+Ï†<JxhnDA
+Oòe1ce@
+Oòm,ce@
