@@ -3,7 +3,10 @@ tap "akeylesslabs/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "samkleespies/ghostcfg"
 tap "universal-ctags/universal-ctags"
+# AI pair programming in your terminal
+brew "aider"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Flexible lightweight test report tool
@@ -72,6 +75,8 @@ brew "fping"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -132,6 +137,8 @@ brew "lua-language-server"
 brew "m-cli"
 # UNIX manpage compiler toolset
 brew "mandoc"
+# Man-page inspired Markdown viewer
+brew "mandown"
 # Text-to-HTML conversion tool
 brew "markdown"
 # Mac App Store command-line interface
@@ -160,6 +167,10 @@ brew "ncdu"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Shell command parallelization utility
@@ -188,8 +199,6 @@ brew "redis"
 brew "remind"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Utility that provides fast incremental file transfer
@@ -240,6 +249,8 @@ brew "uv"
 brew "vimpager"
 # Vim script Language Lint
 brew "vint"
+# Terminal-based Tetris clone
+brew "vitetris"
 # Pager/text based browser
 brew "w3m"
 # Executes a program periodically, showing output fullscreen
@@ -258,6 +269,8 @@ brew "zoxide"
 brew "akeylesslabs/tap/akeyless"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Interactive TUI for Ghostty terminal configuration
+brew "samkleespies/ghostcfg/ghostcfg"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Anthropic's official Claude AI desktop app
