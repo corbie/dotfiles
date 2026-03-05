@@ -19,3 +19,9 @@ git --git-dir=${HOME}/.dotfiles --work-tree=${HOME} checkout
 ```
 dt config --local status.showUntrackedFiles no
 ```
+
+4. Set up remote branch tracking
+
+```
+git --git-dir=$HOME/.dotfiles config --add remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*' && git --git-dir=$HOME/.dotfiles fetch origin
+```
