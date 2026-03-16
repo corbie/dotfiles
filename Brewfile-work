@@ -1,8 +1,6 @@
 tap "2mol/tools"
 tap "akeylesslabs/tap"
 tap "hashicorp/tap"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "samkleespies/ghostcfg"
 tap "universal-ctags/universal-ctags"
 # AI pair programming in your terminal
@@ -11,8 +9,6 @@ brew "aider"
 brew "harfbuzz"
 # Flexible lightweight test report tool
 brew "allure"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # Source-code syntax highlighter
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
@@ -51,6 +47,8 @@ brew "dhcpdump"
 brew "diction"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Small tool to convert Djvu files to PDF files
 brew "djvu2pdf"
 # Pack, ship and run any application as a lightweight container
@@ -61,8 +59,6 @@ brew "docker-compose"
 brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
-# .NET Core
-brew "dotnet"
 # Run arbitrary commands when files change
 brew "entr"
 # AST-based pattern checker for JavaScript
@@ -85,6 +81,8 @@ brew "git"
 brew "git-filter-repo"
 # Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
+brew "glab"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Privacy Guard (OpenPGP)
@@ -265,8 +263,6 @@ brew "yapf"
 brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Akeyless CLI
-brew "akeylesslabs/tap/akeyless"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Interactive TUI for Ghostty terminal configuration
@@ -277,10 +273,14 @@ cask "1password"
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
 # API documentation browser and code snippet manager
 cask "dash"
 # Universal database tool and SQL client
 cask "dbeaver-community"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-iosevka"
@@ -333,15 +333,10 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
 mas "Pages", id: 409201541
 mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
 mas "Tomato 2", id: 1494210770
-vscode "anysphere.cursorpyright"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-vscode-remote.remote-containers"
 go "github.com/klauspost/asmfmt/cmd/asmfmt"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/kisielk/errcheck"
