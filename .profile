@@ -1,3 +1,5 @@
+# ꟛ
+
 # Environment
 ## Shell Options
 export HISTCONTROL=ignoreboth
