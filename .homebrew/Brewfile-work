@@ -31,6 +31,8 @@ brew "btop"
 brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Cross-platform make
 brew "cmake"
 # Strongly specified, highly compatible implementation of Markdown
@@ -119,10 +121,10 @@ brew "jq"
 brew "k9s"
 # Run local Kubernetes cluster in Docker
 brew "kind"
-# Kubernetes command-line interface
-brew "kubernetes-cli"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
 brew "lft"
 # Sophisticated file transfer program
@@ -179,6 +181,8 @@ brew "pkgconf"
 brew "postgresql@15", link: true
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Milkdrop-compatible music visualizer
+brew "projectm"
 # It's not just a linter that annoys you!
 brew "pylint"
 # Static type checker for Python
@@ -256,7 +260,7 @@ brew "watch"
 # Internet file retriever
 brew "wget"
 # Network analyzer and capture tool - without graphical user interface
-brew "wireshark", link: false
+brew "wireshark"
 # Formatter for python code
 brew "yapf"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -288,12 +292,16 @@ cask "font-iosevka-aile"
 cask "font-iosevka-etoile"
 # Notes manager
 cask "fsnotes"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Keyboard shortcuts for every button on your screen
 cask "homerow"
 # Java IDE by JetBrains
@@ -333,6 +341,7 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 mas "Pages", id: 409201541
 mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
