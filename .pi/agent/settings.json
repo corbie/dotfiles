@@ -1,7 +1,8 @@
 {
-  "lastChangelogVersion": "0.65.0",
-  "defaultProvider": "openrouter",
-  "defaultModel": "qwen/qwen3.6-plus:free",
+  "lastChangelogVersion": "0.67.2",
+  "defaultProvider": "lmstudio",
+  "defaultModel": "qwen3.5-27b-claude-4.6-opus-reasoning-distilled-v2",
+  "enableInstallTelemetry": false,
   "extensions": [
     "/usr/local/lib/node_modules/token-rate-pi/"
   ],
