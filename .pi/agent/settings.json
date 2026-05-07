@@ -1,11 +1,16 @@
 {
-  "lastChangelogVersion": "0.67.2",
+  "lastChangelogVersion": "0.73.0",
   "defaultProvider": "lmstudio",
-  "defaultModel": "qwen3.5-27b-claude-4.6-opus-reasoning-distilled-v2",
+  "defaultModel": "qwen/qwen3.6-27b",
   "enableInstallTelemetry": false,
   "extensions": [
     "/usr/local/lib/node_modules/token-rate-pi/"
   ],
   "defaultThinkingLevel": "medium",
-  "showHardwareCursor": true
+  "showHardwareCursor": true,
+  "treeFilterMode": "default",
+  "terminal": {
+    "clearOnShrink": false,
+    "showTerminalProgress": true
+  }
 }
