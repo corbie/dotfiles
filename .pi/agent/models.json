@@ -6,24 +6,32 @@
       "apiKey": "foo",
       "models": [
         {
-          "id": "qwen/qwen3.5-27b",
+          "id": "google/gemma-4-26b-a4b",
           "contextWindow": 65000
-        },
-        {
-          "id": "qwen/qwen3-coder-30b",
-          "contextWindow": 65000
-        },
-        {
-          "id": "qwen/qwen3-coder-next",
-          "contextWindow": 65000
-        },
-        {
-          "id": "qwen/qwen3-32b",
-          "contextWindow": 40900
         },
         {
           "id": "openai/gpt-oss-20b",
           "contextWindow": 65000
+        },
+        {
+          "id": "qwen/qwen3.6-35b-a3b",
+          "contextWindow": 128000
+        },
+        {
+          "id": "qwen/qwen3.6-27b"
+        },
+        {
+          "id": "qwen/qwen3.6-35b-a3b",
+          "contextWindow": 128000
+        }
+      ]
+    },
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "qwen/qwen3.6-plus"
         }
       ]
     }
