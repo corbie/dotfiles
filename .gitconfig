@@ -64,3 +64,6 @@
 	submodule = log
 [pull]
 	rebase = false
+
+[includeIf "hasconfig:remote.*.url:git.scratchpay.com/**"]
+	path = ~/.gitconfig-scratch
