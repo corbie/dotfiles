@@ -42,6 +42,7 @@ Plug 'airblade/vim-gitgutter' " git status in gutter
 Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim' " file/buffer search
 Plug 'drmingdrmer/vim-toggle-quickfix' " toggle for open/closing quickfix window
+Plug 'francoiscabrol/ranger.vim' " use ranger as file browser
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' } " Go language
 Plug 'guns/vim-sexp', { 'for': 'fennel' } " s-expression movements
 Plug 'jpalardy/vim-slime' " REPL terminal
@@ -56,6 +57,7 @@ Plug 'pedrohdz/vim-yaml-folds', { 'for': 'yaml' } " YAML syntax folds
 Plug 'plan9-for-vimspace/acme-colors' " color scheme
 Plug 'preservim/tagbar', { 'on': 'TagbarToggle' } " tag sidebar
 Plug 'qpkorr/vim-bufkill' " close buffer but keep window
+Plug 'rbgrouleff/bclose.vim'
 Plug 'rizzatti/dash.vim' " Dash documentation search
 Plug 'robertmeta/nofrils' " color scheme
 Plug 'roxma/nvim-yarp'
@@ -184,7 +186,7 @@ nmap <leader>l :ls<cr>
 " minimap-vim
 map <leader>m :MinimapToggle<CR>
 " file browser
-nmap <leader>n :Lexplore<cr>
+nmap <leader>n :Ranger<cr>
 " goyo
 nmap <Leader>p :Goyo<CR>
 " vim-session
@@ -488,3 +490,8 @@ let g:lightline = {
 \    'right': [ [ 'close' ] ]
 \  },
 \}
+
+" ranger
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
