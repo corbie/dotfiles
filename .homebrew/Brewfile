@@ -10,6 +10,8 @@ brew "freetype"
 brew "libunistring"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# JSON parser for C
+brew "json-c"
 # Core application library for C
 brew "glib"
 # Low-level library for pixel manipulation
@@ -20,6 +22,8 @@ brew "cairo"
 brew "fribidi"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# TIFF library and utilities
+brew "libtiff"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # Smart font renderer for non-Roman scripts
@@ -32,8 +36,6 @@ brew "pango"
 brew "librsvg"
 # Icons for the GNOME project
 brew "adwaita-icon-theme"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # C library for creating IP packets
 brew "libnet"
 # Utility to check whether MAC addresses are already taken on a LAN
@@ -52,18 +54,28 @@ brew "automake"
 brew "openssl@3"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Text-based UI library
+brew "ncurses"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
 # Yet another cross-platform graphical process/system monitor
 brew "bottom"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
 # (Arguably) the best yacc variant
 brew "byacc"
 # Asynchronous DNS library
 brew "c-ares"
+# Console-based Audio Visualizer for ALSA
+brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Cisco Discovery Protocol Reporter
 brew "cdpr"
-# Display user-friendly message boxes from shell scripts
-brew "dialog"
+# YAML Parser
+brew "libyaml"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
 # Readline wrapper: adds readline support to tools that lack it
@@ -82,6 +94,8 @@ brew "code-minimap"
 brew "dash-shell"
 # Monitor DHCP traffic for debugging purposes
 brew "dhcpdump"
+# Display user-friendly message boxes from shell scripts
+brew "dialog"
 # GNU diction and style
 brew "diction"
 # Image manipulation library
@@ -94,16 +108,6 @@ brew "docker-completion"
 brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# Asynchronous event library
-brew "libevent"
-# Low-level cryptographic library
-brew "nettle"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# GNU Emacs text editor
-brew "emacs"
 # Run arbitrary commands when files change
 brew "entr"
 # Graphics library to dynamically manipulate images
@@ -118,7 +122,7 @@ brew "libpq"
 brew "eralchemy"
 # Lua Lisp Language
 brew "fennel"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Infamous electronic fortune-cookie generator
 brew "fortune"
@@ -142,12 +146,16 @@ brew "gforth"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# YAML Parser
-brew "libyaml"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Ruby client and CLI for GitLab API
 brew "gitlab-gem"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# Low-level cryptographic library
+brew "nettle"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # Common error values for all GnuPG components
 brew "libgpg-error"
 # Assuan IPC Library
@@ -162,7 +170,7 @@ brew "libusb"
 brew "npth"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
@@ -182,8 +190,6 @@ brew "gtk+3"
 brew "guile"
 # Kubernetes package manager
 brew "helm"
-# Text-based UI library
-brew "ncurses"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -196,18 +202,18 @@ brew "iftop"
 brew "intltool"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
-# Peer-to-peer hypermedia protocol
-brew "ipfs"
 # Interactive computing in Python
 brew "ipython"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Command-line note taker
 brew "jrnl"
-# JSON parser for C
-brew "json-c"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 # Run local Kubernetes cluster in Docker
 brew "kind"
+# Peer-to-peer hypermedia protocol
+brew "kubo"
 # Build tool for Clojure
 brew "leiningen"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
@@ -216,6 +222,8 @@ brew "lft"
 brew "lftp"
 # Portable low-level networking library
 brew "libdnet"
+# Asynchronous event library
+brew "libevent"
 # Library for handling page faults in user mode
 brew "libsigsegv"
 # Library for USB device access
@@ -252,6 +260,8 @@ brew "mtr"
 brew "ncdu"
 # HTTP and WebDAV client library with a C interface
 brew "neon"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Tools to collect and process netflow data on the command-line
 brew "nfdump"
 # Port scanning utility for large networks
@@ -260,14 +270,10 @@ brew "nmap"
 brew "pandoc"
 # Extract just secret information out of OpenPGP secret keys
 brew "paperkey"
-# Draw UML diagrams
-brew "plantuml"
 # Python package management tool
 brew "poetry"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Autonomous mail processor
-brew "procmail"
 # GNU Portable THreads
 brew "pth"
 # Interpreted, interactive, object-oriented programming language
@@ -296,6 +302,8 @@ brew "rsync"
 brew "scheme48"
 # Blazing-fast modern Lua linter
 brew "selene"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Generate passwords using SecurityFoundation framework
 brew "sf-pwgen"
 # Advanced console-based IP subnet calculator
@@ -326,8 +334,12 @@ brew "trash", link: true
 brew "tree"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Use ViM as PAGER
 brew "vimpager"
+# Terminal-based Tetris clone
+brew "vitetris"
 # Pager/text based browser
 brew "w3m"
 # Executes a program periodically, showing output fullscreen
@@ -339,92 +351,46 @@ brew "wget"
 # Fetch summaries from MediaWiki wikis, like Wikipedia
 brew "wiki"
 # Network analyzer and capture tool - without graphical user interface
-brew "wireshark"
+brew "wireshark", link: false
 # Cross-platform C++ GUI toolkit
 brew "wxwidgets"
-# Memory training application
-cask "anki"
-# Multi-track audio editor and recorder
-cask "audacity"
-# E-books management software
-cask "calibre"
-# Server and cloud storage browser
-cask "cyberduck"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
-# Online diagram software
-cask "drawio"
-# Alternative to Apple's DiskImageMounter app
-cask "fastdmg"
-# Web browser
-cask "firefox"
 cask "font-iosevka"
-# Notes manager
-cask "fsnotes"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# Open-source video transcoder
-cask "handbrake-app"
-# Vector graphics editor
-cask "inkscape"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Play music online with friends
 cask "jamulus"
 # End-to-end encryption software
 cask "keybase"
-# GPU-based terminal emulator
-cask "kitty"
 # 2D game framework for Lua
 cask "love"
 # Open-source Markdown editor
 cask "macdown"
 # Text editor
 cask "macvim-app"
-# First-person shooter, first in a trilogy
-cask "marathon"
-# First-person shooter, third in a trilogy
-cask "marathon-infinity"
-# Visual diff and merge tool
-cask "meld"
 # Set of CPU, memory, disk, and network monitoring tools
 cask "menumeters"
 # Wallet for the Monero cryptocurrency
 cask "mymonero"
-# Retro video game emulation
-cask "openemu"
-# Replacement for Docker Desktop
-cask "orbstack"
 # Visual programming language for multimedia
 cask "pd"
 # Desktop chat client for Slack (and Discord)
 cask "ripcord"
-# Music streaming service
-cask "spotify"
-# Video game digital distribution service
-cask "steam"
-# Text editor for code, markup and prose
-cask "sublime-text"
-# Modular synthesiser
-cask "sunvox"
-# Web browser focusing on security
-cask "tor-browser"
-# Open-source BitTorrent client
-cask "transmission"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source virtual modular synthesiser
 cask "vcv-rack"
+# Virtualiser for x86 hardware
+cask "virtualbox"
 # Multimedia player
 cask "vlc"
 # Network protocol analyzer
 cask "wireshark-app"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-# Screen savers
-cask "xscreensaver"
-# Simple menu bar app to download YouTube movies
-cask "youtube-downloader"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password 7", id: 1333542190
@@ -433,23 +399,41 @@ mas "Audulus 4", id: 1592022030
 mas "Balance Lock", id: 1019371109
 mas "Calca", id: 635758264
 mas "Exporter", id: 1099120373
+mas "field kit", id: 1612653346
 mas "GarageBand", id: 682658836
 mas "Graphic", id: 404705039
 mas "Keynote", id: 409183694
 mas "Kindle Classic", id: 405399194
 mas "Magnet", id: 441258766
 mas "Marked 2", id: 890031187
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "OP-Z", id: 1098190457
 mas "Oscilloppoi", id: 1102313524
 mas "Pages", id: 409201541
 mas "Paper", id: 1143513744
 mas "Pixelmator", id: 407963104
-mas "Save to Reader", id: 1640236961
-mas "Slack", id: 803453959
-mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
 mas "Tomato 2", id: 1494210770
 mas "ToothFairy", id: 1191449274
 mas "WiFi Explorer", id: 494803304
+mas "Windows App", id: 1295203466
+go "github.com/klauspost/asmfmt/cmd/asmfmt"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/kisielk/errcheck"
+go "github.com/davidrjenni/reftools/cmd/fillstruct"
+go "github.com/rogpeppe/godef"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "golang.org/x/lint/golint"
+go "github.com/fatih/gomodifytags"
+go "golang.org/x/tools/gopls"
+go "golang.org/x/tools/cmd/gorename"
+go "github.com/jstemmer/gotags"
+go "golang.org/x/tools/cmd/guru"
+go "gitlab.com/corbanjohnson/htd"
+go "github.com/koron/iferr"
+go "github.com/josharian/impl"
+go "honnef.co/go/tools/cmd/keyify"
+go "github.com/fatih/motion"
+go "github.com/mgechev/revive"
+go "honnef.co/go/tools/cmd/staticcheck"
