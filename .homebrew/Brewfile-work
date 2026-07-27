@@ -13,8 +13,6 @@ brew "allure"
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Security-oriented static analyser for Python code
 brew "bandit"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -23,6 +21,8 @@ brew "bash"
 brew "bash-completion"
 # Language Server for Bash
 brew "bash-language-server"
+# Searches a binary image for embedded files and executable code
+brew "binwalk"
 # Yet another cross-platform graphical process/system monitor
 brew "bottom"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -31,6 +31,8 @@ brew "btop"
 brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
 # Cross-platform make
@@ -75,6 +77,8 @@ brew "fswatch"
 brew "fzf"
 # Interact with Google Gemini AI models from the command-line
 brew "gemini-cli"
+# Implementation of the ANS Forth language
+brew "gforth"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -93,8 +97,6 @@ brew "gnupg"
 brew "go"
 # Tag generator for Go, compatible with ctags
 brew "gotags"
-# Graph visualization software from AT&T and Bell Labs
-brew "graphviz"
 # Smarter Dockerfile linter to validate best practices
 brew "hadolint"
 # Convert HCL2 to JSON
@@ -119,8 +121,6 @@ brew "ipython"
 brew "jq"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# Run local Kubernetes cluster in Docker
-brew "kind"
 # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
 # Kubernetes command-line interface
@@ -175,6 +175,8 @@ brew "opencode"
 brew "pandoc"
 # Shell command parallelization utility
 brew "parallel"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Object-relational database system
@@ -245,6 +247,8 @@ brew "tree"
 brew "trippy"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
+# Compress/expand executable files
+brew "upx"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Use ViM as PAGER
@@ -267,49 +271,31 @@ brew "yapf"
 brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Terraform
-brew "hashicorp/tap/terraform"
-# Interactive TUI for Ghostty terminal configuration
-brew "samkleespies/ghostcfg/ghostcfg"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Anthropic's official Claude AI desktop app
-cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # API documentation browser and code snippet manager
 cask "dash"
-# Universal database tool and SQL client
-cask "dbeaver-community"
-# App to build and share containerised applications and microservices
-cask "docker-desktop"
 # Web browser
 cask "firefox"
 cask "font-iosevka"
 cask "font-iosevka-aile"
 cask "font-iosevka-etoile"
-# Notes manager
-cask "fsnotes"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Desktop client for GitHub repositories
-cask "github"
 # Web browser
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Keyboard shortcuts for every button on your screen
 cask "homerow"
-# Java IDE by JetBrains
-cask "intellij-idea"
 # Discover, download, and run local LLMs
 cask "lm-studio"
-# Screen and video recording software
-cask "loom"
 # Text editor
 cask "macvim-app"
 # Set of CPU, memory, disk, and network monitoring tools
@@ -318,16 +304,10 @@ cask "menumeters"
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
-# Music streaming service
-cask "spotify"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Multimedia player
 cask "vlc"
-# Scan, monitor, and troubleshoot wireless networks
-cask "wifi-explorer"
-# Network protocol analyzer
-cask "wireshark-app"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 # Screen savers
@@ -339,9 +319,10 @@ mas "AdBlock", id: 1402042596
 mas "Exporter", id: 1099120373
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
+mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
 mas "Numbers", id: 361304891
+mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959

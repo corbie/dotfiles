@@ -115,6 +115,10 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
+## Helm
+helm_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
+[[ -f $helm_completion_dir/helm ]] && . $helm_completion_dir/helm
+
 ## Kubectl
 kubectl_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 [[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
