@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.78.0",
+  "lastChangelogVersion": "0.80.10",
   "defaultProvider": "lmstudio",
   "defaultModel": "qwen/qwen3.6-27b",
   "enableInstallTelemetry": false,
@@ -16,5 +16,6 @@
   "enabledModels": [
     "lmstudio/qwen/qwen3.6-27b",
     "lmstudio/qwen/qwen3.6-35b-a3b"
-  ]
+  ],
+  "theme": "dark"
 }

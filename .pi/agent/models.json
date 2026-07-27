@@ -6,15 +6,13 @@
       "apiKey": "foo",
       "models": [
         {
-          "id": "google/gemma-4-26b-a4b",
-          "contextWindow": 65000
+          "id": "google/gemma-4-26b-a4b"
         },
         {
-          "id": "openai/gpt-oss-20b",
-          "contextWindow": 65000
+          "id": "openai/gpt-oss-20b"
         },
         {
-          "id": "qwen/qwen3.6-35b-a3b",
+          "id": "google/gemma-4-31b",
           "contextWindow": 128000
         },
         {
@@ -28,6 +26,7 @@
     },
     "openrouter": {
       "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKey": "foo",
       "api": "openai-completions",
       "models": [
         {
