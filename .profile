@@ -80,9 +80,6 @@ screen* | xterm* | rxvt*)
 esac
 PS1="\n\w\n\u@\h> "
 
-## AWS
-export AWS_PROFILE=default
-
 ## Go
 export GOPATH=~/Workspace/go
 export GOBIN=$GOPATH/bin
@@ -99,10 +96,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Command completion
-## AWS CLI
-aws_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
-. $aws_completion_dir/aws_bash_completer
-
 ## Docker
 docker_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 . $docker_completion_dir/docker
