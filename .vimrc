@@ -301,7 +301,6 @@ let g:airline#extensions#hunks#non_zero_only = 1
 
 " tagbar settings
 let g:tagbar_compact = 1
-let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
 let g:tagbar_foldlevel = 1
 let g:tagbar_position = 'leftabove vertical'
 let g:tagbar_zoomwidth = 0
