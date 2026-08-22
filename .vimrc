@@ -25,6 +25,7 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 "Plug 'bakpakin/fennel.vim', { 'for': 'fennel' }
+"Plug 'bling/vim-airline' " status line
 "Plug 'chr4/nginx.vim'
 "Plug 'ekalinin/Dockerfile.vim', { 'for': 'Docker' }
 "Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
@@ -38,7 +39,6 @@ call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf' " fzf searching
 Plug 'Joorem/vim-haproxy', { 'for': 'haproxy' } " haproxy syntax
 Plug 'airblade/vim-gitgutter' " git status in gutter
-" Plug 'bling/vim-airline' " status line
 Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim' " file/buffer search
 Plug 'drmingdrmer/vim-toggle-quickfix' " toggle for open/closing quickfix window
@@ -288,16 +288,15 @@ augroup end
 
 "" Plugin settings
 " airline settings
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#branch#format = 2
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#hunks#non_zero_only = 1
-" let g:airline_statusline_ontop=1
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_buffers = 1
+" let g:airline#extensions#tabline#show_close_button = 0
+" let g:airline#extensions#tabline#show_tab_nr = 0
+" let g:airline#extensions#tabline#show_tab_type = 0
+" let g:airline#extensions#branch#format = 2
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#hunks#non_zero_only = 1
 
 " tagbar settings
 let g:tagbar_compact = 1
