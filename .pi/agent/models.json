@@ -12,7 +12,14 @@
           "id": "openai/gpt-oss-20b"
         },
         {
+          "id": "prism-ml/bonsai-27b"
+        },
+        {
           "id": "google/gemma-4-31b",
+          "contextWindow": 128000
+        },
+        {
+          "id": "google/gemma-4-31b-qat",
           "contextWindow": 128000
         },
         {

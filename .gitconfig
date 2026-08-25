@@ -67,3 +67,5 @@
 
 [includeIf "hasconfig:remote.*.url:git.scratchpay.com/**"]
 	path = ~/.gitconfig-scratch
+[includeIf "hasconfig:remote.*.url:gitlab.com/**"]
+	path = ~/.gitconfig-scratch
