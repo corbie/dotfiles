@@ -340,6 +340,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'bash': ['shfmt'],
 \   'json': ['jq', 'eslint'],
+\   'hcl': ['terraform', 'packer'],
 \   'lua': ['lua-format'],
 \   'sh': ['shfmt'],
 \   'terraform': ['terraform'],
@@ -352,6 +353,7 @@ let g:ale_lint_on_text_changed = 'always'
 let g:ale_linters = {
 \   'bash': ['shellcheck', 'bash-language-server'],
 \   'dockerfile': ['hadolint'],
+\   'hcl': ['terraform', 'packer'],
 \   'javascript': ['eslint'],
 \   'json': ['jq', 'eslint'],
 \   'lua': ['selene', 'luac', 'luacheck', 'lua_language_server'],
