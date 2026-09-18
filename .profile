@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/corban.johnson/.docker/bin"
+# End of Docker Desktop section.
+
 # ꟛ
 
 # Environment
@@ -107,6 +111,10 @@ git_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
+
+## Google CLI
+google_cli_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
+[[ -f $google_cli_completion_dir/google-cloud-sdk ]] && . $google_cli_completion_dir/google-cloud-sdk
 
 ## Helm
 helm_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
