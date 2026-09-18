@@ -65,7 +65,7 @@
 [pull]
 	rebase = false
 
-[includeIf "hasconfig:remote.*.url:git.scratchpay.com/**"]
+[includeIf "hasconfig:remote.*.url:git@git.scratchpay.com:**"]
 	path = ~/.gitconfig-scratch
-[includeIf "hasconfig:remote.*.url:gitlab.com/**"]
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:scratchpay/**"]
 	path = ~/.gitconfig-scratch
