@@ -73,6 +73,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'fennel' } " s-expre
 Plug 'tpope/vim-surround' " movements for text inside {[(\" etc
 Plug 'tpope/vim-unimpaired' " pairs of handy bracket bindings
 Plug 'tpope/vim-vinegar' " netrw wrapper
+Plug 'wellle/context.vim' " fold context
 Plug 'w0rp/ale' " linting and autocompletion
 Plug 'wfxr/minimap.vim', { 'on': 'MinimapToggle' } " sidebar file map
 Plug 'xolox/vim-misc' " xolox support lib
