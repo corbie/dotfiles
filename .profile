@@ -100,12 +100,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Command completion
+BREW_BASH_COMPLETION_DIR="${BREW_PREFIX}/etc/bash_completion.d"
 ## Docker
-docker_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
-. $docker_completion_dir/docker
+docker_completion_dir=${BREW_BASH_COMPLETION_DIR}
+[[ -f $docker_completion_dir/docker ]] && . $docker_completion_dir/docker
 
 ## Git
-git_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
+git_completion_dir=${BREW_BASH_COMPLETION_DIR}
 . $git_completion_dir/git-completion.bash
 . $git_completion_dir/git-prompt.sh
 export GIT_PS1_SHOWCOLORHINTS=true
@@ -113,27 +114,27 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 ## Google CLI
-google_cli_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
+google_cli_completion_dir=${BREW_BASH_COMPLETION_DIR}
 [[ -f $google_cli_completion_dir/google-cloud-sdk ]] && . $google_cli_completion_dir/google-cloud-sdk
 
-## Helm
-helm_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
-[[ -f $helm_completion_dir/helm ]] && . $helm_completion_dir/helm
+## google_cli
+google_cli_completion_dir=${BREW_BASH_COMPLETION_DIR}
+[[ -f $google_cli_completion_dir/google_cli ]] && . $google_cli_completion_dir/google_cli
 
 ## Kubectl
-kubectl_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
+kubectl_completion_dir=${BREW_BASH_COMPLETION_DIR}
 [[ -f $kubectl_completion_dir/kubectl ]] && . $kubectl_completion_dir/kubectl
 
 ## M
-m_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
-. $m_completion_dir/m
+m_completion_dir=${BREW_BASH_COMPLETION_DIR}
+[[ -f $m_completion_dir/m ]] && . $m_completion_dir/m
 
 ## Make
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 ## MAS
-mas_completion_dir=${BREW_PREFIX}/etc/bash_completion.d
-. $mas_completion_dir/mas
+mas_completion_dir=${BREW_BASH_COMPLETION_DIR}
+[[ -f $mas_completion_dir/mas ]] & . $mas_completion_dir/mas
 
 # Functions
 ## SSH agent forwarding socket environment workaround
