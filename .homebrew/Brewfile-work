@@ -1,14 +1,11 @@
 tap "2mol/tools"
 tap "akeylesslabs/tap"
+tap "docker/tap", trusted: true
 tap "hashicorp/tap"
 tap "samkleespies/ghostcfg"
 tap "universal-ctags/universal-ctags"
 # AI pair programming in your terminal
 brew "aider"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Flexible lightweight test report tool
-brew "allure"
 # Source-code syntax highlighter
 brew "source-highlight"
 # Formatter/translator for text files to numerous formats
@@ -43,6 +40,8 @@ brew "cmark"
 brew "code-minimap"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# High performance csv viewer for cli
+brew "csview"
 # Reimplementation of ctags(1)
 brew "ctags"
 # Monitor DHCP traffic for debugging purposes
@@ -51,6 +50,8 @@ brew "dhcpdump"
 brew "diction"
 # Tool for exploring each layer in a docker image
 brew "dive"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
 # Small tool to convert Djvu files to PDF files
@@ -59,6 +60,8 @@ brew "djvu2pdf"
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Text processing system for reStructuredText
 brew "docutils"
 # Convert text between DOS, UNIX, and Mac formats
@@ -79,8 +82,6 @@ brew "fzf"
 brew "gemini-cli"
 # Implementation of the ANS Forth language
 brew "gforth"
-# GitHub command-line tool
-brew "gh"
 # Distributed revision control system
 brew "git"
 # Quickly rewrite git repository history
@@ -167,10 +168,6 @@ brew "ncdu"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
-# AI coding agent, built for the terminal
-brew "opencode"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Shell command parallelization utility
@@ -203,6 +200,8 @@ brew "redis"
 brew "remind"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Utility that provides fast incremental file transfer
@@ -231,6 +230,8 @@ brew "tcptraceroute"
 brew "terraform-ls"
 # Language Server Protocol for Terraform
 brew "terraform-lsp"
+# Thin wrapper for Terraform e.g. for locking state
+brew "terragrunt"
 # Linter for Terraform files
 brew "tflint"
 # Code-search similar to ack
@@ -304,6 +305,8 @@ cask "menumeters"
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Build, run, and govern agents across the software development lifecycle
+cask "docker/tap/sbx", trusted: true
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Multimedia player
@@ -321,8 +324,8 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
-mas "Numbers", id: 361304891
 mas "Numbers", id: 409203825
+mas "Numbers", id: 361304891
 mas "Pages", id: 409201541
 mas "Save to Reader", id: 1640236961
 mas "Slack", id: 803453959
