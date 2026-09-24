@@ -134,7 +134,7 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 
 ## MAS
 mas_completion_dir=${BREW_BASH_COMPLETION_DIR}
-[[ -f $mas_completion_dir/mas ]] & . $mas_completion_dir/mas
+[[ -f $mas_completion_dir/mas ]] && . $mas_completion_dir/mas
 
 # Functions
 ## SSH agent forwarding socket environment workaround
