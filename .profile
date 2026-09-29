@@ -137,40 +137,6 @@ mas_completion_dir=${BREW_BASH_COMPLETION_DIR}
 [[ -f $mas_completion_dir/mas ]] && . $mas_completion_dir/mas
 
 # Functions
-## SSH agent forwarding socket environment workaround
-function refresh_socket {
-	if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
-		socket=$(find /private/tmp -user $USER -type s -name Listeners 2>/dev/null | xargs ls -1t | head -1)
-	else
-		socket=$(find /tmp -user $USER -type s -name agent.* 2>/dev/null | xargs ls -1t | head -1)
-	fi
-	if [ -S $socket ]; then
-		export SSH_AUTH_SOCK=$socket
-	fi
-}
-
-## AWS SSO login
-function acontext {
-	if [ "$1" == "" ]; then
-		echo "Current AWS session"
-		echo "----------"
-		if aws sts get-caller-identity; then
-			echo
-			echo "AWS profile"
-			echo "----------"
-			aws configure list
-			[ "$?" != "0" ] && echo "***********"
-		fi
-		return 0
-	fi
-	if ! aws sso login --profile "$1"; then
-		echo "Could not log in to AWS"; return 1
-	fi
-	export AWS_PROFILE="$1"
-	echo "Account ID: $(aws sts get-caller-identity | jq -r .Account)"
-	aws configure list
-}
-
 ## Utility functions
 function print() {
 	echo ">>> [$(time_now)] $1"
@@ -185,49 +151,6 @@ function time_now() {
 	date '+%Y-%m-%d %H:%M:%S' | tr -d '\n'
 }
 
-## Set kubectl context
-function kcontext() {
-	local current_context
-	local contexts
-	local pattern
-	pattern="$1"
-	function get_kubectl_context() {
-		kubectl config current-context | tr -d '\n'
-	}
-	if [ "$1" == "" ]; then
-		echo -e "Current kubectl context:"
-		get_kubectl_context
-		return
-	fi
-	current_context="$(get_kubectl_context)"
-	if [[ "$current_context" =~ $pattern ]]; then
-		print "kubectl current context now '$current_context'"
-		return
-	fi
-	print "The current kubectl context does not match '${pattern}'"
-	# `kubectl config get-contexts` does not support structured output so we need this mess
-	contexts="$(kubectl config get-contexts --no-headers | sed -E -e 's/^[ \*]+([a-z:0-9\/-]+)[ ].+$/\1/')"
-	for context in $contexts; do
-		if [[ "$context" =~ $pattern ]]; then
-			print "Changing active kubectl context"
-			kubectl config use-context "$context"
-			print "kubectl current context now '$(get_kubectl_context)'"
-			return
-		fi
-	done
-	print_err "Could not find a kubectl context matching '${pattern}'"
-	print_err "Available contexts are:"
-	echo "$contexts"
-}
-
-
-#if [[ -v $SSH_AUTH_SOCK && -S $SSH_AUTH_SOCK ]]; then
-#  # SSH auth socket exists, NOP
-#  true
-#else
-#  refresh_socket
-#fi
-
 # zoxide
 if which zoxide > /dev/null; then
 	eval "$(zoxide init --cmd cd bash)"
@@ -236,4 +159,3 @@ fi
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/corban.johnson/.lmstudio/bin"
 # End of LM Studio CLI section
-
