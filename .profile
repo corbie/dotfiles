@@ -18,7 +18,7 @@ shopt -s nocaseglob # ignore case when matching
 PATH=${PATH}:/usr/local/sbin
 
 ## Per-OS environment
-export UNAME_SYSTEM=$(uname -s)
+export UNAME_SYSTEM; UNAME_SYSTEM=$(uname -s)
 if [[ $UNAME_SYSTEM == 'Darwin' ]]; then
 	export BASH_SILENCE_DEPRECATION_WARNING=1
 	if [[ -d /opt/homebrew ]]; then
