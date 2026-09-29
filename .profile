@@ -76,7 +76,7 @@ fi
 
 ## Prompt
 case "$TERM" in
-screen* | xterm* | rxvt*)
+screen* | xterm* | rxvt* | tmux*)
 	# the $DIRSTACK substitution of "~" for $HOME does not work in bash 4
 	PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"; __git_ps1 "\n$([[ -n $VIRTUAL_ENV ]] && echo \>\>\> VENV:\(${VIRTUAL_ENV//$HOME/\~}\))\n${DIRSTACK[*]//$HOME/~}" "\n$(date "+[%Y-%m-%d %H:%M:%S]") \u@\h> " ":{%s}"; history -a'
 	;;
