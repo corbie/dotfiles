@@ -9,6 +9,8 @@ set directory=~/.vim/swap
 set wildchar=<tab> wildmenu wildmode=full " buffer list with <tab>
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 1
+let g:ale_use_neovim_lsp_api = 0
 set belloff=all
 if !has('gui_running')
   set t_Co=256
@@ -157,6 +159,7 @@ nmap <Leader>fg :Ag<CR>
 nmap <Leader>fr :Rg<CR>
 nmap <Leader>fh :Helptags<CR>
 nmap <Leader>ft :Tags<CR>
+nmap <Leader>fm :Man 3 <C-r><C-w><CR>
 " toggle window scroll binding
 nmap <leader>b :windo set scrollbind!<CR>
 " clear search highlight
@@ -206,9 +209,10 @@ nmap <leader>w :BD<CR>
 nmap <leader>x <Plug>window:quickfix:loop
 " close preview window
 nmap <leader>z :pclose<CR>
-" Use Tab and Shift-tab to select completions
+" Use Tab and Shift-tab to select completions, <CR> to confirm
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <silent><expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 
 
 "" Filetype settings
@@ -335,10 +339,10 @@ if executable('ag')
 endif
 
 " ALE settings
-let g:ale_completion_enabled = 1
 let g:ale_default_navigation = 'split'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
+\   'c': ['clang-format'],
 \   'bash': ['shfmt'],
 \   'json': ['jq', 'eslint'],
 \   'hcl': ['terraform', 'packer'],
@@ -367,6 +371,9 @@ let g:ale_linters_ignore = {
 \   'vim' : ['vim-language-server'],
 \}
 let g:ale_sign_column_always = 1
+"" ALE C
+let g:ale_c_clangd_options = '--header-insertion=never --background-index'
+let g:ale_c_cc_options = '-std=c99 -Wall -Wextra'
 "" ALE Python
 let g:ale_python_auto_virtualenv = 1
 let g:ale_python_flake8_options = '--ignore=E501,W503'
