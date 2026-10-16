@@ -143,6 +143,8 @@ command Gp :G push
 command Gpf :G push -f
 command Grf :G refresh
 command Gl :Gclog
+" write and make with vim-dispatch
+nnoremap <F5> :w<CR>:Dispatch<CR>
 
 """ Leader keys
 " ALE info window for symbold under cursor
