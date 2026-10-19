@@ -1,5 +1,3 @@
-tap "2mol/tools"
-tap "openresty/brew"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Library for manipulating PNG images
@@ -36,24 +34,32 @@ brew "pango"
 brew "librsvg"
 # Icons for the GNOME project
 brew "adwaita-icon-theme"
+# Generic library support script
+brew "libtool"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # C library for creating IP packets
 brew "libnet"
 # Utility to check whether MAC addresses are already taken on a LAN
 brew "arping"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
+brew "readline"
+# YAML Parser
+brew "libyaml"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Message bus system, providing inter-application communication
 brew "dbus"
 # Protocol definitions and daemon for D-Bus at-spi
 brew "at-spi2-core"
-# Library for command-line editing
-brew "readline"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Official Amazon AWS command-line interface
-brew "awscli"
+brew "awscli", link: false
 # Text-based UI library
 brew "ncurses"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -68,20 +74,16 @@ brew "btop"
 brew "byacc"
 # Asynchronous DNS library
 brew "c-ares"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Console-based Audio Visualizer for ALSA
 brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
 # Cisco Discovery Protocol Reporter
 brew "cdpr"
-# YAML Parser
-brew "libyaml"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS
 brew "certbot"
-# Readline wrapper: adds readline support to tools that lack it
-brew "rlwrap"
-# Dynamic, general-purpose programming language
-brew "clojure"
 # Common Lisp implementation with a long history
 brew "clozure-cl"
 # Cross-platform make
@@ -90,6 +92,8 @@ brew "cmake"
 brew "cmark"
 # High performance code minimap generator
 brew "code-minimap"
+# Reimplementation of ctags(1)
+brew "ctags"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash-shell"
 # Monitor DHCP traffic for debugging purposes
@@ -112,8 +116,6 @@ brew "dos2unix"
 brew "entr"
 # Graphics library to dynamically manipulate images
 brew "gd"
-# Generic library support script
-brew "libtool"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Postgres C API library
@@ -134,6 +136,8 @@ brew "fprobe"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU debugger
+brew "gdb"
 # GNU database manager
 brew "gdbm"
 # Portable Foreign Function Interface library
@@ -146,12 +150,8 @@ brew "gforth"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Ruby client and CLI for GitLab API
 brew "gitlab-gem"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Low-level cryptographic library
 brew "nettle"
 # GNU Transport Layer Security (TLS) Library
@@ -188,8 +188,6 @@ brew "libepoxy"
 brew "gtk+3"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
-# Kubernetes package manager
-brew "helm"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -210,12 +208,12 @@ brew "jq"
 brew "jrnl"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
+# Minimal CGI and FastCGI library for C/C++
+brew "kcgi"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Peer-to-peer hypermedia protocol
 brew "kubo"
-# Build tool for Clojure
-brew "leiningen"
 # Layer Four Traceroute (LFT), an advanced traceroute tool
 brew "lft"
 # Sophisticated file transfer program
@@ -254,6 +252,8 @@ brew "md5deep"
 brew "midnight-commander"
 # Menu-driven communications program
 brew "minicom"
+# Deep clean and optimize your Mac
+brew "mole"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # NCurses Disk Usage
@@ -282,8 +282,6 @@ brew "python@3.10"
 brew "python@3.9"
 # Generic machine emulator and virtualizer
 brew "qemu"
-# Cross-platform application and UI framework
-brew "qt"
 # File browser
 brew "ranger"
 # Rsync for cloud storage
@@ -296,6 +294,8 @@ brew "remind"
 brew "rename"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Readline wrapper: adds readline support to tools that lack it
+brew "rlwrap"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Scheme byte-code interpreter
@@ -332,8 +332,6 @@ brew "tmux"
 brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Use ViM as PAGER
@@ -344,14 +342,12 @@ brew "vitetris"
 brew "w3m"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-# Extensible IRC client
-brew "weechat"
 # Internet file retriever
 brew "wget"
 # Fetch summaries from MediaWiki wikis, like Wikipedia
 brew "wiki"
 # Network analyzer and capture tool - without graphical user interface
-brew "wireshark", link: false
+brew "wireshark"
 # Cross-platform C++ GUI toolkit
 brew "wxwidgets"
 # API documentation browser and code snippet manager
@@ -401,22 +397,22 @@ mas "Calca", id: 635758264
 mas "Exporter", id: 1099120373
 mas "field kit", id: 1612653346
 mas "GarageBand", id: 682658836
-mas "Graphic", id: 404705039
 mas "Keynote", id: 409183694
 mas "Kindle Classic", id: 405399194
 mas "Magnet", id: 441258766
 mas "Marked 2", id: 890031187
+mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "OP-Z", id: 1098190457
 mas "Oscilloppoi", id: 1102313524
 mas "Pages", id: 409201541
-mas "Paper", id: 1143513744
 mas "Pixelmator", id: 407963104
+mas "Save to Reader", id: 1640236961
+mas "Slack", id: 803453959
+mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
 mas "Tomato 2", id: 1494210770
-mas "ToothFairy", id: 1191449274
 mas "WiFi Explorer", id: 494803304
-mas "Windows App", id: 1295203466
 go "github.com/klauspost/asmfmt/cmd/asmfmt"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/kisielk/errcheck"
