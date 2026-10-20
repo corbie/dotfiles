@@ -28,6 +28,8 @@ brew "btop"
 brew "cava"
 # Like cat but displays content with syntax highlighting
 brew "ccat"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
 # Utility for connecting securely to your Cloud SQL instances
 brew "cloud-sql-proxy"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
@@ -76,8 +78,8 @@ brew "fping"
 brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
+# CLI for managing Grafana Cloud resources
+brew "gcx"
 # Implementation of the ANS Forth language
 brew "gforth"
 # Distributed revision control system
